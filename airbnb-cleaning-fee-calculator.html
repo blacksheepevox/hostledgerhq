@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Airbnb Cleaning Fee Calculator (Break-Even per Stay) — Free | HostLedger</title>
+<meta name="description" content="Free Airbnb cleaning fee calculator: cleaner pay, laundry, supplies and platform fee to a break-even cleaning fee per stay and your monthly cleaning cost.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/airbnb-cleaning-fee-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/airbnb-cleaning-fee-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Airbnb Cleaning Fee Calculator (Break-Even per Stay) — Free | HostLedger">
+<meta property="og:description" content="Free Airbnb cleaning fee calculator: cleaner pay, laundry, supplies and platform fee to a break-even cleaning fee per stay and your monthly cleaning cost.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-str.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Airbnb Cleaning Fee Calculator",
+   "description": "Free Airbnb cleaning fee calculator: cleaner pay, laundry, supplies and platform fee to a break-even cleaning fee per stay and your monthly cleaning cost.",
+   "url": "https://hostledgerhq.vercel.app/airbnb-cleaning-fee-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does the platform take a fee from the cleaning fee?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Booking platforms generally calculate their fee on the booking subtotal, which usually includes the cleaning fee. How much comes out of your payout depends on your fee setup, so use the percentage your payout report shows. For direct bookings, enter your card processing percentage, or 0."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should my cleaning fee equal my cleaning cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "That is a pricing choice. Some hosts charge the full cost, some charge less and build the rest into the nightly rate, and some use a minimum stay so one cleaning is spread over more nights. Whatever you choose, it helps to know the break-even number first, so you know what you are giving up."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What if I clean the place myself?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Enter an hourly rate for your own time to see what a turnover is really worth, or enter 0 for the cleaner to see only the out-of-pocket cost of laundry and supplies. Looking at both is useful when you decide whether to hire help."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is occupancy tax charged on cleaning fees?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In many places it is, but the rules vary by city, county and state. If your platform collects and remits the tax, it does not change this calculation. If you remit it yourself, check your local rules."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why per turnover and not per night?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A cleaning happens once per stay, whether the guest stays one night or seven. That is why short stays cost more in cleaning per night, and why the number of stays per month drives your monthly cleaning bill."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/cleaning-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html" aria-current="page">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_cleaning_fee_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Airbnb cleaning fee calculator</li></ol></nav>
+  <h1>Airbnb cleaning fee calculator</h1>
+  <p class="narrow">Work out what one turnover really costs (cleaner, laundry and supplies) and the cleaning fee per stay that covers it after the platform takes its cut. Add your stays per month to see the monthly cleaning bill. Works the same for Airbnb, VRBO and direct bookings.</p>
+
+  <div class="calc">
+   <form id="cl-form" novalidate aria-describedby="cl-disclaimer">
+    <fieldset>
+     <legend>How you pay your cleaner</legend>
+     <div class="radios">
+      <label><input type="radio" name="payMode" value="turnover" checked> A flat amount per turnover</label>
+      <label><input type="radio" name="payMode" value="hourly"> An hourly rate</label>
+     </div>
+     <div class="fields" style="margin-top:10px">
+     <div class="field">
+      <label for="cleanerPerTurnover">Cleaner pay per turnover</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="cleanerPerTurnover" name="cleanerPerTurnover" type="number" inputmode="decimal" step="any" min="0" value="70"></div>
+      
+     </div>
+     <div class="field">
+      <label for="hourlyRate">Hourly rate</label>
+      <div class="input has-pre has-post"><span class="unit pre" aria-hidden="true">$</span><input id="hourlyRate" name="hourlyRate" type="number" inputmode="decimal" step="any" min="0" value="28"><span class="unit post" aria-hidden="true">/hr</span></div>
+      
+     </div>
+     <div class="field">
+      <label for="hoursPerTurnover">Hours per turnover</label>
+      <div class="input has-post"><input id="hoursPerTurnover" name="hoursPerTurnover" type="number" inputmode="decimal" step="any" min="0" value="2.5"><span class="unit post" aria-hidden="true">hrs</span></div>
+      
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Other costs per turnover</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="laundryPerTurnover">Laundry + linens</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="laundryPerTurnover" name="laundryPerTurnover" type="number" inputmode="decimal" step="any" min="0" value="20" aria-describedby="laundryPerTurnover-hint"></div>
+      <span class="hint" id="laundryPerTurnover-hint">Laundry service, or linen wear and washing</span>
+     </div>
+     <div class="field">
+      <label for="suppliesPerTurnover">Cleaning supplies + restock</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="suppliesPerTurnover" name="suppliesPerTurnover" type="number" inputmode="decimal" step="any" min="0" value="10" aria-describedby="suppliesPerTurnover-hint"></div>
+      <span class="hint" id="suppliesPerTurnover-hint">Soap, paper goods, trash bags</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Fees and volume</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="platformFeePct">Platform fee on the cleaning fee</label>
+      <div class="input has-post"><input id="platformFeePct" name="platformFeePct" type="number" inputmode="decimal" step="any" min="0" max="100" value="3" aria-describedby="platformFeePct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="platformFeePct-hint">From your payout report; 0 for direct</span>
+     </div>
+     <div class="field">
+      <label for="staysPerMonth">Stays per month</label>
+      <div class="input"><input id="staysPerMonth" name="staysPerMonth" type="number" inputmode="decimal" step="any" min="0" value="8" aria-describedby="staysPerMonth-hint"></div>
+      <span class="hint" id="staysPerMonth-hint">One turnover per stay</span>
+     </div>
+     <div class="field">
+      <label for="currentFee">Cleaning fee you charge now (optional)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="currentFee" name="currentFee" type="number" inputmode="decimal" step="any" min="0" value="95" aria-describedby="currentFee-hint"></div>
+      <span class="hint" id="currentFee-hint">Leave blank to skip the comparison</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result">
+    <h3>Cost per turnover</h3>
+    <div class="big" id="out-cost">—</div>
+    <p class="detail" id="out-cost-detail"></p>
+   </div>
+   <div class="result highlight">
+    <h3>Break-even cleaning fee per stay</h3>
+    <div class="big" id="out-be">—</div>
+    <p class="detail" id="out-be-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Monthly cleaning cost</h3>
+    <div class="big" id="out-monthly">—</div>
+    <p class="detail" id="out-monthly-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Your current fee vs cost</h3>
+    <div class="big" id="out-gap">—</div>
+    <p class="detail" id="out-gap-detail"></p>
+   </div>
+    <p class="disclaimer" id="cl-disclaimer">Estimates only, for planning. Not tax, legal or financial advice. Results depend entirely on the numbers you enter.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p><strong>Cost per turnover</strong> is what you pay the cleaner (a flat amount, or hourly rate times hours) plus laundry or linens plus supplies. Because the booking platform usually takes its percentage out of the cleaning fee too, the fee that exactly covers your cost is a bit higher than the cost: <strong>break-even fee = cost ÷ (1 − platform fee %)</strong>. Your <strong>monthly cleaning cost</strong> is the cost per turnover times the number of stays. If you enter the fee you charge now, the calculator shows how much you keep after the platform fee and whether that is over or under your cost each month.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional one-bedroom: a cleaner paid $70 a turnover, $20 of laundry, $10 of supplies, a 3% platform fee, eight stays a month, and a $95 cleaning fee.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Cost per turnover ($70 + $20 + $10)</th><td class="n">$100.00</td></tr>
+   <tr><th scope="row">Break-even fee ($100 ÷ 0.97)</th><td class="n">$103.09</td></tr>
+   <tr><th scope="row">Monthly cleaning cost (8 × $100)</th><td class="n">$800.00</td></tr>
+   <tr><th scope="row">Kept from a $95 fee ($95 × 0.97)</th><td class="n">$92.15</td></tr>
+   <tr><th scope="row">Short per stay ($92.15 − $100)</th><td class="n">−$7.85</td></tr>
+   <tr><th scope="row">Short per month (8 × $7.85)</th><td class="n">−$62.80</td></tr>
+  </table>
+  <p>A $95 fee looks like it covers a $70 cleaner. Add laundry, supplies and the platform's cut and this host pays about $63 a month out of the nightly rate to clean. Paying the cleaner $28 an hour for 2.5 hours gives the same $70; switch the pay option to hourly to try it.</p>
+
+  <h2>Costs that are easy to leave out</h2>
+  <ul>
+   <li><strong>Linen and towel replacement.</strong> Sheets and towels wear out. Add a little per turnover to laundry so replacements are covered.</li>
+   <li><strong>Restocking.</strong> Coffee, toilet paper, soap and trash bags are per-stay costs, not one-off purchases.</li>
+   <li><strong>Deep cleans.</strong> A few times a year the place needs more than a turnover. Spread that cost across the stays in between.</li>
+   <li><strong>Your own time.</strong> If you do turnovers yourself, put a value on the hours. It shows what you would pay to hand it off.</li>
+  </ul>
+
+  <h2>Using the result when you set prices</h2>
+  <p>A cleaning fee is a fixed charge per stay, so it weighs more on a one-night booking than on a week-long one. Some hosts price the fee at break-even, some charge less and raise the nightly rate, and some set a minimum stay. The calculator does not pick for you. It tells you what a turnover costs, so the choice is deliberate. To see how cleaning fits into the whole month, try the <a href="short-term-rental-profit-calculator.html">short-term rental profit calculator</a>.</p>
+
+  <h2>Track actual turnovers, not averages</h2>
+  <p>Real turnovers vary: a family after a week takes longer than a couple after one night. The HostLedger Cleaning &amp; Turnover Log records each turnover's hours, pay and supplies with a guest-ready flag, for short-term turnovers and long-term make-ready alike, so your cost per turnover comes from what you actually paid.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Cleaning &amp; Turnover Log on Etsy">
+   <img src="img/cleaning-turnover-log.jpg" width="560" height="700" loading="lazy" alt="Cleaning &amp; Turnover Log listing image">
+   <div>
+    <h2>Log every turnover and what it cost</h2>
+    <p>The Cleaning &amp; Turnover Log: hours, pay, supplies and a guest-ready flag for STR turnovers and LTR make-ready. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4564479963/str-cleaning-log-spreadsheet-turnover?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_cleaning_fee_calculator" rel="noopener">Cleaning &amp; Turnover Log: $5 on Etsy</a>
+    <p class="also-flag">To see cleaning against revenue, fees and fixed costs every month, see the <a href="https://www.etsy.com/listing/4564157134/str-host-profit-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_cleaning_fee_calculator" rel="noopener">STR Profit Tracker + Seasonal Pricing Calendar</a> ($9 on Etsy).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>Does the platform take a fee from the cleaning fee?</summary>
+   <p>Booking platforms generally calculate their fee on the booking subtotal, which usually includes the cleaning fee. How much comes out of your payout depends on your fee setup, so use the percentage your payout report shows. For direct bookings, enter your card processing percentage, or 0.</p>
+  </details>
+  <details>
+   <summary>Should my cleaning fee equal my cleaning cost?</summary>
+   <p>That is a pricing choice. Some hosts charge the full cost, some charge less and build the rest into the nightly rate, and some use a minimum stay so one cleaning is spread over more nights. Whatever you choose, it helps to know the break-even number first, so you know what you are giving up.</p>
+  </details>
+  <details>
+   <summary>What if I clean the place myself?</summary>
+   <p>Enter an hourly rate for your own time to see what a turnover is really worth, or enter 0 for the cleaner to see only the out-of-pocket cost of laundry and supplies. Looking at both is useful when you decide whether to hire help.</p>
+  </details>
+  <details>
+   <summary>Is occupancy tax charged on cleaning fees?</summary>
+   <p>In many places it is, but the rules vary by city, county and state. If your platform collects and remits the tax, it does not change this calculation. If you remit it yourself, check your local rules.</p>
+  </details>
+  <details>
+   <summary>Why per turnover and not per night?</summary>
+   <p>A cleaning happens once per stay, whether the guest stays one night or seven. That is why short stays cost more in cleaning per night, and why the number of stays per month drives your monthly cleaning bill.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="short-term-rental-profit-calculator.html">short-term rental profit calculator</a> and <a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_cleaning_fee_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_cleaning_fee_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>

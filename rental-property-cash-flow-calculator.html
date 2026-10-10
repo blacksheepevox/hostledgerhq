@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Property Cash Flow Calculator (1–10 Units) — Free | HostLedger</title>
+<meta name="description" content="Free rental property cash flow calculator for 1–10 unit landlords: rent, vacancy, mortgage, taxes, reserves to NOI, monthly cash flow and cash-on-cash.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/rental-property-cash-flow-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/rental-property-cash-flow-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Rental Property Cash Flow Calculator (1–10 Units) — Free | HostLedger">
+<meta property="og:description" content="Free rental property cash flow calculator for 1–10 unit landlords: rent, vacancy, mortgage, taxes, reserves to NOI, monthly cash flow and cash-on-cash.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Rental Property Cash Flow Calculator",
+   "description": "Free rental property cash flow calculator for 1–10 unit landlords: rent, vacancy, mortgage, taxes, reserves to NOI, monthly cash flow and cash-on-cash.",
+   "url": "https://hostledgerhq.vercel.app/rental-property-cash-flow-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What vacancy rate should I use?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Use your own history if you have it: months empty divided by total months across your units. Without history, many small landlords budget somewhere around 5–8%, more for older properties, student areas, or markets where units sit longer. One empty month a year is about 8% of rent."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why are maintenance and CapEx separate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Maintenance covers recurring small repairs: a faucet, a filter, a service call. CapEx (capital expenditures) covers big items that wear out on a schedule: roof, water heater, HVAC, flooring. Setting money aside monthly for both keeps one bad year from wiping out your cash flow."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is NOI the same as cash flow?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Net operating income (NOI) is income minus operating expenses before the mortgage. Cash flow is what is left after the mortgage payment. NOI describes the property; cash flow describes your loan and the property together."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this calculator include CapEx reserves in NOI?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Here NOI is after your maintenance and CapEx reserves, which is the more conservative view. Some lenders and appraisers calculate NOI before reserves. If you want that version, set CapEx to 0% and add it back mentally."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What should I put in cash invested?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Everything you paid out of pocket to buy and get the property rentable: down payment, closing costs, and initial repairs or rehab. Leave it at 0 to skip cash-on-cash return."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this include income tax or depreciation?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It is a pre-tax cash estimate. Depreciation, deductions and your tax situation are questions for a tax professional."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/cashflow-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html" aria-current="page">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_cash_flow_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Rental property cash flow calculator</li></ol></nav>
+  <h1>Rental property cash flow calculator</h1>
+  <p class="narrow">For long-term landlords with 1–10 units. Enter rent, vacancy, the mortgage and your operating costs to see net operating income, monthly and annual cash flow, and cash-on-cash return. Results update as you type.</p>
+
+  <div class="calc">
+   <form id="cf-form" novalidate aria-describedby="cf-disclaimer">
+    <fieldset>
+     <legend>Income</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="units">Number of units</label>
+      <div class="input"><input id="units" name="units" type="number" inputmode="decimal" step="1" min="1" max="10" value="2" aria-describedby="units-hint"></div>
+      <span class="hint" id="units-hint">1 to 10</span>
+     </div>
+     <div class="field">
+      <label for="rentPerUnit">Monthly rent per unit</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="rentPerUnit" name="rentPerUnit" type="number" inputmode="decimal" step="any" min="0" value="1450" aria-describedby="rentPerUnit-hint"></div>
+      <span class="hint" id="rentPerUnit-hint">Average if units differ</span>
+     </div>
+     <div class="field">
+      <label for="otherIncome">Other monthly income</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="otherIncome" name="otherIncome" type="number" inputmode="decimal" step="any" min="0" value="0" aria-describedby="otherIncome-hint"></div>
+      <span class="hint" id="otherIncome-hint">Laundry, parking, pet rent</span>
+     </div>
+     <div class="field">
+      <label for="vacancyPct">Vacancy + credit loss</label>
+      <div class="input has-post"><input id="vacancyPct" name="vacancyPct" type="number" inputmode="decimal" step="any" min="0" max="100" value="5"><span class="unit post" aria-hidden="true">%</span></div>
+      
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Financing</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="mortgage">Mortgage payment (principal + interest)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="mortgage" name="mortgage" type="number" inputmode="decimal" step="any" min="0" value="1650" aria-describedby="mortgage-hint"></div>
+      <span class="hint" id="mortgage-hint">Monthly. Escrowed taxes/insurance go below instead</span>
+     </div>
+     <div class="field">
+      <label for="cashInvested">Cash invested (optional)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="cashInvested" name="cashInvested" type="number" inputmode="decimal" step="any" min="0" value="60000" aria-describedby="cashInvested-hint"></div>
+      <span class="hint" id="cashInvested-hint">Down payment + closing + rehab</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Operating costs</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="propertyTaxesAnnual">Property taxes (per year)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="propertyTaxesAnnual" name="propertyTaxesAnnual" type="number" inputmode="decimal" step="any" min="0" value="4200"></div>
+      
+     </div>
+     <div class="field">
+      <label for="insuranceAnnual">Insurance (per year)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="insuranceAnnual" name="insuranceAnnual" type="number" inputmode="decimal" step="any" min="0" value="1800"></div>
+      
+     </div>
+     <div class="field">
+      <label for="maintenancePct">Maintenance reserve</label>
+      <div class="input has-post"><input id="maintenancePct" name="maintenancePct" type="number" inputmode="decimal" step="any" min="0" max="100" value="5" aria-describedby="maintenancePct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="maintenancePct-hint">% of scheduled rent</span>
+     </div>
+     <div class="field">
+      <label for="capexPct">CapEx reserve</label>
+      <div class="input has-post"><input id="capexPct" name="capexPct" type="number" inputmode="decimal" step="any" min="0" max="100" value="5" aria-describedby="capexPct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="capexPct-hint">% of scheduled rent</span>
+     </div>
+     <div class="field">
+      <label for="managementPct">Property management</label>
+      <div class="input has-post"><input id="managementPct" name="managementPct" type="number" inputmode="decimal" step="any" min="0" max="100" value="8" aria-describedby="managementPct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="managementPct-hint">% of collected income; 0 if self-managed</span>
+     </div>
+     <div class="field">
+      <label for="utilities">Owner-paid utilities (monthly)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="utilities" name="utilities" type="number" inputmode="decimal" step="any" min="0" value="120"></div>
+      
+     </div>
+     <div class="field">
+      <label for="hoaOther">HOA + other (monthly)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="hoaOther" name="hoaOther" type="number" inputmode="decimal" step="any" min="0" value="0" aria-describedby="hoaOther-hint"></div>
+      <span class="hint" id="hoaOther-hint">Lawn, snow, trash, software</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result">
+    <h3>Effective monthly income</h3>
+    <div class="big" id="out-income">—</div>
+    <p class="detail" id="out-income-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Monthly operating expenses</h3>
+    <div class="big" id="out-opex">—</div>
+    <p class="detail" id="out-opex-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Net operating income (NOI) per month</h3>
+    <div class="big" id="out-noi">—</div>
+    <p class="detail" id="out-noi-detail"></p>
+   </div>
+   <div class="result highlight">
+    <h3>Cash flow per month</h3>
+    <div class="big" id="out-cf">—</div>
+    <p class="detail" id="out-cf-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Cash-on-cash return</h3>
+    <div class="big" id="out-coc">—</div>
+    <p class="detail" id="out-coc-detail"></p>
+   </div>
+    <p class="disclaimer" id="cf-disclaimer">Estimates only, for planning. Not tax, legal or financial advice. Results depend entirely on the numbers you enter.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p>It follows the standard order landlords and lenders use. Start with <strong>scheduled income</strong>: units times monthly rent, plus any other income. Subtract a <strong>vacancy and credit loss</strong> allowance to get effective income, the rent you can realistically expect to collect.</p>
+  <p>Then subtract <strong>operating expenses</strong>: property taxes and insurance (entered per year, divided by 12), owner-paid utilities, HOA and other monthly costs, plus three percentage-based lines. Maintenance and CapEx reserves are a percentage of scheduled rent; property management is a percentage of collected income, since most managers are paid on what they collect. What remains is <strong>net operating income (NOI)</strong>. Subtract the mortgage payment to get <strong>cash flow</strong>. If you enter the cash you put in, <strong>cash-on-cash return</strong> is annual cash flow divided by that amount.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional duplex: two units at $1,450, 5% vacancy, a $1,650 mortgage, $4,200 a year in taxes, $1,800 in insurance, 5% each for maintenance and CapEx, 8% management, and $120 of owner-paid water.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Scheduled rent (2 × $1,450)</th><td class="n">$2,900.00</td></tr>
+   <tr><th scope="row">Vacancy (5%)</th><td class="n">−$145.00</td></tr>
+   <tr><th scope="row">Effective income</th><td class="n">$2,755.00</td></tr>
+   <tr><th scope="row">Operating expenses</th><td class="n">−$1,130.40</td></tr>
+   <tr><th scope="row">NOI</th><td class="n">$1,624.60</td></tr>
+   <tr><th scope="row">Mortgage</th><td class="n">−$1,650.00</td></tr>
+   <tr><th scope="row">Cash flow</th><td class="n">−$25.40 / month</td></tr>
+  </table>
+  <p>On a quick "rent minus mortgage" check, this duplex looks like it clears $1,250 a month. Once taxes, insurance, vacancy and honest reserves are counted, it roughly breaks even. Self-manage (management 0%) and it turns positive, at about $195 a month. That gap between the napkin math and the real math is what this calculator is for.</p>
+
+  <h2>Choosing your percentages</h2>
+  <p>There is no universal right number, and published rules of thumb vary. Many small landlords budget something like 5–10% of rent each for maintenance and CapEx, more for older buildings or properties with original systems. Property managers often charge a percentage of collected rent, frequently somewhere around 8–10%, plus leasing fees. If you have a year or two of your own records, use those instead. Your actual repair spending is a far better guide than any rule.</p>
+
+  <h2>What this doesn't include</h2>
+  <p>Income tax, depreciation, principal paydown, appreciation, and one-time costs like a major renovation are left out on purpose. This is a monthly cash picture, not an investment return model or a tax estimate.</p>
+
+  <h2>From estimate to ledger</h2>
+  <p>Once you own the property, the question changes from "will it cash flow?" to "did it?" The HostLedger Landlord Rent Ledger tracks rent due versus collected for up to ten units, expenses by property, and security deposits held, with a dashboard per door, so your real vacancy and repair numbers can replace the guesses above.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Landlord Rent Ledger on Etsy">
+   <img src="img/landlord-rent-ledger.jpg" width="560" height="700" loading="lazy" alt="Landlord Rent Ledger listing image">
+   <div>
+    <h2>Track rent and expenses for up to 10 units</h2>
+    <p>The Landlord Rent Ledger: rent roll, expenses, deposits and a per-door dashboard. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_cash_flow_calculator" rel="noopener">Landlord Rent Ledger: $9 on Etsy</a>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>What vacancy rate should I use?</summary>
+   <p>Use your own history if you have it: months empty divided by total months across your units. Without history, many small landlords budget somewhere around 5–8%, more for older properties, student areas, or markets where units sit longer. One empty month a year is about 8% of rent.</p>
+  </details>
+  <details>
+   <summary>Why are maintenance and CapEx separate?</summary>
+   <p>Maintenance covers recurring small repairs: a faucet, a filter, a service call. CapEx (capital expenditures) covers big items that wear out on a schedule: roof, water heater, HVAC, flooring. Setting money aside monthly for both keeps one bad year from wiping out your cash flow.</p>
+  </details>
+  <details>
+   <summary>Is NOI the same as cash flow?</summary>
+   <p>No. Net operating income (NOI) is income minus operating expenses before the mortgage. Cash flow is what is left after the mortgage payment. NOI describes the property; cash flow describes your loan and the property together.</p>
+  </details>
+  <details>
+   <summary>Does this calculator include CapEx reserves in NOI?</summary>
+   <p>Yes. Here NOI is after your maintenance and CapEx reserves, which is the more conservative view. Some lenders and appraisers calculate NOI before reserves. If you want that version, set CapEx to 0% and add it back mentally.</p>
+  </details>
+  <details>
+   <summary>What should I put in cash invested?</summary>
+   <p>Everything you paid out of pocket to buy and get the property rentable: down payment, closing costs, and initial repairs or rehab. Leave it at 0 to skip cash-on-cash return.</p>
+  </details>
+  <details>
+   <summary>Does this include income tax or depreciation?</summary>
+   <p>No. It is a pre-tax cash estimate. Depreciation, deductions and your tax situation are questions for a tax professional.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="rental-property-mileage-deduction-calculator.html">rental property mileage deduction calculator</a> and <a href="short-term-rental-profit-calculator.html">short-term rental profit calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_cash_flow_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_cash_flow_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>

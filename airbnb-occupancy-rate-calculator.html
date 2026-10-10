@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Airbnb Occupancy Rate Calculator (ADR &amp; RevPAR) — Free | HostLedger</title>
+<meta name="description" content="Free Airbnb occupancy rate calculator: booked nights over available nights (minus owner-blocked nights), ADR, RevPAR and a month-by-month view.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/airbnb-occupancy-rate-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/airbnb-occupancy-rate-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Airbnb Occupancy Rate Calculator (ADR &amp; RevPAR) — Free | HostLedger">
+<meta property="og:description" content="Free Airbnb occupancy rate calculator: booked nights over available nights (minus owner-blocked nights), ADR, RevPAR and a month-by-month view.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-str.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Airbnb Occupancy Rate Calculator",
+   "description": "Free Airbnb occupancy rate calculator: booked nights over available nights (minus owner-blocked nights), ADR, RevPAR and a month-by-month view.",
+   "url": "https://hostledgerhq.vercel.app/airbnb-occupancy-rate-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Should owner-blocked nights count as available?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Most hosts leave them out. Nights you blocked for your own use or for maintenance were never for sale, so counting them as empty makes occupancy look worse than your pricing really performed. This calculator shows both versions so you can compare: occupancy of available nights, and occupancy counting every night in the period."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the difference between ADR and RevPAR?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ADR (average daily rate) is rental revenue divided by booked nights: what a booked night earned on average. RevPAR (revenue per available night) is rental revenue divided by available nights, booked or not. RevPAR equals ADR times occupancy, so it shows whether a higher rate cost you more empty nights than it was worth."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should cleaning fees be included in revenue?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For ADR and RevPAR, use nightly charges only and leave out cleaning fees and taxes. That keeps the numbers comparable with your nightly rates. Whatever you choose, be consistent from month to month."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is a booked night the same as a stay?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. A stay is one booking; a booked night is one paid night. A three-night stay is three booked nights. Occupancy rate counts nights."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is a good occupancy rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There is no single good number. It depends on your market, the season and how you price. Compare a month with the same month last year, and use the break-even occupancy from the short-term rental profit calculator to see what your costs require."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/occupancy-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html" aria-current="page">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_occupancy_rate_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Airbnb occupancy rate calculator</li></ol></nav>
+  <h1>Airbnb occupancy rate calculator</h1>
+  <p class="narrow">Calculate occupancy the way many hosts track it: booked nights divided by the nights you actually made available, after taking out nights you blocked for yourself or for maintenance. You also get average daily rate (ADR) and revenue per available night (RevPAR), plus a month-by-month view for a whole year.</p>
+
+  <div class="calc">
+   <form id="occ-form" novalidate aria-describedby="occ-disclaimer">
+    <fieldset>
+     <legend>Nights</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="nightsInPeriod">Nights in the period</label>
+      <div class="input"><input id="nightsInPeriod" name="nightsInPeriod" type="number" inputmode="decimal" step="1" min="0" value="30" aria-describedby="nightsInPeriod-hint"></div>
+      <span class="hint" id="nightsInPeriod-hint">30 for a month, 365 for a year</span>
+     </div>
+     <div class="field">
+      <label for="blockedNights">Owner or maintenance blocked nights</label>
+      <div class="input"><input id="blockedNights" name="blockedNights" type="number" inputmode="decimal" step="1" min="0" value="4" aria-describedby="blockedNights-hint"></div>
+      <span class="hint" id="blockedNights-hint">Nights not offered for booking</span>
+     </div>
+     <div class="field">
+      <label for="bookedNights">Booked nights</label>
+      <div class="input"><input id="bookedNights" name="bookedNights" type="number" inputmode="decimal" step="1" min="0" value="19" aria-describedby="bookedNights-hint"></div>
+      <span class="hint" id="bookedNights-hint">Paid nights, not number of stays</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Revenue</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="revenue">Rental revenue for those nights</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="revenue" name="revenue" type="number" inputmode="decimal" step="any" min="0" value="3420" aria-describedby="revenue-hint"></div>
+      <span class="hint" id="revenue-hint">Nightly charges only: leave out cleaning fees and taxes</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result highlight">
+    <h3>Occupancy rate</h3>
+    <div class="big" id="out-occ">—</div>
+    <p class="detail" id="out-occ-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Average daily rate (ADR)</h3>
+    <div class="big" id="out-adr">—</div>
+    <p class="detail" id="out-adr-detail"></p>
+   </div>
+   <div class="result">
+    <h3>RevPAR (revenue per available night)</h3>
+    <div class="big" id="out-revpar">—</div>
+    <p class="detail" id="out-revpar-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Available nights</h3>
+    <div class="big" id="out-avail">—</div>
+    <p class="detail" id="out-avail-detail"></p>
+   </div>
+    <p class="disclaimer" id="occ-disclaimer">Estimates only, for planning. Not tax, legal or financial advice. Results depend entirely on the numbers you enter.</p>
+   </div>
+  </div>
+
+  <section aria-labelledby="monthly">
+   <h2 id="monthly">Month-by-month view</h2>
+   <p class="narrow">Enter each month to see where the year is strong and where it sags. The prefilled numbers are a fictional cabin, not real data. Occupancy, ADR and RevPAR for each month update as you type; the bottom row is the whole year.</p>
+   <form id="occ-year-form" novalidate>
+    <div class="table-scroll">
+    <table class="example monthly">
+     <caption class="sr-only">Month-by-month occupancy, ADR and RevPAR</caption>
+     <thead><tr><th scope="col">Month</th><th scope="col">Nights</th><th scope="col">Blocked</th><th scope="col">Booked</th><th scope="col">Rental revenue</th><th scope="col">Occupancy</th><th scope="col">ADR</th><th scope="col">RevPAR</th></tr></thead>
+     <tbody>
+     <tr><th scope="row">Jan</th><td><div class="input"><input id="m1-nights" name="m1-nights" type="number" inputmode="decimal" step="1" min="0" value="31" aria-label="January: nights in month"></div></td><td><div class="input"><input id="m1-blocked" name="m1-blocked" type="number" inputmode="decimal" step="1" min="0" value="0" aria-label="January: blocked nights"></div></td><td><div class="input"><input id="m1-booked" name="m1-booked" type="number" inputmode="decimal" step="1" min="0" value="12" aria-label="January: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m1-revenue" name="m1-revenue" type="number" inputmode="decimal" step="any" min="0" value="1740" aria-label="January: rental revenue"></div></td><td class="n" id="m1-occ">—</td><td class="n" id="m1-adr">—</td><td class="n" id="m1-revpar">—</td></tr>
+     <tr><th scope="row">Feb</th><td><div class="input"><input id="m2-nights" name="m2-nights" type="number" inputmode="decimal" step="1" min="0" value="28" aria-label="February: nights in month"></div></td><td><div class="input"><input id="m2-blocked" name="m2-blocked" type="number" inputmode="decimal" step="1" min="0" value="0" aria-label="February: blocked nights"></div></td><td><div class="input"><input id="m2-booked" name="m2-booked" type="number" inputmode="decimal" step="1" min="0" value="13" aria-label="February: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m2-revenue" name="m2-revenue" type="number" inputmode="decimal" step="any" min="0" value="1885" aria-label="February: rental revenue"></div></td><td class="n" id="m2-occ">—</td><td class="n" id="m2-adr">—</td><td class="n" id="m2-revpar">—</td></tr>
+     <tr><th scope="row">Mar</th><td><div class="input"><input id="m3-nights" name="m3-nights" type="number" inputmode="decimal" step="1" min="0" value="31" aria-label="March: nights in month"></div></td><td><div class="input"><input id="m3-blocked" name="m3-blocked" type="number" inputmode="decimal" step="1" min="0" value="2" aria-label="March: blocked nights"></div></td><td><div class="input"><input id="m3-booked" name="m3-booked" type="number" inputmode="decimal" step="1" min="0" value="17" aria-label="March: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m3-revenue" name="m3-revenue" type="number" inputmode="decimal" step="any" min="0" value="2550" aria-label="March: rental revenue"></div></td><td class="n" id="m3-occ">—</td><td class="n" id="m3-adr">—</td><td class="n" id="m3-revpar">—</td></tr>
+     <tr><th scope="row">Apr</th><td><div class="input"><input id="m4-nights" name="m4-nights" type="number" inputmode="decimal" step="1" min="0" value="30" aria-label="April: nights in month"></div></td><td><div class="input"><input id="m4-blocked" name="m4-blocked" type="number" inputmode="decimal" step="1" min="0" value="0" aria-label="April: blocked nights"></div></td><td><div class="input"><input id="m4-booked" name="m4-booked" type="number" inputmode="decimal" step="1" min="0" value="18" aria-label="April: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m4-revenue" name="m4-revenue" type="number" inputmode="decimal" step="any" min="0" value="2880" aria-label="April: rental revenue"></div></td><td class="n" id="m4-occ">—</td><td class="n" id="m4-adr">—</td><td class="n" id="m4-revpar">—</td></tr>
+     <tr><th scope="row">May</th><td><div class="input"><input id="m5-nights" name="m5-nights" type="number" inputmode="decimal" step="1" min="0" value="31" aria-label="May: nights in month"></div></td><td><div class="input"><input id="m5-blocked" name="m5-blocked" type="number" inputmode="decimal" step="1" min="0" value="3" aria-label="May: blocked nights"></div></td><td><div class="input"><input id="m5-booked" name="m5-booked" type="number" inputmode="decimal" step="1" min="0" value="21" aria-label="May: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m5-revenue" name="m5-revenue" type="number" inputmode="decimal" step="any" min="0" value="3570" aria-label="May: rental revenue"></div></td><td class="n" id="m5-occ">—</td><td class="n" id="m5-adr">—</td><td class="n" id="m5-revpar">—</td></tr>
+     <tr><th scope="row">Jun</th><td><div class="input"><input id="m6-nights" name="m6-nights" type="number" inputmode="decimal" step="1" min="0" value="30" aria-label="June: nights in month"></div></td><td><div class="input"><input id="m6-blocked" name="m6-blocked" type="number" inputmode="decimal" step="1" min="0" value="0" aria-label="June: blocked nights"></div></td><td><div class="input"><input id="m6-booked" name="m6-booked" type="number" inputmode="decimal" step="1" min="0" value="25" aria-label="June: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m6-revenue" name="m6-revenue" type="number" inputmode="decimal" step="any" min="0" value="5000" aria-label="June: rental revenue"></div></td><td class="n" id="m6-occ">—</td><td class="n" id="m6-adr">—</td><td class="n" id="m6-revpar">—</td></tr>
+     <tr><th scope="row">Jul</th><td><div class="input"><input id="m7-nights" name="m7-nights" type="number" inputmode="decimal" step="1" min="0" value="31" aria-label="July: nights in month"></div></td><td><div class="input"><input id="m7-blocked" name="m7-blocked" type="number" inputmode="decimal" step="1" min="0" value="5" aria-label="July: blocked nights"></div></td><td><div class="input"><input id="m7-booked" name="m7-booked" type="number" inputmode="decimal" step="1" min="0" value="24" aria-label="July: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m7-revenue" name="m7-revenue" type="number" inputmode="decimal" step="any" min="0" value="5280" aria-label="July: rental revenue"></div></td><td class="n" id="m7-occ">—</td><td class="n" id="m7-adr">—</td><td class="n" id="m7-revpar">—</td></tr>
+     <tr><th scope="row">Aug</th><td><div class="input"><input id="m8-nights" name="m8-nights" type="number" inputmode="decimal" step="1" min="0" value="31" aria-label="August: nights in month"></div></td><td><div class="input"><input id="m8-blocked" name="m8-blocked" type="number" inputmode="decimal" step="1" min="0" value="0" aria-label="August: blocked nights"></div></td><td><div class="input"><input id="m8-booked" name="m8-booked" type="number" inputmode="decimal" step="1" min="0" value="27" aria-label="August: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m8-revenue" name="m8-revenue" type="number" inputmode="decimal" step="any" min="0" value="5940" aria-label="August: rental revenue"></div></td><td class="n" id="m8-occ">—</td><td class="n" id="m8-adr">—</td><td class="n" id="m8-revpar">—</td></tr>
+     <tr><th scope="row">Sep</th><td><div class="input"><input id="m9-nights" name="m9-nights" type="number" inputmode="decimal" step="1" min="0" value="30" aria-label="September: nights in month"></div></td><td><div class="input"><input id="m9-blocked" name="m9-blocked" type="number" inputmode="decimal" step="1" min="0" value="0" aria-label="September: blocked nights"></div></td><td><div class="input"><input id="m9-booked" name="m9-booked" type="number" inputmode="decimal" step="1" min="0" value="20" aria-label="September: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m9-revenue" name="m9-revenue" type="number" inputmode="decimal" step="any" min="0" value="3600" aria-label="September: rental revenue"></div></td><td class="n" id="m9-occ">—</td><td class="n" id="m9-adr">—</td><td class="n" id="m9-revpar">—</td></tr>
+     <tr><th scope="row">Oct</th><td><div class="input"><input id="m10-nights" name="m10-nights" type="number" inputmode="decimal" step="1" min="0" value="31" aria-label="October: nights in month"></div></td><td><div class="input"><input id="m10-blocked" name="m10-blocked" type="number" inputmode="decimal" step="1" min="0" value="2" aria-label="October: blocked nights"></div></td><td><div class="input"><input id="m10-booked" name="m10-booked" type="number" inputmode="decimal" step="1" min="0" value="19" aria-label="October: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m10-revenue" name="m10-revenue" type="number" inputmode="decimal" step="any" min="0" value="3230" aria-label="October: rental revenue"></div></td><td class="n" id="m10-occ">—</td><td class="n" id="m10-adr">—</td><td class="n" id="m10-revpar">—</td></tr>
+     <tr><th scope="row">Nov</th><td><div class="input"><input id="m11-nights" name="m11-nights" type="number" inputmode="decimal" step="1" min="0" value="30" aria-label="November: nights in month"></div></td><td><div class="input"><input id="m11-blocked" name="m11-blocked" type="number" inputmode="decimal" step="1" min="0" value="0" aria-label="November: blocked nights"></div></td><td><div class="input"><input id="m11-booked" name="m11-booked" type="number" inputmode="decimal" step="1" min="0" value="13" aria-label="November: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m11-revenue" name="m11-revenue" type="number" inputmode="decimal" step="any" min="0" value="1950" aria-label="November: rental revenue"></div></td><td class="n" id="m11-occ">—</td><td class="n" id="m11-adr">—</td><td class="n" id="m11-revpar">—</td></tr>
+     <tr><th scope="row">Dec</th><td><div class="input"><input id="m12-nights" name="m12-nights" type="number" inputmode="decimal" step="1" min="0" value="31" aria-label="December: nights in month"></div></td><td><div class="input"><input id="m12-blocked" name="m12-blocked" type="number" inputmode="decimal" step="1" min="0" value="4" aria-label="December: blocked nights"></div></td><td><div class="input"><input id="m12-booked" name="m12-booked" type="number" inputmode="decimal" step="1" min="0" value="18" aria-label="December: booked nights"></div></td><td><div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="m12-revenue" name="m12-revenue" type="number" inputmode="decimal" step="any" min="0" value="3060" aria-label="December: rental revenue"></div></td><td class="n" id="m12-occ">—</td><td class="n" id="m12-adr">—</td><td class="n" id="m12-revpar">—</td></tr>
+     </tbody>
+     <tfoot><tr><th scope="row">Year</th><td class="n" id="mt-nights">—</td><td class="n" id="mt-blocked">—</td><td class="n" id="mt-booked">—</td><td class="n" id="mt-revenue">—</td><td class="n" id="mt-occ">—</td><td class="n" id="mt-adr">—</td><td class="n" id="mt-revpar">—</td></tr></tfoot>
+    </table>
+    </div>
+    <div class="form-actions" style="margin-top:10px">
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+  </section>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p><strong>Available nights</strong> are the nights in the period minus nights you blocked for your own use or for maintenance. <strong>Occupancy rate</strong> is booked nights divided by available nights. <strong>ADR</strong> is rental revenue divided by booked nights, and <strong>RevPAR</strong> is rental revenue divided by available nights. For the whole year, the calculator adds up the nights and revenue first and then divides, so a short month counts less than a long one.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional month: 30 nights, 4 blocked for the owner's own stay, 19 booked nights, and $3,420 of rental revenue.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Available nights (30 − 4)</th><td class="n">26</td></tr>
+   <tr><th scope="row">Occupancy (19 ÷ 26)</th><td class="n">73.1%</td></tr>
+   <tr><th scope="row">ADR ($3,420 ÷ 19)</th><td class="n">$180.00</td></tr>
+   <tr><th scope="row">RevPAR ($3,420 ÷ 26)</th><td class="n">$131.54</td></tr>
+   <tr><th scope="row">Occupancy counting all 30 nights</th><td class="n">63.3%</td></tr>
+  </table>
+  <p>The same month reads as 73% or 63% depending on whether the owner's nights count. Neither is wrong, but mixing the two between months makes trends meaningless. Pick one and stick to it.</p>
+
+  <h2>Occupancy, ADR and RevPAR together</h2>
+  <p>Occupancy alone can mislead. Dropping your rate fills more nights but may earn less; raising it earns more per night but may leave gaps. RevPAR combines the two: it is what each night you offered earned on average, booked or not. If a pricing change raises RevPAR, it probably helped, even if occupancy fell.</p>
+
+  <h2>Booked nights are not stays</h2>
+  <p>Count paid nights, not bookings. Ten one-night stays and two five-night stays are both ten booked nights, but they are very different months for cleaning costs. To see what turnovers cost you, try the <a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a>.</p>
+
+  <h2>Keep a running record</h2>
+  <p>This calculator works from totals you already have. The HostLedger Guest Stay &amp; Booking Log records each stay, its nights, cancellations and booking pace by property, so your monthly booked nights and revenue are already added up when you want these numbers.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Guest Stay &amp; Booking Log on Etsy">
+   <img src="img/guest-stay-log.jpg" width="560" height="700" loading="lazy" alt="Guest Stay &amp; Booking Log listing image">
+   <div>
+    <h2>Log stays and nights as they book</h2>
+    <p>The Guest Stay &amp; Booking Log: stays, nights, cancellations and booking pace by property. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4566075524/str-guest-stay-log-spreadsheet-booking?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_occupancy_rate_calculator" rel="noopener">Guest Stay &amp; Booking Log: $5 on Etsy</a>
+    <p class="also-flag">For monthly occupancy, weighted ADR and profit across up to four rentals, see the <a href="https://www.etsy.com/listing/4564157134/str-host-profit-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_occupancy_rate_calculator" rel="noopener">STR Profit Tracker + Seasonal Pricing Calendar</a> ($9 on Etsy).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>Should owner-blocked nights count as available?</summary>
+   <p>Most hosts leave them out. Nights you blocked for your own use or for maintenance were never for sale, so counting them as empty makes occupancy look worse than your pricing really performed. This calculator shows both versions so you can compare: occupancy of available nights, and occupancy counting every night in the period.</p>
+  </details>
+  <details>
+   <summary>What is the difference between ADR and RevPAR?</summary>
+   <p>ADR (average daily rate) is rental revenue divided by booked nights: what a booked night earned on average. RevPAR (revenue per available night) is rental revenue divided by available nights, booked or not. RevPAR equals ADR times occupancy, so it shows whether a higher rate cost you more empty nights than it was worth.</p>
+  </details>
+  <details>
+   <summary>Should cleaning fees be included in revenue?</summary>
+   <p>For ADR and RevPAR, use nightly charges only and leave out cleaning fees and taxes. That keeps the numbers comparable with your nightly rates. Whatever you choose, be consistent from month to month.</p>
+  </details>
+  <details>
+   <summary>Is a booked night the same as a stay?</summary>
+   <p>No. A stay is one booking; a booked night is one paid night. A three-night stay is three booked nights. Occupancy rate counts nights.</p>
+  </details>
+  <details>
+   <summary>What is a good occupancy rate?</summary>
+   <p>There is no single good number. It depends on your market, the season and how you price. Compare a month with the same month last year, and use the break-even occupancy from the short-term rental profit calculator to see what your costs require.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="short-term-rental-profit-calculator.html">short-term rental profit calculator</a> and <a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_occupancy_rate_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_occupancy_rate_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>

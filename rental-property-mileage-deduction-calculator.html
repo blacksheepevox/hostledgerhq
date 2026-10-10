@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Property Mileage Deduction Calculator — Free | HostLedger</title>
+<meta name="description" content="Free rental property mileage deduction calculator: rental-business miles times the IRS standard mileage rate (2026 rates prefilled) plus parking and tolls.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/rental-property-mileage-deduction-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/rental-property-mileage-deduction-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Rental Property Mileage Deduction Calculator — Free | HostLedger">
+<meta property="og:description" content="Free rental property mileage deduction calculator: rental-business miles times the IRS standard mileage rate (2026 rates prefilled) plus parking and tolls.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Rental Property Mileage Deduction Calculator",
+   "description": "Free rental property mileage deduction calculator: rental-business miles times the IRS standard mileage rate (2026 rates prefilled) plus parking and tolls.",
+   "url": "https://hostledgerhq.vercel.app/rental-property-mileage-deduction-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What mileage rate should I use?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The IRS standard mileage rate for business use for the tax year and dates you are working on. For 2026 the IRS changed the rate mid-year: 72.5 cents a mile for miles driven January 1 to June 30, 2026, and 76 cents a mile from July 1 to December 31, 2026. This calculator starts at 76 cents with the first 6 months at 72.5 cents. Rates change, so confirm the rate for your tax year on the IRS standard mileage rates page and type it in."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why are there two rates?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The IRS raised the 2026 business rate from 72.5 to 76 cents a mile effective July 1, 2026. Miles driven before July 1 use the old rate and miles from July 1 use the new one. Set “Months at an earlier rate” to the number of months in your period that fall before July 1, or to 0 to use one rate for everything (for example, a different tax year)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I add parking and tolls?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Generally, yes. Business parking fees and tolls are usually added on top of the standard mileage amount, which is why they are a separate input. Keep the receipts. Parking tickets and fines do not count."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which trips count as rental business miles?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Trips you make to run the rental, such as showing a vacant unit, meeting a contractor, doing an inspection, or picking up supplies for the property, are the usual examples. Personal errands do not count. Whether a particular drive qualifies, including the drive from your home, depends on your situation, so ask a tax professional if you are unsure."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Standard mileage rate or actual car expenses?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can generally choose between the standard mileage rate and the business share of your actual car costs (gas, insurance, repairs, depreciation). There are rules about when you can use or switch methods. This calculator only does the standard-rate method; a tax professional can tell you which method fits you."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this work for short-term rentals too?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The math is the same for any rental: miles times the rate, plus parking and tolls. How a short-term rental is treated for tax purposes can differ from a long-term rental, so check with a tax professional how it applies to you."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/mileage-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html" aria-current="page">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_mileage_deduction_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Rental property mileage deduction calculator</li></ol></nav>
+  <h1>Rental property mileage deduction calculator</h1>
+  <p class="narrow">Estimate the mileage deduction for driving you do to run your rentals: showing a unit, meeting a contractor, inspections, supply runs. Enter your trips and the per-mile rate, add parking and tolls, and see the total. Results update as you type.</p>
+
+  <div class="calc">
+   <form id="mi-form" novalidate aria-describedby="mi-disclaimer">
+    <fieldset>
+     <legend>Your rental driving</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="tripsPerMonth">Rental trips per month</label>
+      <div class="input"><input id="tripsPerMonth" name="tripsPerMonth" type="number" inputmode="decimal" step="any" min="0" value="6" aria-describedby="tripsPerMonth-hint"></div>
+      <span class="hint" id="tripsPerMonth-hint">Average trips for the rental business</span>
+     </div>
+     <div class="field">
+      <label for="roundTripMiles">Round-trip miles per trip</label>
+      <div class="input has-post"><input id="roundTripMiles" name="roundTripMiles" type="number" inputmode="decimal" step="any" min="0" value="18" aria-describedby="roundTripMiles-hint"><span class="unit post" aria-hidden="true">mi</span></div>
+      <span class="hint" id="roundTripMiles-hint">There and back</span>
+     </div>
+     <div class="field">
+      <label for="months">Months covered</label>
+      <div class="input"><input id="months" name="months" type="number" inputmode="decimal" step="1" min="1" max="12" value="12" aria-describedby="months-hint"></div>
+      <span class="hint" id="months-hint">12 for a full year</span>
+     </div>
+     <div class="field">
+      <label for="extraMiles">One-off extra miles</label>
+      <div class="input has-post"><input id="extraMiles" name="extraMiles" type="number" inputmode="decimal" step="any" min="0" value="40" aria-describedby="extraMiles-hint"><span class="unit post" aria-hidden="true">mi</span></div>
+      <span class="hint" id="extraMiles-hint">Trips outside your monthly average; at the current rate</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Rate and costs</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="rateCents">Mileage rate (current)</label>
+      <div class="input has-post"><input id="rateCents" name="rateCents" type="number" inputmode="decimal" step="any" min="0" value="76" aria-describedby="rateCents-hint"><span class="unit post" aria-hidden="true">¢/mi</span></div>
+      <span class="hint" id="rateCents-hint">Default: IRS 2026 business rate from Jul 1, 76¢. Confirm for your tax year</span>
+     </div>
+     <div class="field">
+      <label for="earlyMonths">Months at an earlier rate</label>
+      <div class="input"><input id="earlyMonths" name="earlyMonths" type="number" inputmode="decimal" step="1" min="0" max="12" value="6" aria-describedby="earlyMonths-hint"></div>
+      <span class="hint" id="earlyMonths-hint">Months before a rate change. 0 = one rate for all</span>
+     </div>
+     <div class="field">
+      <label for="earlyRateCents">Earlier rate</label>
+      <div class="input has-post"><input id="earlyRateCents" name="earlyRateCents" type="number" inputmode="decimal" step="any" min="0" value="72.5" aria-describedby="earlyRateCents-hint"><span class="unit post" aria-hidden="true">¢/mi</span></div>
+      <span class="hint" id="earlyRateCents-hint">IRS 2026 business rate for Jan 1 – Jun 30: 72.5¢</span>
+     </div>
+     <div class="field">
+      <label for="parkingTolls">Parking + tolls for the period</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="parkingTolls" name="parkingTolls" type="number" inputmode="decimal" step="any" min="0" value="60" aria-describedby="parkingTolls-hint"></div>
+      <span class="hint" id="parkingTolls-hint">Actual amounts, from receipts</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result">
+    <h3>Business miles</h3>
+    <div class="big" id="out-miles">—</div>
+    <p class="detail" id="out-miles-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Mileage amount</h3>
+    <div class="big" id="out-mileage">—</div>
+    <p class="detail" id="out-mileage-detail"></p>
+   </div>
+   <div class="result highlight">
+    <h3>Estimated mileage deduction</h3>
+    <div class="big" id="out-total">—</div>
+    <p class="detail" id="out-total-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Average per month</h3>
+    <div class="big" id="out-permonth">—</div>
+    <p class="detail" id="out-permonth-detail"></p>
+   </div>
+    <p class="disclaimer" id="mi-disclaimer">An estimate, not tax advice. The IRS sets the standard mileage rate and it changes (2026 changed mid-year), so confirm the rate for your tax year on IRS.gov and ask a tax professional before using a result on a return.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p><strong>Business miles</strong> are your rental trips per month times the round-trip miles per trip, times the number of months, plus any one-off trips you enter separately. The <strong>mileage amount</strong> is those miles times the standard mileage rate. If the rate changed during your period, the regular miles for the months before the change use the earlier rate and the rest (plus one-off trips) use the current rate. Parking fees and tolls for business trips are added on top, because they are generally not included in the per-mile rate.</p>
+
+  <h2>About the 2026 mileage rate</h2>
+  <p>The IRS publishes a standard mileage rate for business use of a car. For tax year 2026 it changed mid-year: <strong>72.5 cents a mile for January 1 – June 30, 2026, and 76 cents a mile for July 1 – December 31, 2026</strong> (source: the <a href="https://www.irs.gov/tax-professionals/standard-mileage-rates" rel="noopener">IRS standard mileage rates page</a>, checked October 9, 2026). The calculator defaults to the current 76-cent rate, with the first six months of the year at 72.5 cents. This page does not update itself when the IRS announces a new rate, so confirm the rate for your tax year and type it in. For a past year, put that year's rate in the current-rate box and set the earlier-rate months to 0.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional landlord with two rentals across town in 2026: six round trips a month at 18 miles each, all year, plus 40 miles of one-off trips in the fall and $60 of parking.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Jan–Jun miles (6 × 18 × 6)</th><td class="n">648 mi</td></tr>
+   <tr><th scope="row">Jul–Dec miles (6 × 18 × 6) + one-off trips (40)</th><td class="n">688 mi</td></tr>
+   <tr><th scope="row">Business miles</th><td class="n">1,336 mi</td></tr>
+   <tr><th scope="row">Jan–Jun amount (648 × $0.725)</th><td class="n">$469.80</td></tr>
+   <tr><th scope="row">Jul–Dec amount (688 × $0.76)</th><td class="n">$522.88</td></tr>
+   <tr><th scope="row">Mileage amount</th><td class="n">$992.68</td></tr>
+   <tr><th scope="row">Parking + tolls</th><td class="n">$60.00</td></tr>
+   <tr><th scope="row">Estimated mileage deduction</th><td class="n">$1,052.68</td></tr>
+   <tr><th scope="row">Average per month</th><td class="n">$87.72</td></tr>
+  </table>
+  <p>Six short trips a month feels like nothing. Over a year it adds up to more than a thousand miles, which is why it is worth writing them down as you go.</p>
+
+  <h2>Which miles usually count</h2>
+  <p>Driving that is part of running the rental: showing a vacancy, meeting a plumber, doing a move-out inspection, buying supplies for the property, handling a turnover. Personal stops on the same trip do not count. Whether a given drive qualifies, including the drive from your home to the property, depends on your circumstances, so ask a tax professional if you are not sure.</p>
+
+  <h2>Standard rate or actual expenses</h2>
+  <p>Instead of the per-mile rate, you can generally deduct the business share of the car's actual costs: gas, insurance, repairs and depreciation. There are rules about when each method can be used and about switching between them. This calculator only does the standard-rate method. Your tax professional can tell you which one fits.</p>
+
+  <h2>A log beats a guess</h2>
+  <p>An estimate is fine for planning. What supports a deduction is a record made at the time: the date, the miles, which property, and why you went. The HostLedger Mileage &amp; Vehicle Log is a 250-row trip log for one vehicle that totals miles by property and purpose, so the number at the end of the year comes from your trips, not from memory.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Mileage &amp; Vehicle Log on Etsy">
+   <img src="img/mileage-log.jpg" width="560" height="700" loading="lazy" alt="Mileage &amp; Vehicle Log listing image">
+   <div>
+    <h2>Log every rental trip as it happens</h2>
+    <p>The Mileage &amp; Vehicle Log: one vehicle, a 250-row trip log, miles by property and purpose. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4564299174/landlord-mileage-log-spreadsheet-vehicle?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_mileage_deduction_calculator" rel="noopener">Mileage &amp; Vehicle Log: $5 on Etsy</a>
+    <p class="also-flag">Want rent, expenses and deposits for every door in one file? See the <a href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_mileage_deduction_calculator" rel="noopener">Landlord Rent Ledger</a> ($9 on Etsy).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>What mileage rate should I use?</summary>
+   <p>The IRS standard mileage rate for business use for the tax year and dates you are working on. For 2026 the IRS changed the rate mid-year: 72.5 cents a mile for miles driven January 1 to June 30, 2026, and 76 cents a mile from July 1 to December 31, 2026. This calculator starts at 76 cents with the first 6 months at 72.5 cents. Rates change, so confirm the rate for your tax year on the <a href="https://www.irs.gov/tax-professionals/standard-mileage-rates" rel="noopener">IRS standard mileage rates page</a> and type it in.</p>
+  </details>
+  <details>
+   <summary>Why are there two rates?</summary>
+   <p>The IRS raised the 2026 business rate from 72.5 to 76 cents a mile effective July 1, 2026. Miles driven before July 1 use the old rate and miles from July 1 use the new one. Set “Months at an earlier rate” to the number of months in your period that fall before July 1, or to 0 to use one rate for everything (for example, a different tax year).</p>
+  </details>
+  <details>
+   <summary>Can I add parking and tolls?</summary>
+   <p>Generally, yes. Business parking fees and tolls are usually added on top of the standard mileage amount, which is why they are a separate input. Keep the receipts. Parking tickets and fines do not count.</p>
+  </details>
+  <details>
+   <summary>Which trips count as rental business miles?</summary>
+   <p>Trips you make to run the rental, such as showing a vacant unit, meeting a contractor, doing an inspection, or picking up supplies for the property, are the usual examples. Personal errands do not count. Whether a particular drive qualifies, including the drive from your home, depends on your situation, so ask a tax professional if you are unsure.</p>
+  </details>
+  <details>
+   <summary>Standard mileage rate or actual car expenses?</summary>
+   <p>You can generally choose between the standard mileage rate and the business share of your actual car costs (gas, insurance, repairs, depreciation). There are rules about when you can use or switch methods. This calculator only does the standard-rate method; a tax professional can tell you which method fits you.</p>
+  </details>
+  <details>
+   <summary>Does this work for short-term rentals too?</summary>
+   <p>The math is the same for any rental: miles times the rate, plus parking and tolls. How a short-term rental is treated for tax purposes can differ from a long-term rental, so check with a tax professional how it applies to you.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a> and <a href="short-term-rental-profit-calculator.html">short-term rental profit calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_mileage_deduction_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_mileage_deduction_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
