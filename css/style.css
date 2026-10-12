@@ -147,3 +147,7 @@ table.monthly tfoot th, table.monthly tfoot td { font-weight: 700; background: #
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
 .site-footer p.fine { margin-top: 18px; font-size: .8rem; opacity: .8; }
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* bundles (2026-10-12) */
+.card p.bundle-link { font-size: .9rem; margin-bottom: .6rem; }
+.card p.bundle-save { color: var(--ink, #1b1b1b); font-weight: 700; font-size: .92rem; }
+.cta-box p.also-bundle { margin: .6rem 0 0; font-size: .92rem; }
