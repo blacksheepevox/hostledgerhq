@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prorated Rent Calculator — Free | HostLedger</title>
+<meta name="description" content="Free prorated rent calculator for landlords: move-in or move-out partial months using actual days or a 30-day month, with daily rate shown.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/prorated-rent-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/prorated-rent-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Prorated Rent Calculator — Free | HostLedger">
+<meta property="og:description" content="Free prorated rent calculator for landlords: move-in or move-out partial months using actual days or a 30-day month, with daily rate shown.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Prorated Rent Calculator",
+   "description": "Free prorated rent calculator for landlords: move-in or move-out partial months using actual days or a 30-day month, with daily rate shown.",
+   "url": "https://hostledgerhq.vercel.app/prorated-rent-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Which proration method is correct: actual days or a 30-day month?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Neither is universally correct. Many landlords divide the monthly rent by the actual number of days in that month, so every day costs exactly its share of that month. Others use a 30-day “banker's month” so the daily rate is the same all year. If your lease or local law names a method, use that one. If not, pick one, put it in writing, and use it the same way for every tenant."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I prorate rent for a move-in vs a move-out?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For a move-in, count from the move-in day through the last day of the month, including the move-in day. For a move-out, count from the 1st through the move-out day, including it. Then multiply those days by the daily rate. Some leases count the move-out day differently, so check yours."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I collect prorated rent and the first full month at move-in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Many landlords collect the prorated partial month and a security deposit at move-in, then the first full month on the 1st. Some move-ins late in the month collect the partial month plus the next full month together. What you can collect up front, and how large a deposit can be, may be limited by state or local law."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does the law require me to prorate rent?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on where the property is and what the lease says. Some places set rules for move-out or early termination; many leave it to the lease. This calculator applies no legal rules or caps; it only does the arithmetic. Check your lease, your state and local rules, or an attorney."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why does the 30-day method give a different answer in February or a 31-day month?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The 30-day method uses the same daily rate (rent ÷ 30) in every month, so a 15-day stay costs the same in February as in March. The actual-days method charges more per day in February (28 or 29 days) and less in 31-day months. Under the 30-day method this calculator never charges more than 30 days, so a full calendar month is never more than one month of rent."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/proration-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="prorated-rent-calculator.html" aria-current="page">Proration<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=prorated_rent_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Prorated rent calculator</li></ol></nav>
+  <h1>Prorated rent calculator</h1>
+  <p class="narrow">For landlords with 1–10 units whose tenant moves in or out mid-month: enter the monthly rent, the month and the move day, choose actual days or a 30-day month, and see the daily rate, the days charged and the prorated rent for that partial month. Results update as you type.</p>
+
+  <div class="calc">
+   <form id="pr-form" novalidate aria-describedby="pr-disclaimer">
+    <fieldset>
+     <legend>Rent &amp; month</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="monthlyRent">Monthly rent</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="monthlyRent" name="monthlyRent" type="number" inputmode="decimal" step="any" min="0" value="1500" aria-describedby="monthlyRent-hint"></div>
+      <span class="hint" id="monthlyRent-hint">The full-month rent in the lease</span>
+     </div>
+     <div class="field">
+      <label for="month">Month (1–12)</label>
+      <div class="input"><input id="month" name="month" type="number" inputmode="decimal" step="1" min="1" max="12" value="3" aria-describedby="month-hint"></div>
+      <span class="hint" id="month-hint">The month of the move; 3 = March</span>
+     </div>
+     <div class="field">
+      <label for="year">Year</label>
+      <div class="input"><input id="year" name="year" type="number" inputmode="decimal" step="1" min="1900" max="2100" value="2026" aria-describedby="year-hint"></div>
+      <span class="hint" id="year-hint">Sets February to 28 or 29 days</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Move type</legend>
+     <div class="radios" role="radiogroup" aria-label="Move type">
+      <label><input type="radio" name="mode" value="move-in" checked> Move-in (charge from the move-in day to the end of the month)</label>
+      <label><input type="radio" name="mode" value="move-out"> Move-out (charge from the 1st through the move-out day)</label>
+     </div>
+     <div class="radios" role="radiogroup" aria-label="Proration method" style="margin-top:10px">
+      <label><input type="radio" name="method" value="actual" checked> Actual days in the month (rent ÷ 28, 29, 30 or 31)</label>
+      <label><input type="radio" name="method" value="thirty"> 30-day month (rent ÷ 30, the &ldquo;banker's month&rdquo;)</label>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Day</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="day">Move-in or move-out day of the month</label>
+      <div class="input"><input id="day" name="day" type="number" inputmode="decimal" step="1" min="1" max="31" value="17" aria-describedby="day-hint"></div>
+      <span class="hint" id="day-hint">Counted as a day charged; days past the month's end use the last day</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result">
+    <h3>Daily rate</h3>
+    <div class="big" id="out-daily">—</div>
+    <p class="detail" id="out-daily-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Days charged</h3>
+    <div class="big" id="out-days">—</div>
+    <p class="detail" id="out-days-detail"></p>
+   </div>
+   <div class="result highlight">
+    <h3>Prorated rent</h3>
+    <div class="big" id="out-prorated">—</div>
+    <p class="detail" id="out-prorated-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Full-month rent</h3>
+    <div class="big" id="out-full">—</div>
+    <p class="detail" id="out-full-detail"></p>
+   </div>
+    <p class="disclaimer" id="pr-disclaimer">Estimates only. Not legal advice. Your lease or local law may require a specific proration method, a different way of counting the move day, or no proration at all. This calculator applies no legal rules or caps; check your lease and jurisdiction before you bill a tenant.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p>First it counts the <strong>calendar days</strong> the tenant has the unit that month. For a move-in that is the move-in day through the last day of the month; for a move-out it is the 1st through the move-out day. Both ends count. Then it sets a <strong>daily rate</strong>. With the <strong>actual-days</strong> method the daily rate is the monthly rent divided by the days in that month (28 or 29 in February, 30 or 31 otherwise), so a full month always adds back up to one month of rent. With the <strong>30-day</strong> method the daily rate is the monthly rent divided by 30 in every month, and the days charged are capped at 30. The <strong>prorated rent</strong> is the daily rate times the days charged.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional tenant moving into a $1,500-a-month unit on March 17, 2026. March has 31 days, so March 17 through March 31 is 15 days.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Monthly rent</th><td class="n">$1,500.00</td></tr>
+   <tr><th scope="row">Days in March 2026</th><td class="n">31</td></tr>
+   <tr><th scope="row">Days charged (March 17–31)</th><td class="n">15</td></tr>
+   <tr><th scope="row">Daily rate, actual days ($1,500 ÷ 31)</th><td class="n">$48.39</td></tr>
+   <tr><th scope="row">Prorated rent, actual days</th><td class="n">$725.81</td></tr>
+   <tr><th scope="row">Daily rate, 30-day month ($1,500 ÷ 30)</th><td class="n">$50.00</td></tr>
+   <tr><th scope="row">Prorated rent, 30-day month</th><td class="n">$750.00</td></tr>
+  </table>
+  <p>The two methods differ by $24.19 here. If the same tenant instead moved out on March 10, the actual-days method charges 10 days, or $483.87. The daily rate is calculated before rounding, so the total can differ by a cent from multiplying the rounded rate.</p>
+
+  <h2>When landlords prorate rent</h2>
+  <p>The common cases are a move-in that does not land on the 1st, a move-out mid-month at the end of a lease or under an early-termination agreement, and a switch of the rent due date (for example from the 15th to the 1st) where the gap month is billed as a partial. Some landlords skip proration and start the lease on the 1st or the 15th instead. Whatever you choose, putting the method and the first payment in the lease avoids an argument later.</p>
+
+  <h2>Why a lease tracker helps</h2>
+  <p>Proration questions come back at every renewal and move-out: when does this lease end, did the tenant give notice, which day did they actually leave, and which method does this lease say to use? A note in a calendar does not answer that for ten doors at once. The HostLedger Lease &amp; Renewal Tracker keeps term end dates, month-to-month review dates and notice given by door, so the move day you plug in here comes from a record, not from memory.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Lease &amp; Renewal Tracker on Etsy">
+   <img src="img/lease-tracker.jpg" width="560" height="700" loading="lazy" alt="Lease &amp; Renewal Tracker listing image">
+   <div>
+    <h2>Track every lease date by door</h2>
+    <p>The Lease &amp; Renewal Tracker: term end dates, month-to-month review dates and notice given. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4566005699/landlord-lease-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=prorated_rent_calculator" rel="noopener">Lease &amp; Renewal Tracker: $5 on Etsy</a>
+    <p class="also-flag">Want rent due vs collected, expenses and deposits for every door in one file? See the <a href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=prorated_rent_calculator" rel="noopener">Landlord Rent Ledger</a> ($9 on Etsy).</p>
+    <p class="also-bundle">The lease tracker also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=prorated_rent_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>Which proration method is correct: actual days or a 30-day month?</summary>
+   <p>Neither is universally correct. Many landlords divide the monthly rent by the actual number of days in that month, so every day costs exactly its share of that month. Others use a 30-day &ldquo;banker's month&rdquo; so the daily rate is the same all year. If your lease or local law names a method, use that one. If not, pick one, put it in writing, and use it the same way for every tenant.</p>
+  </details>
+  <details>
+   <summary>How do I prorate rent for a move-in vs a move-out?</summary>
+   <p>For a move-in, count from the move-in day through the last day of the month, including the move-in day. For a move-out, count from the 1st through the move-out day, including it. Then multiply those days by the daily rate. Some leases count the move-out day differently, so check yours.</p>
+  </details>
+  <details>
+   <summary>Should I collect prorated rent and the first full month at move-in?</summary>
+   <p>Many landlords collect the prorated partial month and a security deposit at move-in, then the first full month on the 1st. Some move-ins late in the month collect the partial month plus the next full month together. What you can collect up front, and how large a deposit can be, may be limited by state or local law.</p>
+  </details>
+  <details>
+   <summary>Does the law require me to prorate rent?</summary>
+   <p>It depends on where the property is and what the lease says. Some places set rules for move-out or early termination; many leave it to the lease. This calculator applies no legal rules or caps; it only does the arithmetic. Check your lease, your state and local rules, or an attorney.</p>
+  </details>
+  <details>
+   <summary>Why does the 30-day method give a different answer in February or a 31-day month?</summary>
+   <p>The 30-day method uses the same daily rate (rent ÷ 30) in every month, so a 15-day stay costs the same in February as in March. The actual-days method charges more per day in February (28 or 29 days) and less in 31-day months. Under the 30-day method this calculator never charges more than 30 days, so a full calendar month is never more than one month of rent.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a>, <a href="security-deposit-refund-calculator.html">security deposit refund calculator</a> and <a href="rental-property-depreciation-calculator.html">rental property depreciation calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=prorated_rent_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+     <li><a href="prorated-rent-calculator.html">Prorated rent calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=prorated_rent_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
