@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rent Late Fee Calculator — Free | HostLedger</title>
+<meta name="description" content="Free rent late fee calculator for landlords: flat fee, percent of rent, or daily fee after a grace period, with an optional cap. Estimates only.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/rent-late-fee-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/rent-late-fee-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Rent Late Fee Calculator — Free | HostLedger">
+<meta property="og:description" content="Free rent late fee calculator for landlords: flat fee, percent of rent, or daily fee after a grace period, with an optional cap. Estimates only.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Rent Late Fee Calculator",
+   "description": "Free rent late fee calculator for landlords: flat fee, percent of rent, or daily fee after a grace period, with an optional cap. Estimates only.",
+   "url": "https://hostledgerhq.vercel.app/rent-late-fee-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do landlords usually charge a late fee?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Three common lease patterns are a one-time flat dollar amount once rent is past the grace period, a one-time percentage of the monthly rent, or a daily fee for each day past the grace period. Some leases combine a flat fee with a daily fee; this calculator runs one method at a time. Whatever you charge should match the lease the tenant signed."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is a grace period?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A grace period is the number of days after the rent due date before a late fee starts. If rent is due on the 1st and the lease gives a 3-day grace period, a payment on the 4th is still on time for the fee, and a payment on the 5th is one day past grace. Enter 0 if your lease has no grace period."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do states cap late fees?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Many states and some cities limit how large a late fee can be (for example a flat dollar cap, a percentage of rent, or a rule that the fee must be “reasonable”). Some places also regulate grace periods or when you can serve a pay-or-quit notice. This calculator applies only the optional cap you type in; it does not encode any state or local statute. Check your lease and jurisdiction, or an attorney, before you charge a fee."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I charge a late fee that is not in the lease?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually no. Late fees are typically enforceable only when the amount or formula is written in the lease the tenant agreed to. Putting the method (flat, percent or daily), the grace period and any cap in the lease avoids an argument later."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is the late fee part of &ldquo;rent&rdquo; for eviction or deposit purposes?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on the lease language and local law. Some places treat unpaid late fees differently from unpaid rent. This calculator only adds the fee to the rent figure you entered so you can see a total due; it is not a legal characterization."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/late-fee-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="prorated-rent-calculator.html">Proration<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-late-fee-calculator.html" aria-current="page">Late fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_late_fee_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Rent late fee calculator</li></ol></nav>
+  <h1>Rent late fee calculator</h1>
+  <p class="narrow">For landlords with 1–10 units whose lease names a late fee: enter the monthly rent, how many days late the payment is, any grace period, and choose a flat fee, a percent of rent, or a daily fee. Optionally cap the fee. Results update as you type.</p>
+
+  <div class="calc">
+   <form id="lf-form" novalidate aria-describedby="lf-disclaimer">
+    <fieldset>
+     <legend>Rent &amp; timing</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="monthlyRent">Monthly rent</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="monthlyRent" name="monthlyRent" type="number" inputmode="decimal" step="any" min="0" value="1500" aria-describedby="monthlyRent-hint"></div>
+      <span class="hint" id="monthlyRent-hint">The full-month rent in the lease</span>
+     </div>
+     <div class="field">
+      <label for="daysLate">Days late</label>
+      <div class="input"><input id="daysLate" name="daysLate" type="number" inputmode="decimal" step="1" min="0" value="8" aria-describedby="daysLate-hint"></div>
+      <span class="hint" id="daysLate-hint">Calendar days after the rent due date</span>
+     </div>
+     <div class="field">
+      <label for="graceDays">Grace period (days)</label>
+      <div class="input"><input id="graceDays" name="graceDays" type="number" inputmode="decimal" step="1" min="0" value="3" aria-describedby="graceDays-hint"></div>
+      <span class="hint" id="graceDays-hint">Days after the due date before a late fee starts; 0 if none</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Fee method</legend>
+     <div class="radios" role="radiogroup" aria-label="Fee method">
+      <label><input type="radio" name="feeType" value="flat" checked> Flat fee (one-time amount once past grace)</label>
+      <label><input type="radio" name="feeType" value="percent"> Percent of monthly rent (one-time once past grace)</label>
+      <label><input type="radio" name="feeType" value="daily"> Daily fee (each day past grace)</label>
+     </div>
+     <div class="fields" style="margin-top:10px">
+     <div class="field">
+      <label for="flatFee">Flat late fee</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="flatFee" name="flatFee" type="number" inputmode="decimal" step="any" min="0" value="50" aria-describedby="flatFee-hint"></div>
+      <span class="hint" id="flatFee-hint">Used when Flat fee is selected</span>
+     </div>
+     <div class="field">
+      <label for="percentOfRent">Percent of rent</label>
+      <div class="input has-post"><input id="percentOfRent" name="percentOfRent" type="number" inputmode="decimal" step="any" min="0" value="5" aria-describedby="percentOfRent-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="percentOfRent-hint">Used when Percent is selected</span>
+     </div>
+     <div class="field">
+      <label for="dailyFee">Daily late fee</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="dailyFee" name="dailyFee" type="number" inputmode="decimal" step="any" min="0" value="10" aria-describedby="dailyFee-hint"></div>
+      <span class="hint" id="dailyFee-hint">Used when Daily fee is selected</span>
+     </div>
+     <div class="field">
+      <label for="cap">Optional fee cap (blank = none)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="cap" name="cap" type="number" inputmode="decimal" step="any" min="0" value="" aria-describedby="cap-hint"></div>
+      <span class="hint" id="cap-hint">Leave blank for no cap; many states set their own maximum</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result">
+    <h3>Days past grace</h3>
+    <div class="big" id="out-past">—</div>
+    <p class="detail" id="out-past-detail"></p>
+   </div>
+   <div class="result highlight">
+    <h3>Late fee</h3>
+    <div class="big" id="out-fee">—</div>
+    <p class="detail" id="out-fee-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Total due (rent + fee)</h3>
+    <div class="big" id="out-total">—</div>
+    <p class="detail" id="out-total-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Monthly rent</h3>
+    <div class="big" id="out-rent">—</div>
+    <p class="detail" id="out-rent-detail"></p>
+   </div>
+    <p class="disclaimer" id="lf-disclaimer">Estimates only. Not legal advice. Many states and some cities cap late fees, require a grace period, or limit when a fee can be charged. This calculator applies only the optional cap you enter; it does not encode any statute. Check your lease and jurisdiction before you charge a tenant.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p>First it finds the <strong>days past grace</strong>: days late minus the grace period, never below zero. A flat fee or a percent of rent is charged only when that number is greater than zero (the payment is past the grace period). A daily fee is the daily amount times the days past grace. If you enter an <strong>optional cap</strong>, the late fee is limited to that amount. The <strong>total due</strong> is the monthly rent plus the (possibly capped) late fee. The calculator does not apply state or local late-fee caps on its own.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional $1,500-a-month lease with an 8-day late payment, a 3-day grace period and a $50 flat late fee.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Monthly rent</th><td class="n">$1,500.00</td></tr>
+   <tr><th scope="row">Days late</th><td class="n">8</td></tr>
+   <tr><th scope="row">Grace period</th><td class="n">3 days</td></tr>
+   <tr><th scope="row">Days past grace</th><td class="n">5</td></tr>
+   <tr><th scope="row">Flat late fee</th><td class="n">$50.00</td></tr>
+   <tr><th scope="row">Total due</th><td class="n">$1,550.00</td></tr>
+   <tr><th scope="row">Same timing at 5% of rent</th><td class="n">$75.00 fee → $1,575.00 total</td></tr>
+   <tr><th scope="row">Same timing at $10/day</th><td class="n">$50.00 fee → $1,550.00 total</td></tr>
+  </table>
+  <p>If the same tenant paid only 2 days late under a 3-day grace period, the days past grace would be 0 and every method would return a $0 late fee. A $20 daily fee for 10 days with no grace and a $100 cap would compute $200 before the cap and $100 after it.</p>
+
+  <h2>When landlords use a late fee</h2>
+  <p>A written late fee is meant to recover the cost of chasing a late payment and to give tenants a clear reason to pay on time. It only works when the lease spells out the method, the grace period and any cap, and when local law allows that fee. Charging more than the lease or the law allows can create a bigger problem than the late rent. Keep a record of the due date, the day you received payment and the fee you assessed so the rent roll matches what the tenant was told.</p>
+
+  <h2>Why a rent ledger helps</h2>
+  <p>Late fees show up as &ldquo;rent due vs collected&rdquo; questions across every door: who paid late, which fee applied, and whether the balance is clear before you renew. A note in a text thread does not answer that for ten doors at once. The HostLedger Landlord Rent Ledger keeps rent due, rent collected and balances by door, so the late fee you compute here has a place to land next to the month&rsquo;s rent.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Landlord Rent Ledger on Etsy">
+   <img src="img/landlord-rent-ledger.jpg" width="560" height="700" loading="lazy" alt="Landlord Rent Ledger listing image">
+   <div>
+    <h2>Track rent due vs collected by door</h2>
+    <p>The Landlord Rent Ledger: rent due vs collected, expenses and deposits held for up to ten long-term units. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_late_fee_calculator" rel="noopener">Landlord Rent Ledger: $9 on Etsy</a>
+    <p class="also-flag">Want term end dates, renewals and notice given by door so the late-fee clause is easy to find? See the <a href="https://www.etsy.com/listing/4566005699/landlord-lease-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_late_fee_calculator" rel="noopener">Lease &amp; Renewal Tracker</a> ($5 on Etsy).</p>
+    <p class="also-bundle">The rent ledger also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_late_fee_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>How do landlords usually charge a late fee?</summary>
+   <p>Three common lease patterns are a one-time flat dollar amount once rent is past the grace period, a one-time percentage of the monthly rent, or a daily fee for each day past the grace period. Some leases combine a flat fee with a daily fee; this calculator runs one method at a time. Whatever you charge should match the lease the tenant signed.</p>
+  </details>
+  <details>
+   <summary>What is a grace period?</summary>
+   <p>A grace period is the number of days after the rent due date before a late fee starts. If rent is due on the 1st and the lease gives a 3-day grace period, a payment on the 4th is still on time for the fee, and a payment on the 5th is one day past grace. Enter 0 if your lease has no grace period.</p>
+  </details>
+  <details>
+   <summary>Do states cap late fees?</summary>
+   <p>Many states and some cities limit how large a late fee can be (for example a flat dollar cap, a percentage of rent, or a rule that the fee must be &ldquo;reasonable&rdquo;). Some places also regulate grace periods or when you can serve a pay-or-quit notice. This calculator applies only the optional cap you type in; it does not encode any state or local statute. Check your lease and jurisdiction, or an attorney, before you charge a fee.</p>
+  </details>
+  <details>
+   <summary>Can I charge a late fee that is not in the lease?</summary>
+   <p>Usually no. Late fees are typically enforceable only when the amount or formula is written in the lease the tenant agreed to. Putting the method (flat, percent or daily), the grace period and any cap in the lease avoids an argument later.</p>
+  </details>
+  <details>
+   <summary>Is the late fee part of &amp;ldquo;rent&amp;rdquo; for eviction or deposit purposes?</summary>
+   <p>It depends on the lease language and local law. Some places treat unpaid late fees differently from unpaid rent. This calculator only adds the fee to the rent figure you entered so you can see a total due; it is not a legal characterization.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="prorated-rent-calculator.html">prorated rent calculator</a>, <a href="security-deposit-refund-calculator.html">security deposit refund calculator</a> and <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_late_fee_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+     <li><a href="prorated-rent-calculator.html">Prorated rent calculator</a></li>
+     <li><a href="rent-late-fee-calculator.html">Rent late fee calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_late_fee_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
