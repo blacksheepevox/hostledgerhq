@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Property Depreciation Calculator (27.5 Years) — Free | HostLedger</title>
+<meta name="description" content="Free rental property depreciation calculator: price, closing costs and improvements minus land to the 27.5-year basis, first-year and annual depreciation.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/rental-property-depreciation-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/rental-property-depreciation-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Rental Property Depreciation Calculator (27.5 Years) — Free | HostLedger">
+<meta property="og:description" content="Free rental property depreciation calculator: price, closing costs and improvements minus land to the 27.5-year basis, first-year and annual depreciation.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Rental Property Depreciation Calculator",
+   "description": "Free rental property depreciation calculator: price, closing costs and improvements minus land to the 27.5-year basis, first-year and annual depreciation.",
+   "url": "https://hostledgerhq.vercel.app/rental-property-depreciation-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Why 27.5 years?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Under the IRS general depreciation system, residential rental property (a building where most of the rent comes from dwelling units) is depreciated straight line over 27.5 years. That is about 3.636% of the depreciable basis a year. Commercial property uses a different period. See IRS Publication 527 for the details and exceptions."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why can't I depreciate the land?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Land does not wear out, so the IRS does not let you depreciate it. You subtract the land value from your cost to get the building basis. Many owners use the land-to-building split on the county property tax assessment as a starting point; an appraisal or your tax preparer can give a better number."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the mid-month convention?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For residential rental property, the IRS treats the building as placed in service in the middle of the month you first made it available to rent, no matter which day it was. So a rental placed in service in March gets 9.5 of 12 months of depreciation in the first year. The calculator applies that automatically from the month you enter."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do short-term rentals use 27.5 years too?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not always. If the average guest stay is short (commonly seven days or less), the property may not count as residential rental property for depreciation, and a different recovery period can apply. That is a question for a tax professional; this calculator only does the 27.5-year math."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What about improvements I make later?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A capital improvement made after the rental is in service (a new roof, an addition) generally starts its own depreciation schedule from the month it is placed in service. Enter only improvements made before the rental was placed in service here, and track later projects separately."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens when I sell?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Depreciation you took, or could have taken, can be taxed when you sell (often called depreciation recapture), and the final year is prorated by the month you sell. This calculator ignores the sale year. Talk to a tax professional before you sell."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/depreciation-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html" aria-current="page">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_depreciation_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Rental property depreciation calculator</li></ol></nav>
+  <h1>Rental property depreciation calculator</h1>
+  <p class="narrow">Estimate yearly depreciation on a residential rental: add the purchase price, the closing costs you can capitalize and any improvements made before you started renting, subtract the land value, and see the depreciable basis, the full-year deduction over 27.5 years, the first-year amount under the mid-month convention, and the total taken so far. Results update as you type.</p>
+
+  <div class="calc">
+   <form id="depr-form" novalidate aria-describedby="depr-disclaimer">
+    <fieldset>
+     <legend>Cost basis</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="purchasePrice">Purchase price</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="purchasePrice" name="purchasePrice" type="number" inputmode="decimal" step="any" min="0" value="300000" aria-describedby="purchasePrice-hint"></div>
+      <span class="hint" id="purchasePrice-hint">What you paid for the property, land and building</span>
+     </div>
+     <div class="field">
+      <label for="closingCosts">Capitalized closing costs</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="closingCosts" name="closingCosts" type="number" inputmode="decimal" step="any" min="0" value="6000" aria-describedby="closingCosts-hint"></div>
+      <span class="hint" id="closingCosts-hint">Title, recording, transfer taxes and similar; not loan fees or prepaid items</span>
+     </div>
+     <div class="field">
+      <label for="improvements">Improvements before renting</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="improvements" name="improvements" type="number" inputmode="decimal" step="any" min="0" value="0" aria-describedby="improvements-hint"></div>
+      <span class="hint" id="improvements-hint">Only work done before the rental was placed in service</span>
+     </div>
+     <div class="field">
+      <label for="landValue">Land value</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="landValue" name="landValue" type="number" inputmode="decimal" step="any" min="0" value="60000" aria-describedby="landValue-hint"></div>
+      <span class="hint" id="landValue-hint">Not depreciable; the tax assessment split is a common starting point</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Timing</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="monthPlaced">Month placed in service (1–12)</label>
+      <div class="input"><input id="monthPlaced" name="monthPlaced" type="number" inputmode="decimal" step="1" min="1" max="12" value="3" aria-describedby="monthPlaced-hint"></div>
+      <span class="hint" id="monthPlaced-hint">The month the rental was first ready and available to rent; 3 = March</span>
+     </div>
+     <div class="field">
+      <label for="taxYear">Tax year of ownership to show</label>
+      <div class="input"><input id="taxYear" name="taxYear" type="number" inputmode="decimal" step="1" min="1" max="40" value="5" aria-describedby="taxYear-hint"></div>
+      <span class="hint" id="taxYear-hint">1 = the year it was placed in service</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result">
+    <h3>Depreciable basis</h3>
+    <div class="big" id="out-basis">—</div>
+    <p class="detail" id="out-basis-detail"></p>
+   </div>
+   <div class="result highlight">
+    <h3>Full-year depreciation</h3>
+    <div class="big" id="out-annual">—</div>
+    <p class="detail" id="out-annual-detail"></p>
+   </div>
+   <div class="result">
+    <h3>First-year depreciation</h3>
+    <div class="big" id="out-first">—</div>
+    <p class="detail" id="out-first-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Total depreciation so far</h3>
+    <div class="big" id="out-accum">—</div>
+    <p class="detail" id="out-accum-detail"></p>
+   </div>
+    <p class="disclaimer" id="depr-disclaimer">Estimates for planning only. Not tax advice. Uses the 27.5-year straight-line schedule with the mid-month convention for residential rental property; it ignores the sale year, bonus depreciation, cost segregation, later improvements and short-term-rental exceptions. Confirm with IRS Publication 527 or a tax professional before filing.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p>The <strong>depreciable basis</strong> is the purchase price plus capitalized closing costs plus improvements made before the rental was placed in service, minus the land value, which cannot be depreciated. Residential rental property is depreciated straight line over 27.5 years, so the <strong>full-year depreciation</strong> is the basis divided by 27.5. In the first year the IRS mid-month convention treats the rental as placed in service halfway through its month, so the <strong>first-year depreciation</strong> is the full-year amount times the months left (counting the half month) over 12. Every later year gets the full amount until the basis is used up, which happens in year 28 or 29 depending on the starting month. The rules come from <a href="https://www.irs.gov/publications/p527" rel="noopener">IRS Publication 527, Residential Rental Property</a> (checked October 13, 2026).</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional single-family rental bought for $300,000 with $6,000 of capitalized closing costs and a $60,000 land value, first available to rent in March.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Purchase price</th><td class="n">$300,000.00</td></tr>
+   <tr><th scope="row">Capitalized closing costs</th><td class="n">$6,000.00</td></tr>
+   <tr><th scope="row">Land value</th><td class="n">−$60,000.00</td></tr>
+   <tr><th scope="row">Depreciable basis</th><td class="n">$246,000.00</td></tr>
+   <tr><th scope="row">Full-year depreciation (÷ 27.5)</th><td class="n">$8,945.45</td></tr>
+   <tr><th scope="row">First year, placed in service in March (9.5 ÷ 12)</th><td class="n">$7,081.82</td></tr>
+   <tr><th scope="row">Total through tax year 5</th><td class="n">$42,863.64</td></tr>
+  </table>
+  <p>Raise the land value to $90,000 and the basis drops to $216,000, cutting the full-year deduction to $7,854.55. That is why the land split matters: every dollar moved from land to building is a dollar you can depreciate.</p>
+
+  <h2>What usually goes into basis, and what does not</h2>
+  <p>At a high level, basis often includes the price, settlement costs such as title fees, recording fees and transfer taxes, and improvements made before renting. Costs tied to the loan (points, mortgage insurance) and prepaid items like property tax and insurance escrows usually do not; they are handled differently. Repairs that only keep the property in working order are generally expensed, while improvements that better, restore or adapt it are capitalized and depreciated on their own schedule. Publication 527 has the full lists, and a tax professional can confirm how your purchase breaks down.</p>
+
+  <h2>Why a CapEx log saves you at tax time</h2>
+  <p>Every capital project after you start renting gets its own depreciation start date and basis. A year later, nobody remembers whether the water heater went in during May or October, or whether the $4,800 was a repair or an improvement. The HostLedger CapEx &amp; Improvement Tracker records each project planned and done, budget versus paid, so you and your preparer can see what was spent, when, and on which property.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="CapEx &amp; Improvement Tracker on Etsy">
+   <img src="img/capex-tracker.jpg" width="560" height="700" loading="lazy" alt="CapEx &amp; Improvement Tracker listing image">
+   <div>
+    <h2>Log every capital project by property</h2>
+    <p>The CapEx &amp; Improvement Tracker: projects planned vs done, budget vs paid, by property. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4567824696/landlord-capex-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_depreciation_calculator" rel="noopener">CapEx &amp; Improvement Tracker: $5 on Etsy</a>
+    <p class="also-flag">Want rent due vs collected, expenses and deposits for every door in one file? See the <a href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_depreciation_calculator" rel="noopener">Landlord Rent Ledger</a> ($9 on Etsy).</p>
+    <p class="also-bundle">The CapEx tracker also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_depreciation_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>Why 27.5 years?</summary>
+   <p>Under the IRS general depreciation system, residential rental property (a building where most of the rent comes from dwelling units) is depreciated straight line over 27.5 years. That is about 3.636% of the depreciable basis a year. Commercial property uses a different period. See IRS Publication 527 for the details and exceptions.</p>
+  </details>
+  <details>
+   <summary>Why can&#x27;t I depreciate the land?</summary>
+   <p>Land does not wear out, so the IRS does not let you depreciate it. You subtract the land value from your cost to get the building basis. Many owners use the land-to-building split on the county property tax assessment as a starting point; an appraisal or your tax preparer can give a better number.</p>
+  </details>
+  <details>
+   <summary>What is the mid-month convention?</summary>
+   <p>For residential rental property, the IRS treats the building as placed in service in the middle of the month you first made it available to rent, no matter which day it was. So a rental placed in service in March gets 9.5 of 12 months of depreciation in the first year. The calculator applies that automatically from the month you enter.</p>
+  </details>
+  <details>
+   <summary>Do short-term rentals use 27.5 years too?</summary>
+   <p>Not always. If the average guest stay is short (commonly seven days or less), the property may not count as residential rental property for depreciation, and a different recovery period can apply. That is a question for a tax professional; this calculator only does the 27.5-year math.</p>
+  </details>
+  <details>
+   <summary>What about improvements I make later?</summary>
+   <p>A capital improvement made after the rental is in service (a new roof, an addition) generally starts its own depreciation schedule from the month it is placed in service. Enter only improvements made before the rental was placed in service here, and track later projects separately.</p>
+  </details>
+  <details>
+   <summary>What happens when I sell?</summary>
+   <p>Depreciation you took, or could have taken, can be taxed when you sell (often called depreciation recapture), and the final year is prorated by the month you sell. This calculator ignores the sale year. Talk to a tax professional before you sell.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a>, <a href="rental-property-mileage-deduction-calculator.html">rental property mileage deduction calculator</a> and <a href="security-deposit-refund-calculator.html">security deposit refund calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_depreciation_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_depreciation_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
