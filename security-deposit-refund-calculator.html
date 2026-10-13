@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security Deposit Refund Calculator — Free | HostLedger</title>
+<meta name="description" content="Free security deposit refund calculator: deposit held minus unpaid rent, cleaning, repairs and other deductions to the refund due or amount still owed.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/security-deposit-refund-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/security-deposit-refund-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Security Deposit Refund Calculator — Free | HostLedger">
+<meta property="og:description" content="Free security deposit refund calculator: deposit held minus unpaid rent, cleaning, repairs and other deductions to the refund due or amount still owed.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Security Deposit Refund Calculator",
+   "description": "Free security deposit refund calculator: deposit held minus unpaid rent, cleaning, repairs and other deductions to the refund due or amount still owed.",
+   "url": "https://hostledgerhq.vercel.app/security-deposit-refund-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do I have to pay interest on a security deposit?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Some states and cities require landlords to hold deposits in an interest-bearing account and pay the interest to the tenant. Others do not. This calculator has an interest field so you can include it when it applies; it does not look up your jurisdiction. Check your state and local rules, or ask an attorney."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is normal wear and tear?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Normal wear is the gradual aging of a place from ordinary living: scuffed paint, worn carpet in high-traffic spots, faded curtains. Damage beyond that (a hole in the wall, a burned countertop, missing appliances) is often treated differently. The line depends on the lease and local law, so this page does not draw it for you."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can unpaid rent come out of the deposit?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Many leases and jurisdictions allow unpaid rent to be deducted from a security deposit, often alongside documented damage and cleaning beyond ordinary wear. Whether and how that works where you are is a legal question. Enter the amount here only if you are allowed to withhold it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How soon do I have to refund the deposit?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Refund deadlines are set by state and sometimes local law, and they are often short (commonly a few weeks after move-out, sometimes with a written itemization). Missing a deadline can carry penalties. This calculator has no countdown; check your jurisdiction."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What if I have several units?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Run the calculator once per move-out. Each tenancy has its own deposit, deductions and deadlines. A deposit log that tracks every door separately keeps the numbers from mixing."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/deposit-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html" aria-current="page">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=security_deposit_refund_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Security deposit refund calculator</li></ol></nav>
+  <h1>Security deposit refund calculator</h1>
+  <p class="narrow">Estimate what a tenant is owed back at move-out: start with the deposit you still hold, add any interest you owe, subtract unpaid rent, cleaning, repairs beyond normal wear and other allowed deductions, and see the refund due or the amount still owed. Results update as you type.</p>
+
+  <div class="calc">
+   <form id="dep-form" novalidate aria-describedby="dep-disclaimer">
+    <fieldset>
+     <legend>Deposit held</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="depositHeld">Security deposit held</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="depositHeld" name="depositHeld" type="number" inputmode="decimal" step="any" min="0" value="1500" aria-describedby="depositHeld-hint"></div>
+      <span class="hint" id="depositHeld-hint">What you still hold for this tenancy</span>
+     </div>
+     <div class="field">
+      <label for="interestOwed">Interest owed to tenant (optional)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="interestOwed" name="interestOwed" type="number" inputmode="decimal" step="any" min="0" value="0" aria-describedby="interestOwed-hint"></div>
+      <span class="hint" id="interestOwed-hint">Many states require interest; enter 0 if yours does not, or you are unsure</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Deductions</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="unpaidRent">Unpaid rent</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="unpaidRent" name="unpaidRent" type="number" inputmode="decimal" step="any" min="0" value="0" aria-describedby="unpaidRent-hint"></div>
+      <span class="hint" id="unpaidRent-hint">Only if your lease and local law allow withholding it</span>
+     </div>
+     <div class="field">
+      <label for="cleaning">Cleaning / make-ready</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="cleaning" name="cleaning" type="number" inputmode="decimal" step="any" min="0" value="175" aria-describedby="cleaning-hint"></div>
+      <span class="hint" id="cleaning-hint">Beyond ordinary turn-in condition</span>
+     </div>
+     <div class="field">
+      <label for="repairs">Repairs / damage beyond normal wear</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="repairs" name="repairs" type="number" inputmode="decimal" step="any" min="0" value="85" aria-describedby="repairs-hint"></div>
+      <span class="hint" id="repairs-hint">Documented damage, not gradual wear</span>
+     </div>
+     <div class="field">
+      <label for="other">Other allowed deductions</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="other" name="other" type="number" inputmode="decimal" step="any" min="0" value="0" aria-describedby="other-hint"></div>
+      <span class="hint" id="other-hint">Local law decides what is allowed; keep receipts</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result">
+    <h3>Total deductions</h3>
+    <div class="big" id="out-deductions">—</div>
+    <p class="detail" id="out-deductions-detail"></p>
+   </div>
+   <div class="result highlight">
+    <h3>Refund due to tenant</h3>
+    <div class="big" id="out-refund">—</div>
+    <p class="detail" id="out-refund-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Amount still owed by tenant</h3>
+    <div class="big" id="out-owed">—</div>
+    <p class="detail" id="out-owed-detail"></p>
+   </div>
+    <p class="disclaimer" id="dep-disclaimer">Estimates for planning only. Not legal or tax advice. What you may withhold, whether interest is due, and refund deadlines depend on state and local law and the lease. Check your jurisdiction or an attorney before acting on a result.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p><strong>Total deductions</strong> are unpaid rent plus cleaning or make-ready plus repairs beyond normal wear plus any other allowed line you enter. The <strong>balance</strong> is the deposit you still hold, plus any interest you owe the tenant, minus those deductions. If the balance is positive, that is the <strong>refund due</strong>. If deductions exceed the deposit plus interest, the refund is zero and the leftover is the <strong>amount still owed by the tenant</strong>. The calculator does not decide what is legal to withhold; it only does the arithmetic on the numbers you type.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional one-bedroom move-out: a $1,500 deposit still held, no unpaid rent, $175 of cleaning, $85 of documented repairs, and no interest.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Deposit held</th><td class="n">$1,500.00</td></tr>
+   <tr><th scope="row">Interest owed</th><td class="n">$0.00</td></tr>
+   <tr><th scope="row">Cleaning / make-ready</th><td class="n">−$175.00</td></tr>
+   <tr><th scope="row">Repairs beyond normal wear</th><td class="n">−$85.00</td></tr>
+   <tr><th scope="row">Total deductions</th><td class="n">$260.00</td></tr>
+   <tr><th scope="row">Refund due to tenant</th><td class="n">$1,240.00</td></tr>
+   <tr><th scope="row">Amount still owed by tenant</th><td class="n">$0.00</td></tr>
+  </table>
+  <p>If the same unit also had $800 of unpaid rent and $400 more in repairs, deductions would jump to $1,460 and the refund would fall to $40. Push repairs and cleaning high enough and the balance flips: the tenant owes the difference instead of getting money back.</p>
+
+  <h2>What often counts as a deduction vs normal wear</h2>
+  <p>At a high level, many landlords treat unpaid rent, unpaid utilities the tenant was responsible for, and documented damage beyond ordinary living as candidate deductions. Gradual wear from normal use (faded paint, worn carpet paths, loose door stops) is usually not. Cleaning that brings the unit back to the condition required by the lease can be a gray area. None of that is a rule you can rely on from this page: the lease and your state or city set the line, and an attorney or local landlord association is the right place to check it.</p>
+
+  <h2>Why a deposit log beats a spreadsheet cell</h2>
+  <p>A one-line cell that says &ldquo;$1,500 held&rdquo; does not show when it was received, which unit, what you already deducted, when you sent the refund, or which receipt backs each line. When a tenant disputes a deduction or a deadline is approaching, you need that trail. The HostLedger Security Deposit Tracker records deposits still held, deductions taken and refunds sent, so the number you send comes from a log, not from memory.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Security Deposit Tracker on Etsy">
+   <img src="img/security-deposit-tracker.jpg" width="560" height="700" loading="lazy" alt="Security Deposit Tracker listing image">
+   <div>
+    <h2>Track every deposit by door</h2>
+    <p>The Security Deposit Tracker: deposits still held, deductions taken and refunds sent. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4567564994/landlord-security-deposit-tracker?utm_source=hostledger_site&utm_medium=referral&utm_campaign=security_deposit_refund_calculator" rel="noopener">Security Deposit Tracker: $5 on Etsy</a>
+    <p class="also-flag">Want rent due vs collected, expenses and deposits for every door in one file? See the <a href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=security_deposit_refund_calculator" rel="noopener">Landlord Rent Ledger</a> ($9 on Etsy).</p>
+    <p class="also-bundle">The deposit tracker also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=security_deposit_refund_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>Do I have to pay interest on a security deposit?</summary>
+   <p>Some states and cities require landlords to hold deposits in an interest-bearing account and pay the interest to the tenant. Others do not. This calculator has an interest field so you can include it when it applies; it does not look up your jurisdiction. Check your state and local rules, or ask an attorney.</p>
+  </details>
+  <details>
+   <summary>What is normal wear and tear?</summary>
+   <p>Normal wear is the gradual aging of a place from ordinary living: scuffed paint, worn carpet in high-traffic spots, faded curtains. Damage beyond that (a hole in the wall, a burned countertop, missing appliances) is often treated differently. The line depends on the lease and local law, so this page does not draw it for you.</p>
+  </details>
+  <details>
+   <summary>Can unpaid rent come out of the deposit?</summary>
+   <p>Many leases and jurisdictions allow unpaid rent to be deducted from a security deposit, often alongside documented damage and cleaning beyond ordinary wear. Whether and how that works where you are is a legal question. Enter the amount here only if you are allowed to withhold it.</p>
+  </details>
+  <details>
+   <summary>How soon do I have to refund the deposit?</summary>
+   <p>Refund deadlines are set by state and sometimes local law, and they are often short (commonly a few weeks after move-out, sometimes with a written itemization). Missing a deadline can carry penalties. This calculator has no countdown; check your jurisdiction.</p>
+  </details>
+  <details>
+   <summary>What if I have several units?</summary>
+   <p>Run the calculator once per move-out. Each tenancy has its own deposit, deductions and deadlines. A deposit log that tracks every door separately keeps the numbers from mixing.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a> and <a href="rental-property-mileage-deduction-calculator.html">rental property mileage deduction calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=security_deposit_refund_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=security_deposit_refund_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
