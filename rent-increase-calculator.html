@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rent Increase Calculator — Free | HostLedger</title>
+<meta name="description" content="Free rent increase calculator for landlords: current rent plus a percent or new rent to the new monthly rent, monthly and annual increase, and % change.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/rent-increase-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/rent-increase-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Rent Increase Calculator — Free | HostLedger">
+<meta property="og:description" content="Free rent increase calculator for landlords: current rent plus a percent or new rent to the new monthly rent, monthly and annual increase, and % change.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Rent Increase Calculator",
+   "description": "Free rent increase calculator for landlords: current rent plus a percent or new rent to the new monthly rent, monthly and annual increase, and % change.",
+   "url": "https://hostledgerhq.vercel.app/rent-increase-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I calculate a rent increase percentage?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Subtract the current rent from the new rent, divide by the current rent, and multiply by 100. Raising $1,500 to $1,600 is a $100 increase, and $100 ÷ $1,500 = 6.67%. Going the other way, a 5% increase on $1,500 is $1,500 × 1.05 = $1,575, or $75 more a month and $900 more over twelve months."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much can a landlord raise the rent?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on where the property is and what the lease says. Many places set no cap on market-rate units, but some states and a number of cities have rent control or rent stabilization rules that limit annual increases for covered units, and some require a reason or a filing. This calculator applies no caps; it only does the arithmetic. Check your state and local rules, or an attorney, before you set the number."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much notice do I need to give before a rent increase?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Notice rules vary by state, city and lease type. A common pattern is at least 30 days’ written notice for a month-to-month tenancy, with some places requiring 60 or 90 days for larger increases or longer tenancies. For a fixed-term lease, the increase usually takes effect at renewal. The optional notice field here only counts days back from the date you enter; it does not know your local requirement."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I raise the rent in the middle of a lease?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually not on a fixed-term lease unless the lease itself allows it. Most landlords raise rent when a fixed term ends and a renewal is signed, or on a month-to-month tenancy after giving the required notice. Read the rent clause of the lease you actually signed."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is a reasonable rent increase?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There is no single right number. Landlords often weigh market rents for similar units, their own cost changes (property taxes, insurance, utilities they pay), and the cost of turnover if the tenant leaves. A vacant month on a $1,500 unit costs $1,500, which is more than a full year of a $75-a-month increase, so the cheapest outcome is not always the highest rent."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/rent-increase-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="prorated-rent-calculator.html">Proration<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-late-fee-calculator.html">Late fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-increase-calculator.html" aria-current="page">Rent increase<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cap-rate-calculator.html">Cap rate<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-on-cash-calculator.html">Cash-on-cash<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-dscr-calculator.html">DSCR<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-break-even-calculator.html">Break-even<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_increase_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Rent increase calculator</li></ol></nav>
+  <h1>Rent increase calculator</h1>
+  <p class="narrow">For landlords with 1–10 units planning a renewal: enter the current monthly rent, then either the percent increase or the new rent, and see the other side of the math: the new monthly rent, the monthly and annual dollar increase, and the percent change. Add a target rent to see what percent it takes, and an optional notice period to see when notice should go out. Results update as you type.</p>
+
+  <div class="calc">
+   <form id="ri-form" novalidate aria-describedby="ri-disclaimer">
+    <fieldset>
+     <legend>Current rent &amp; increase</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="currentRent">Current monthly rent</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="currentRent" name="currentRent" type="number" inputmode="decimal" step="any" min="0" value="1500" aria-describedby="currentRent-hint"></div>
+      <span class="hint" id="currentRent-hint">What the tenant pays now</span>
+     </div>
+     </div>
+     <div class="radios" role="radiogroup" aria-label="Increase entered as" style="margin-top:10px">
+      <label><input type="radio" name="mode" value="percent" checked> I know the percent increase</label>
+      <label><input type="radio" name="mode" value="newRent"> I know the new monthly rent</label>
+     </div>
+     <div class="fields" style="margin-top:10px">
+     <div class="field">
+      <label for="increasePct">Increase</label>
+      <div class="input has-post"><input id="increasePct" name="increasePct" type="number" inputmode="decimal" step="any" min="-100" value="5" aria-describedby="increasePct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="increasePct-hint">Used when percent is selected; negative = a decrease</span>
+     </div>
+     <div class="field">
+      <label for="newRent">New monthly rent</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="newRent" name="newRent" type="number" inputmode="decimal" step="any" min="0" value="1600" aria-describedby="newRent-hint"></div>
+      <span class="hint" id="newRent-hint">Used when new rent is selected</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Target rent &amp; notice (optional)</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="targetRent">Target monthly rent (blank = none)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="targetRent" name="targetRent" type="number" inputmode="decimal" step="any" min="0" value="1600" aria-describedby="targetRent-hint"></div>
+      <span class="hint" id="targetRent-hint">Shows the percent increase it takes to reach this rent</span>
+     </div>
+     <div class="field">
+      <label for="noticeDays">Notice period in days (blank = none)</label>
+      <div class="input"><input id="noticeDays" name="noticeDays" type="number" inputmode="decimal" step="1" min="0" value="60" aria-describedby="noticeDays-hint"></div>
+      <span class="hint" id="noticeDays-hint">The notice your lease or local law requires</span>
+     </div>
+     <div class="field">
+      <label for="effectiveDate">Date the new rent starts</label>
+      <div class="input"><input id="effectiveDate" name="effectiveDate" type="date" value="2026-12-01" aria-describedby="effectiveDate-hint"></div>
+      <span class="hint" id="effectiveDate-hint">Used with notice days to show when notice should go out</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result highlight">
+    <h3>New monthly rent</h3>
+    <div class="big" id="out-new">—</div>
+    <p class="detail" id="out-new-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Monthly increase</h3>
+    <div class="big" id="out-monthly">—</div>
+    <p class="detail" id="out-monthly-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Annual increase</h3>
+    <div class="big" id="out-annual">—</div>
+    <p class="detail" id="out-annual-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Percent increase</h3>
+    <div class="big" id="out-pct">—</div>
+    <p class="detail" id="out-pct-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Percent needed for target rent</h3>
+    <div class="big" id="out-target">—</div>
+    <p class="detail" id="out-target-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Send notice by</h3>
+    <div class="big" id="out-notice">—</div>
+    <p class="detail" id="out-notice-detail"></p>
+   </div>
+    <p class="disclaimer" id="ri-disclaimer">Estimates only. Not legal advice. Rent control, rent stabilization and notice laws vary by state and city, and some limit how much or how often rent can rise. This calculator applies no caps or notice rules; check your lease and local law before you send a rent increase notice.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p>In <strong>percent</strong> mode the new rent is the current rent times (1 + the increase &divide; 100). In <strong>new rent</strong> mode it uses the new rent you type and works out the percent. Either way, the <strong>monthly increase</strong> is the new rent minus the current rent, the <strong>annual increase</strong> is twelve times that, and the <strong>percent increase</strong> is the monthly increase divided by the current rent. The <strong>target rent</strong> reverse answers &ldquo;what percent gets me to this number?&rdquo;: (target &minus; current) &divide; current. If you enter a <strong>notice period</strong> and the date the new rent starts, it counts that many calendar days back to show the last day to send notice. A zero current rent leaves the percent fields blank; a negative percent or a lower new rent shows a decrease.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional $1,500-a-month unit renewing with a 5% increase, a $1,600 target rent to compare against, and 60 days&rsquo; notice for a new rent that starts December 1, 2026.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Current monthly rent</th><td class="n">$1,500.00</td></tr>
+   <tr><th scope="row">Increase</th><td class="n">5%</td></tr>
+   <tr><th scope="row">New monthly rent ($1,500 &times; 1.05)</th><td class="n">$1,575.00</td></tr>
+   <tr><th scope="row">Monthly increase</th><td class="n">+$75.00</td></tr>
+   <tr><th scope="row">Annual increase (12 months)</th><td class="n">+$900.00</td></tr>
+   <tr><th scope="row">Percent needed to reach $1,600</th><td class="n">6.67% (+$100.00/mo, +$1,200.00/yr)</td></tr>
+   <tr><th scope="row">Send notice by (60 days before Dec 1, 2026)</th><td class="n">Oct 2, 2026</td></tr>
+  </table>
+  <p>So 5% on $1,500 is $75 a month, or $900 over a twelve-month lease. Getting to $1,600 instead takes 6.67%, or $100 a month. Switch to &ldquo;I know the new monthly rent&rdquo; and type 1600 to see the same 6.67% from the other direction.</p>
+
+  <h2>When landlords raise rent</h2>
+  <p>Most increases happen at a lease renewal or, for month-to-month tenants, after written notice. Landlords usually look at rents for similar nearby units, their own cost changes such as property taxes and insurance, and what a turnover would cost: a vacant month, cleaning, repairs and marketing. Some prefer small regular increases; others hold rent steady for a long-term tenant who pays on time. Whatever you decide, put the new rent, the start date and the date you sent notice in writing.</p>
+  <p><strong>Local rules come first.</strong> Rent control, rent stabilization and notice laws vary by state and city. Some cap how much rent can rise in a year, some require 60 or 90 days&rsquo; notice for larger increases, and some limit increases during a fixed-term lease. This page is not legal advice; confirm the rules for your property before you send a notice.</p>
+
+  <h2>Why a lease tracker helps</h2>
+  <p>A rent increase lives on a calendar: when the term ends, how many days of notice this lease and this city require, when you actually sent the notice, and what the new rent is. Across ten doors that is easy to miss by a week. The HostLedger Lease &amp; Renewal Tracker keeps term end dates, month-to-month review dates and notice given by door, so you see a renewal coming early enough to send notice on time. The Landlord Rent Ledger then records the new rent due against what was collected.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Lease &amp; Renewal Tracker on Etsy">
+   <img src="img/lease-tracker.jpg" width="560" height="700" loading="lazy" alt="Lease &amp; Renewal Tracker listing image">
+   <div>
+    <h2>See every renewal and notice date by door</h2>
+    <p>The Lease &amp; Renewal Tracker: term end dates, month-to-month review dates and notice given. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4566005699/landlord-lease-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_increase_calculator" rel="noopener">Lease &amp; Renewal Tracker: $5 on Etsy</a>
+    <p class="also-flag">Want the new rent due vs collected, expenses and deposits for every door in one file? See the <a href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_increase_calculator" rel="noopener">Landlord Rent Ledger</a> ($9 on Etsy).</p>
+    <p class="also-bundle">The lease tracker also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_increase_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>How do I calculate a rent increase percentage?</summary>
+   <p>Subtract the current rent from the new rent, divide by the current rent, and multiply by 100. Raising $1,500 to $1,600 is a $100 increase, and $100 &divide; $1,500 = 6.67%. Going the other way, a 5% increase on $1,500 is $1,500 &times; 1.05 = $1,575, or $75 more a month and $900 more over twelve months.</p>
+  </details>
+  <details>
+   <summary>How much can a landlord raise the rent?</summary>
+   <p>It depends on where the property is and what the lease says. Many places set no cap on market-rate units, but some states and a number of cities have rent control or rent stabilization rules that limit annual increases for covered units, and some require a reason or a filing. This calculator applies no caps; it only does the arithmetic. Check your state and local rules, or an attorney, before you set the number.</p>
+  </details>
+  <details>
+   <summary>How much notice do I need to give before a rent increase?</summary>
+   <p>Notice rules vary by state, city and lease type. A common pattern is at least 30 days&rsquo; written notice for a month-to-month tenancy, with some places requiring 60 or 90 days for larger increases or longer tenancies. For a fixed-term lease, the increase usually takes effect at renewal. The optional notice field here only counts days back from the date you enter; it does not know your local requirement.</p>
+  </details>
+  <details>
+   <summary>Can I raise the rent in the middle of a lease?</summary>
+   <p>Usually not on a fixed-term lease unless the lease itself allows it. Most landlords raise rent when a fixed term ends and a renewal is signed, or on a month-to-month tenancy after giving the required notice. Read the rent clause of the lease you actually signed.</p>
+  </details>
+  <details>
+   <summary>What is a reasonable rent increase?</summary>
+   <p>There is no single right number. Landlords often weigh market rents for similar units, their own cost changes (property taxes, insurance, utilities they pay), and the cost of turnover if the tenant leaves. A vacant month on a $1,500 unit costs $1,500, which is more than a full year of a $75-a-month increase, so the cheapest outcome is not always the highest rent.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="rent-late-fee-calculator.html">rent late fee calculator</a>, <a href="prorated-rent-calculator.html">prorated rent calculator</a>, <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a> and <a href="security-deposit-refund-calculator.html">security deposit refund calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_increase_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+     <li><a href="prorated-rent-calculator.html">Prorated rent calculator</a></li>
+     <li><a href="rent-late-fee-calculator.html">Rent late fee calculator</a></li>
+     <li><a href="rent-increase-calculator.html">Rent increase calculator</a></li>
+     <li><a href="rental-property-cap-rate-calculator.html">Rental property cap rate calculator</a></li>
+     <li><a href="rental-property-cash-on-cash-calculator.html">Rental property cash-on-cash return calculator</a></li>
+     <li><a href="rental-property-dscr-calculator.html">Rental property DSCR calculator</a></li>
+     <li><a href="airbnb-break-even-calculator.html">Airbnb break-even calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rent_increase_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
