@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Property Cash-on-Cash Return Calculator — Free | HostLedger</title>
+<meta name="description" content="Free rental property cash-on-cash calculator: cash invested and annual cash flow to CoC, plus cash flow or invest for a target return. Estimates only.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/rental-property-cash-on-cash-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/rental-property-cash-on-cash-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Rental Property Cash-on-Cash Return Calculator — Free | HostLedger">
+<meta property="og:description" content="Free rental property cash-on-cash calculator: cash invested and annual cash flow to CoC, plus cash flow or invest for a target return. Estimates only.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Rental Property Cash-on-Cash Return Calculator",
+   "description": "Free rental property cash-on-cash calculator: cash invested and annual cash flow to CoC, plus cash flow or invest for a target return. Estimates only.",
+   "url": "https://hostledgerhq.vercel.app/rental-property-cash-on-cash-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is cash-on-cash return?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Cash-on-cash (CoC) return is annual pre-tax cash flow divided by the cash you put into the deal, as a percent. A property that returns $6,400 a year on $80,000 of cash invested has an 8% cash-on-cash return. It is a levered metric: it reflects your down payment, closing costs and rehab cash, and the cash flow left after debt service."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is cash-on-cash different from cap rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Cap rate is unlevered: annual NOI divided by purchase price (or value), with no mortgage in the picture. Cash-on-cash uses the cash you actually put in and the cash flow after debt. Two buyers of the same property can share one cap rate and still have very different CoC returns once leverage and cash invested differ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What counts as cash invested?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually the down payment, closing costs you pay in cash, and any rehab or reserve cash you fund at purchase. Do not count the financed portion of the purchase price. If you later put in more cash (a cash-out refinance is the opposite), update the invested figure so CoC stays honest."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What does a negative cash-on-cash mean?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Annual cash flow is negative: the property is costing you money each year after the mortgage and operating expenses. That can be intentional (a value-add during rehab) or a red flag. The calculator shows the negative percent so you can see the size of the gap."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is a &ldquo;good&rdquo; cash-on-cash return?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There is no universal number. Targets vary by market, risk tolerance, interest rates and whether you expect appreciation or tax benefits to make up the rest. Compare a deal to your own hurdle rate and to similar local rentals. This calculator only does the arithmetic."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/cash-on-cash-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="prorated-rent-calculator.html">Proration<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-late-fee-calculator.html">Late fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cap-rate-calculator.html">Cap rate<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-on-cash-calculator.html" aria-current="page">Cash-on-cash<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_cash_on_cash_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Rental property cash-on-cash return calculator</li></ol></nav>
+  <h1>Rental property cash-on-cash return calculator</h1>
+  <p class="narrow">For landlords and small investors with 1–10 units who want a quick levered screen: enter the cash you put in and the annual pre-tax cash flow to get cash-on-cash return. Optionally enter a target CoC to see the cash flow you would need, or the most you can invest at this cash flow and still hit the target.</p>
+
+  <div class="calc">
+   <form id="coc-form" novalidate aria-describedby="coc-disclaimer">
+    <fieldset>
+     <legend>Cash invested &amp; cash flow</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="cashInvested">Cash invested</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="cashInvested" name="cashInvested" type="number" inputmode="decimal" step="any" min="0" value="80000" aria-describedby="cashInvested-hint"></div>
+      <span class="hint" id="cashInvested-hint">Down payment + closing costs + rehab cash you funded (not the loan)</span>
+     </div>
+     <div class="field">
+      <label for="annualCashFlow">Annual pre-tax cash flow</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="annualCashFlow" name="annualCashFlow" type="number" inputmode="decimal" step="any" min="-999999999" value="6400" aria-describedby="annualCashFlow-hint"></div>
+      <span class="hint" id="annualCashFlow-hint">Cash left after operating expenses and debt service, before income tax (can be negative)</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Target return (optional)</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="targetCoCPct">Target cash-on-cash return</label>
+      <div class="input has-post"><input id="targetCoCPct" name="targetCoCPct" type="number" inputmode="decimal" step="any" min="0" value="10" aria-describedby="targetCoCPct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="targetCoCPct-hint">Used to back into the cash flow needed, or the max invest at this cash flow</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result highlight">
+    <h3>Cash-on-cash return</h3>
+    <div class="big" id="out-coc">—</div>
+    <p class="detail" id="out-coc-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Cash flow needed for target</h3>
+    <div class="big" id="out-cf-needed">—</div>
+    <p class="detail" id="out-cf-needed-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Max invest at this cash flow for target</h3>
+    <div class="big" id="out-invest">—</div>
+    <p class="detail" id="out-invest-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Annual cash flow</h3>
+    <div class="big" id="out-cf">—</div>
+    <p class="detail" id="out-cf-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Cash invested</h3>
+    <div class="big" id="out-invested">—</div>
+    <p class="detail" id="out-invested-detail"></p>
+   </div>
+    <p class="disclaimer" id="coc-disclaimer">Estimates only. Not investment, tax or legal advice. Cash-on-cash is a pre-tax levered return: it ignores tax brackets, CapEx timing, refinance and appreciation. Confirm cash flow from your own books or a rent roll.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p><strong>Cash-on-cash return</strong> is annual pre-tax cash flow divided by cash invested, as a percent. If cash invested is zero, the rate is blank. Negative cash flow produces a negative CoC (that is intentional). The optional <strong>target return</strong> runs two reverses: the annual cash flow you would need at this invested amount, and the maximum cash you can invest at this cash flow and still hit the target. Cash invested and the target are clamped at zero; cash flow is not. The calculator does not build a financing schedule, tax return or appreciation model.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional deal with $80,000 of cash in (down payment, closing and rehab) and $6,400 of annual pre-tax cash flow, with a 10% target CoC.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Cash invested</th><td class="n">$80,000.00</td></tr>
+   <tr><th scope="row">Annual pre-tax cash flow</th><td class="n">$6,400.00</td></tr>
+   <tr><th scope="row">Cash-on-cash return</th><td class="n">8.00%</td></tr>
+   <tr><th scope="row">Cash flow needed for 10%</th><td class="n">$8,000.00</td></tr>
+   <tr><th scope="row">Max invest at this cash flow for 10%</th><td class="n">$64,000.00</td></tr>
+  </table>
+  <p>So this example returns 8% on cash. To hit a 10% target at $80k invested you need $8,000 of annual cash flow; at the current $6,400 cash flow you can invest at most $64,000 and still clear 10%. A zero cash invested leaves CoC blank; a zero target leaves the reverse fields blank.</p>
+
+  <h2>When landlords use cash-on-cash</h2>
+  <p>Buyers use CoC to compare levered deals after they know the down payment and the mortgage payment. Cap rate screens the property; CoC screens the deal as financed. Owners recompute it when cash flow changes after a rent increase, a rate reset or a big CapEx project funded from pocket. It is a screen, not a full underwrite: two properties with the same CoC can still diverge once tax treatment, deferred maintenance and exit plans enter the picture.</p>
+
+  <h2>Why a rent ledger helps</h2>
+  <p>A trustworthy CoC starts with trustworthy cash flow. That means rent collected, vacancy, operating expenses and debt service by door&mdash;not a napkin estimate. The HostLedger Landlord Rent Ledger keeps rent due vs collected and expenses for up to ten long-term units, so the cash flow you type here can come from your own books. CapEx projects you fund with more cash (raising invested capital) belong in the CapEx &amp; Improvement Tracker.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Landlord Rent Ledger on Etsy">
+   <img src="img/landlord-rent-ledger.jpg" width="560" height="700" loading="lazy" alt="Landlord Rent Ledger listing image">
+   <div>
+    <h2>Track the income and expenses that feed real cash flow</h2>
+    <p>The Landlord Rent Ledger: rent due vs collected, expenses and deposits held for up to ten long-term units. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_cash_on_cash_calculator" rel="noopener">Landlord Rent Ledger: $9 on Etsy</a>
+    <p class="also-flag">Planning improvements you fund with more cash? See the <a href="https://www.etsy.com/listing/4567824696/landlord-capex-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_cash_on_cash_calculator" rel="noopener">CapEx &amp; Improvement Tracker</a> ($5 on Etsy).</p>
+    <p class="also-bundle">The rent ledger also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_cash_on_cash_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>What is cash-on-cash return?</summary>
+   <p>Cash-on-cash (CoC) return is annual pre-tax cash flow divided by the cash you put into the deal, as a percent. A property that returns $6,400 a year on $80,000 of cash invested has an 8% cash-on-cash return. It is a levered metric: it reflects your down payment, closing costs and rehab cash, and the cash flow left after debt service.</p>
+  </details>
+  <details>
+   <summary>How is cash-on-cash different from cap rate?</summary>
+   <p>Cap rate is unlevered: annual NOI divided by purchase price (or value), with no mortgage in the picture. Cash-on-cash uses the cash you actually put in and the cash flow after debt. Two buyers of the same property can share one cap rate and still have very different CoC returns once leverage and cash invested differ.</p>
+  </details>
+  <details>
+   <summary>What counts as cash invested?</summary>
+   <p>Usually the down payment, closing costs you pay in cash, and any rehab or reserve cash you fund at purchase. Do not count the financed portion of the purchase price. If you later put in more cash (a cash-out refinance is the opposite), update the invested figure so CoC stays honest.</p>
+  </details>
+  <details>
+   <summary>What does a negative cash-on-cash mean?</summary>
+   <p>Annual cash flow is negative: the property is costing you money each year after the mortgage and operating expenses. That can be intentional (a value-add during rehab) or a red flag. The calculator shows the negative percent so you can see the size of the gap.</p>
+  </details>
+  <details>
+   <summary>What is a &amp;ldquo;good&amp;rdquo; cash-on-cash return?</summary>
+   <p>There is no universal number. Targets vary by market, risk tolerance, interest rates and whether you expect appreciation or tax benefits to make up the rest. Compare a deal to your own hurdle rate and to similar local rentals. This calculator only does the arithmetic.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a>, <a href="rental-property-cap-rate-calculator.html">rental property cap rate calculator</a>, <a href="rental-property-depreciation-calculator.html">rental property depreciation calculator</a> and <a href="rent-late-fee-calculator.html">rent late fee calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_cash_on_cash_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+     <li><a href="prorated-rent-calculator.html">Prorated rent calculator</a></li>
+     <li><a href="rent-late-fee-calculator.html">Rent late fee calculator</a></li>
+     <li><a href="rental-property-cap-rate-calculator.html">Rental property cap rate calculator</a></li>
+     <li><a href="rental-property-cash-on-cash-calculator.html">Rental property cash-on-cash return calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_cash_on_cash_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
