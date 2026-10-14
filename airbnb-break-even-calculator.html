@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Airbnb Break-Even Nightly Rate Calculator — Free | HostLedger</title>
+<meta name="description" content="Free Airbnb break-even calculator: fixed costs, per-stay costs and platform fee to the nightly rate you need, target rate, and break-even occupancy.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/airbnb-break-even-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/airbnb-break-even-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Airbnb Break-Even Nightly Rate Calculator — Free | HostLedger">
+<meta property="og:description" content="Free Airbnb break-even calculator: fixed costs, per-stay costs and platform fee to the nightly rate you need, target rate, and break-even occupancy.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-str.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Airbnb Break-Even Calculator",
+   "description": "Free Airbnb break-even calculator: fixed costs, per-stay costs and platform fee to the nightly rate you need, target rate, and break-even occupancy.",
+   "url": "https://hostledgerhq.vercel.app/airbnb-break-even-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is a break-even nightly rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is the average nightly rate you need so that, after the platform fee and what you pay per stay (cleaning, supplies), the nights you expect to book cover your fixed monthly costs. Above it you make money at that occupancy; below it you lose money. It does not include income tax, occupancy tax you remit yourself, or one-off repairs."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is this different from the STR profit calculator?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The profit calculator starts from a nightly rate and occupancy and shows monthly net profit and break-even occupancy. This page starts from your costs and expected nights and answers how much to charge: break-even rate, rate for a target profit, and break-even occupancy at a rate you enter. Use both when you are setting or reviewing rates."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I include a cleaning fee guests pay?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "This calculator models lodging only. If you charge a separate cleaning fee, use the Airbnb cleaning fee calculator for that fee, and keep per-stay costs here as what you actually pay the cleaner and for supplies. Or bake cleaning into the nightly rate and leave cost per stay as zero."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What platform fee percentage should I use?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Use the host fee percentage your payout report actually shows, not a generic published rate. For direct bookings, enter your card-processing percentage, or 0. The fee must be under 100% or the break-even rate is blank."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What if break-even occupancy says not reachable?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "At the nightly rate you entered, each booked night loses money after the platform fee and per-stay costs, so no occupancy covers fixed costs. Raise the rate, cut per-stay costs, or shorten average stays (fewer turnovers) before chasing more bookings."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/break-even-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="prorated-rent-calculator.html">Proration<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-late-fee-calculator.html">Late fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cap-rate-calculator.html">Cap rate<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-on-cash-calculator.html">Cash-on-cash<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-break-even-calculator.html" aria-current="page">Break-even<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_break_even_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Airbnb break-even calculator</li></ol></nav>
+  <h1>Airbnb break-even calculator</h1>
+  <p class="narrow">Work out how much to charge per night on Airbnb, VRBO or direct bookings: the break-even nightly rate that covers your fixed costs after platform fees and per-stay costs, the rate you need for a target monthly profit, and break-even occupancy at a rate you enter. Change any number and the results update instantly.</p>
+
+  <div class="calc">
+   <form id="be-form" novalidate aria-describedby="be-disclaimer">
+    <fieldset>
+     <legend>Costs</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="monthlyFixed">Monthly fixed costs</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="monthlyFixed" name="monthlyFixed" type="number" inputmode="decimal" step="any" min="0" value="2310" aria-describedby="monthlyFixed-hint"></div>
+      <span class="hint" id="monthlyFixed-hint">Mortgage or rent, utilities, insurance, software, internet, etc.</span>
+     </div>
+     <div class="field">
+      <label for="costPerStay">Cost you pay per stay</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="costPerStay" name="costPerStay" type="number" inputmode="decimal" step="any" min="0" value="90" aria-describedby="costPerStay-hint"></div>
+      <span class="hint" id="costPerStay-hint">Cleaner, laundry and supplies per turnover</span>
+     </div>
+     <div class="field">
+      <label for="platformFeePct">Platform host fee</label>
+      <div class="input has-post"><input id="platformFeePct" name="platformFeePct" type="number" inputmode="decimal" step="any" min="0" max="100" value="3" aria-describedby="platformFeePct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="platformFeePct-hint">From your payout report; must be under 100%</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Stays &amp; nights</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="avgStayNights">Average stay length</label>
+      <div class="input has-post"><input id="avgStayNights" name="avgStayNights" type="number" inputmode="decimal" step="any" min="0" value="3" aria-describedby="avgStayNights-hint"><span class="unit post" aria-hidden="true">nights</span></div>
+      <span class="hint" id="avgStayNights-hint">Typical booked nights per stay</span>
+     </div>
+     <div class="field">
+      <label for="nightsBooked">Expected nights booked per month</label>
+      <div class="input"><input id="nightsBooked" name="nightsBooked" type="number" inputmode="decimal" step="any" min="0" value="20" aria-describedby="nightsBooked-hint"></div>
+      <span class="hint" id="nightsBooked-hint">Used for break-even and target nightly rates</span>
+     </div>
+     <div class="field">
+      <label for="nightsAvailable">Nights available per month</label>
+      <div class="input"><input id="nightsAvailable" name="nightsAvailable" type="number" inputmode="decimal" step="any" min="0" value="30" aria-describedby="nightsAvailable-hint"></div>
+      <span class="hint" id="nightsAvailable-hint">Used for break-even occupancy %</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Rate &amp; target (optional)</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="nightlyRate">Nightly rate you plan to charge</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="nightlyRate" name="nightlyRate" type="number" inputmode="decimal" step="any" min="0" value="180" aria-describedby="nightlyRate-hint"></div>
+      <span class="hint" id="nightlyRate-hint">Used for revenue, profit and break-even occupancy</span>
+     </div>
+     <div class="field">
+      <label for="targetProfit">Target monthly profit</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="targetProfit" name="targetProfit" type="number" inputmode="decimal" step="any" min="0" value="970" aria-describedby="targetProfit-hint"></div>
+      <span class="hint" id="targetProfit-hint">Added on top of fixed costs for the target nightly rate</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result highlight">
+    <h3>Break-even nightly rate</h3>
+    <div class="big" id="out-be-rate">—</div>
+    <p class="detail" id="out-be-rate-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Nightly rate for target profit</h3>
+    <div class="big" id="out-target-rate">—</div>
+    <p class="detail" id="out-target-rate-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Break-even occupancy at your rate</h3>
+    <div class="big" id="out-be-occ">—</div>
+    <p class="detail" id="out-be-occ-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Monthly lodging revenue</h3>
+    <div class="big" id="out-revenue">—</div>
+    <p class="detail" id="out-revenue-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Monthly profit at your rate</h3>
+    <div class="big" id="out-profit">—</div>
+    <p class="detail" id="out-profit-detail"></p>
+   </div>
+    <p class="disclaimer" id="be-disclaimer">Estimates only. Not tax, legal or financial advice. Models lodging only (no cleaning fee charged to guests, no occupancy tax, no seasonality). Ignores income tax and one-off repairs. Confirm costs from your own books.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p><strong>Break-even nightly rate</strong> is what you need so that, after the platform takes its percentage and you pay your per-stay costs, the nights you expect to book cover your fixed monthly costs. Divide fixed costs by nights booked, add the per-stay cost spread over the average stay, then divide by what you keep after the fee (1 − fee %). The <strong>target rate</strong> does the same with your target monthly profit added to fixed costs. <strong>Break-even occupancy</strong> flips the question: at the nightly rate you enter, how many of the available nights must be booked so contribution per night covers fixed costs. Monthly revenue and profit use your entered rate and expected nights. Fixed costs, per-stay costs, target profit and the nightly rate are clamped at zero; stay length is at least one night; the platform fee is clamped between 0 and 100% (at 100% the rates are blank).</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional cabin: $2,310 a month in fixed costs, $90 paid per turnover, a 3% platform fee, 3-night average stays, 20 nights booked out of 30 available, a planned $180 nightly rate, and a $970 target monthly profit.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Break-even nightly rate</th><td class="n">$150.00</td></tr>
+   <tr><th scope="row">Nightly rate for $970 profit</th><td class="n">$200.00</td></tr>
+   <tr><th scope="row">Break-even occupancy at $180</th><td class="n">53.3%</td></tr>
+   <tr><th scope="row">Monthly lodging revenue (20 × $180)</th><td class="n">$3,600.00</td></tr>
+   <tr><th scope="row">Monthly profit at $180</th><td class="n">$582.00</td></tr>
+  </table>
+  <p>So $150 a night covers costs at 20 booked nights; $200 a night would clear the $970 profit target; at $180 you need about 53.3% occupancy (roughly 16 booked nights) just to break even. Zero nights booked leaves the rate fields blank; a 100% platform fee does too.</p>
+
+  <h2>When hosts use a break-even rate</h2>
+  <p>New listings need a floor before guessing at market ADR. Returning hosts recompute it when the mortgage, insurance or cleaner rate changes, or when average stay length shortens and turnovers pile up. Run it once per season: shoulder months with fewer booked nights push the break-even rate up even if costs stay the same. Pair it with the short-term rental profit calculator when you want the full month (cleaning fees charged, occupancy tax remittance, expense detail).</p>
+
+  <h2>Why a profit tracker helps</h2>
+  <p>A calculator answers "what if". Running a short-term rental means logging what actually booked, what guests paid, and what you spent, month by month. The HostLedger STR Profit Tracker + Seasonal Pricing Calendar records nights booked and average rate for up to four properties, the platform fee you actually pay, and a Low / Mid / Peak seasonal pricing calendar, with occupancy, ADR, NOI and break-even occupancy on the dashboard. The Guest Stay &amp; Booking Log tracks stays, nights and cancellations so the nights you type here come from your own history.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="STR Profit Tracker + Seasonal Pricing Calendar on Etsy">
+   <img src="img/str-profit-tracker.jpg" width="560" height="700" loading="lazy" alt="STR Profit Tracker + Seasonal Pricing Calendar listing image">
+   <div>
+    <h2>Track the real nights and rates every month</h2>
+    <p>The STR Profit Tracker + Seasonal Pricing Calendar for 1–4 units. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4564157134/str-host-profit-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_break_even_calculator" rel="noopener">STR Profit Tracker + Seasonal Pricing Calendar: $9 on Etsy</a>
+    <p class="also-flag">Logging stays and booking pace separately? See the <a href="https://www.etsy.com/listing/4566075524/str-guest-stay-log-spreadsheet-booking?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_break_even_calculator" rel="noopener">Guest Stay &amp; Booking Log</a> ($5 on Etsy).</p>
+    <p class="also-bundle">The tracker also comes in the <a href="https://www.etsy.com/listing/4592299378/airbnb-host-spreadsheet-bundle-7?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_break_even_calculator" rel="noopener">Airbnb Host Spreadsheet Bundle</a> (7 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>What is a break-even nightly rate?</summary>
+   <p>It is the average nightly rate you need so that, after the platform fee and what you pay per stay (cleaning, supplies), the nights you expect to book cover your fixed monthly costs. Above it you make money at that occupancy; below it you lose money. It does not include income tax, occupancy tax you remit yourself, or one-off repairs.</p>
+  </details>
+  <details>
+   <summary>How is this different from the STR profit calculator?</summary>
+   <p>The profit calculator starts from a nightly rate and occupancy and shows monthly net profit and break-even occupancy. This page starts from your costs and expected nights and answers how much to charge: break-even rate, rate for a target profit, and break-even occupancy at a rate you enter. Use both when you are setting or reviewing rates.</p>
+  </details>
+  <details>
+   <summary>Should I include a cleaning fee guests pay?</summary>
+   <p>This calculator models lodging only. If you charge a separate cleaning fee, use the Airbnb cleaning fee calculator for that fee, and keep per-stay costs here as what you actually pay the cleaner and for supplies. Or bake cleaning into the nightly rate and leave cost per stay as zero.</p>
+  </details>
+  <details>
+   <summary>What platform fee percentage should I use?</summary>
+   <p>Use the host fee percentage your payout report actually shows, not a generic published rate. For direct bookings, enter your card-processing percentage, or 0. The fee must be under 100% or the break-even rate is blank.</p>
+  </details>
+  <details>
+   <summary>What if break-even occupancy says not reachable?</summary>
+   <p>At the nightly rate you entered, each booked night loses money after the platform fee and per-stay costs, so no occupancy covers fixed costs. Raise the rate, cut per-stay costs, or shorten average stays (fewer turnovers) before chasing more bookings.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="short-term-rental-profit-calculator.html">short-term rental profit calculator</a>, <a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a>, <a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a> and <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_break_even_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+     <li><a href="prorated-rent-calculator.html">Prorated rent calculator</a></li>
+     <li><a href="rent-late-fee-calculator.html">Rent late fee calculator</a></li>
+     <li><a href="rental-property-cap-rate-calculator.html">Rental property cap rate calculator</a></li>
+     <li><a href="rental-property-cash-on-cash-calculator.html">Rental property cash-on-cash return calculator</a></li>
+     <li><a href="airbnb-break-even-calculator.html">Airbnb break-even calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_break_even_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
