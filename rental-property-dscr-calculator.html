@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Property DSCR Calculator — Free | HostLedger</title>
+<meta name="description" content="Free rental property DSCR calculator: NOI and annual debt service to debt service coverage ratio, plus NOI or debt service for a target DSCR.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/rental-property-dscr-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/rental-property-dscr-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Rental Property DSCR Calculator — Free | HostLedger">
+<meta property="og:description" content="Free rental property DSCR calculator: NOI and annual debt service to debt service coverage ratio, plus NOI or debt service for a target DSCR.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Rental Property DSCR Calculator",
+   "description": "Free rental property DSCR calculator: NOI and annual debt service to debt service coverage ratio, plus NOI or debt service for a target DSCR.",
+   "url": "https://hostledgerhq.vercel.app/rental-property-dscr-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is DSCR?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Debt service coverage ratio (DSCR) is annual net operating income (NOI) divided by annual debt service. A property with $24,500 of NOI and $18,000 of annual mortgage payments has a DSCR of about 1.36×. Lenders use it to see whether the property’s income covers the loan payments with a cushion."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why do lenders care about DSCR?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Most rental loans require a minimum DSCR (often around 1.20–1.25, sometimes higher). Below the floor, the deal may need a larger down payment, a lower loan amount, or a different product. The calculator does not replace a lender’s underwriting worksheet."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What counts as debt service?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually the annual principal and interest (P&I) on the qualifying loan—often 12 × the monthly payment. Some lenders add property taxes, insurance or HOA into a PITIA figure. Enter the debt service your lender will use; this page does not build an amortization schedule."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What counts as NOI?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "NOI is income after vacancy and operating expenses, before debt service, income tax and depreciation. Lenders may haircut rents, use market rents, or exclude certain owner-paid items. Confirm the NOI definition with your lender rather than copying a listing flyer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is a &ldquo;good&rdquo; DSCR?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Many conventional rental programs look for about 1.25× or higher, but floors vary by lender, product and market. A DSCR under 1.0× means NOI does not cover debt service. This calculator only does the arithmetic."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/dscr-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="prorated-rent-calculator.html">Proration<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-late-fee-calculator.html">Late fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cap-rate-calculator.html">Cap rate<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-on-cash-calculator.html">Cash-on-cash<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-dscr-calculator.html" aria-current="page">DSCR<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-break-even-calculator.html">Break-even<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_dscr_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Rental property DSCR calculator</li></ol></nav>
+  <h1>Rental property DSCR calculator</h1>
+  <p class="narrow">For landlords and small investors checking whether a rental&rsquo;s net operating income covers the mortgage: enter annual NOI and annual debt service to get DSCR. Optionally enter a target DSCR to see the NOI you would need, or the most debt service this NOI can support at that target.</p>
+
+  <div class="calc">
+   <form id="dscr-form" novalidate aria-describedby="dscr-disclaimer">
+    <fieldset>
+     <legend>NOI &amp; debt service</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="noi">Annual net operating income (NOI)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="noi" name="noi" type="number" inputmode="decimal" step="any" min="-999999999" value="24500" aria-describedby="noi-hint"></div>
+      <span class="hint" id="noi-hint">Income after vacancy and operating expenses, before debt service (can be negative)</span>
+     </div>
+     <div class="field">
+      <label for="annualDebtService">Annual debt service</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="annualDebtService" name="annualDebtService" type="number" inputmode="decimal" step="any" min="0" value="18000" aria-describedby="annualDebtService-hint"></div>
+      <span class="hint" id="annualDebtService-hint">12 &times; monthly P&amp;I (or the qualifying debt service your lender uses)</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Target DSCR (optional)</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="targetDscr">Target DSCR</label>
+      <div class="input"><input id="targetDscr" name="targetDscr" type="number" inputmode="decimal" step="any" min="0" value="1.25" aria-describedby="targetDscr-hint"></div>
+      <span class="hint" id="targetDscr-hint">Used to back into the NOI needed, or the max debt service at this NOI</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result highlight">
+    <h3>DSCR</h3>
+    <div class="big" id="out-dscr">—</div>
+    <p class="detail" id="out-dscr-detail"></p>
+   </div>
+   <div class="result">
+    <h3>NOI needed for target DSCR</h3>
+    <div class="big" id="out-noi-needed">—</div>
+    <p class="detail" id="out-noi-needed-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Max annual debt service at this NOI for target</h3>
+    <div class="big" id="out-debt-max">—</div>
+    <p class="detail" id="out-debt-max-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Annual NOI</h3>
+    <div class="big" id="out-noi">—</div>
+    <p class="detail" id="out-noi-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Annual debt service</h3>
+    <div class="big" id="out-debt">—</div>
+    <p class="detail" id="out-debt-detail"></p>
+   </div>
+    <p class="disclaimer" id="dscr-disclaimer">Estimates only. Not lending, investment, tax or legal advice. Lenders define NOI and qualifying debt service differently (P&amp;I vs PITIA, market rents vs in-place, haircuts). Confirm with your lender before you underwrite or apply.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p><strong>DSCR</strong> is annual NOI divided by annual debt service. If debt service is zero, the ratio is blank. Negative NOI produces a negative DSCR (that is intentional). The optional <strong>target DSCR</strong> runs two reverses: the NOI you would need at this debt service, and the maximum annual debt service this NOI can support at the target. Debt service and the target are clamped at zero; NOI is not. The calculator does not build an amortization schedule, tax return or lender worksheet.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional rental with $24,500 of annual NOI and $18,000 of annual debt service (about $1,500 per month), with a 1.25&times; target DSCR.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Annual NOI</th><td class="n">$24,500.00</td></tr>
+   <tr><th scope="row">Annual debt service</th><td class="n">$18,000.00</td></tr>
+   <tr><th scope="row">DSCR</th><td class="n">1.36&times;</td></tr>
+   <tr><th scope="row">NOI needed for 1.25&times;</th><td class="n">$22,500.00</td></tr>
+   <tr><th scope="row">Max debt service at this NOI for 1.25&times;</th><td class="n">$19,600.00</td></tr>
+  </table>
+  <p>So this example covers debt service 1.36 times. To hit a 1.25&times; target at $18,000 of debt you need $22,500 of NOI; at the current $24,500 NOI you can support at most $19,600 of annual debt service and still clear 1.25&times;. Zero debt service leaves DSCR blank; a zero target leaves the reverse fields blank.</p>
+
+  <h2>When landlords use DSCR</h2>
+  <p>Buyers check DSCR before they lock a loan amount or down payment. Owners recompute it when rent, vacancy or the mortgage payment changes, or when a refinance quote arrives. Cap rate screens the property unlevered; cash-on-cash screens your cash return after debt; DSCR screens whether the property&rsquo;s income covers the loan. It is a lender screen, not a full underwrite: two properties with the same DSCR can still diverge once reserves, personal income and exit plans enter the picture.</p>
+
+  <h2>Why a rent ledger helps</h2>
+  <p>A trustworthy DSCR starts with trustworthy NOI. That means rent collected, vacancy and operating expenses by door&mdash;not a napkin estimate. The HostLedger Landlord Rent Ledger keeps rent due vs collected and expenses for up to ten long-term units, so the NOI you type here can come from your own books. CapEx projects that change future NOI or reserves belong in the CapEx &amp; Improvement Tracker.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Landlord Rent Ledger on Etsy">
+   <img src="img/landlord-rent-ledger.jpg" width="560" height="700" loading="lazy" alt="Landlord Rent Ledger listing image">
+   <div>
+    <h2>Track the income and expenses that feed real NOI</h2>
+    <p>The Landlord Rent Ledger: rent due vs collected, expenses and deposits held for up to ten long-term units. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_dscr_calculator" rel="noopener">Landlord Rent Ledger: $9 on Etsy</a>
+    <p class="also-flag">Planning improvements that change future NOI? See the <a href="https://www.etsy.com/listing/4567824696/landlord-capex-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_dscr_calculator" rel="noopener">CapEx &amp; Improvement Tracker</a> ($5 on Etsy).</p>
+    <p class="also-bundle">The rent ledger also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_dscr_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>What is DSCR?</summary>
+   <p>Debt service coverage ratio (DSCR) is annual net operating income (NOI) divided by annual debt service. A property with $24,500 of NOI and $18,000 of annual mortgage payments has a DSCR of about 1.36&times;. Lenders use it to see whether the property&rsquo;s income covers the loan payments with a cushion.</p>
+  </details>
+  <details>
+   <summary>Why do lenders care about DSCR?</summary>
+   <p>Most rental loans require a minimum DSCR (often around 1.20&ndash;1.25, sometimes higher). Below the floor, the deal may need a larger down payment, a lower loan amount, or a different product. The calculator does not replace a lender&rsquo;s underwriting worksheet.</p>
+  </details>
+  <details>
+   <summary>What counts as debt service?</summary>
+   <p>Usually the annual principal and interest (P&amp;I) on the qualifying loan&mdash;often 12 &times; the monthly payment. Some lenders add property taxes, insurance or HOA into a PITIA figure. Enter the debt service your lender will use; this page does not build an amortization schedule.</p>
+  </details>
+  <details>
+   <summary>What counts as NOI?</summary>
+   <p>NOI is income after vacancy and operating expenses, before debt service, income tax and depreciation. Lenders may haircut rents, use market rents, or exclude certain owner-paid items. Confirm the NOI definition with your lender rather than copying a listing flyer.</p>
+  </details>
+  <details>
+   <summary>What is a &amp;ldquo;good&amp;rdquo; DSCR?</summary>
+   <p>Many conventional rental programs look for about 1.25&times; or higher, but floors vary by lender, product and market. A DSCR under 1.0&times; means NOI does not cover debt service. This calculator only does the arithmetic.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="rental-property-cash-on-cash-calculator.html">rental property cash-on-cash return calculator</a>, <a href="rental-property-cap-rate-calculator.html">rental property cap rate calculator</a>, <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a> and <a href="rental-property-depreciation-calculator.html">rental property depreciation calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_dscr_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+     <li><a href="prorated-rent-calculator.html">Prorated rent calculator</a></li>
+     <li><a href="rent-late-fee-calculator.html">Rent late fee calculator</a></li>
+     <li><a href="rental-property-cap-rate-calculator.html">Rental property cap rate calculator</a></li>
+     <li><a href="rental-property-cash-on-cash-calculator.html">Rental property cash-on-cash return calculator</a></li>
+     <li><a href="rental-property-dscr-calculator.html">Rental property DSCR calculator</a></li>
+     <li><a href="airbnb-break-even-calculator.html">Airbnb break-even calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_dscr_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
