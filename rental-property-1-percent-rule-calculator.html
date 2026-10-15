@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Property 1% Rule Calculator — Free | HostLedger</title>
+<meta name="description" content="Free 1% rule calculator: purchase price and monthly rent to actual %, pass/fail, rent needed and max price for the one percent rule. Estimates only.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/rental-property-1-percent-rule-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/rental-property-1-percent-rule-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Rental Property 1% Rule Calculator — Free | HostLedger">
+<meta property="og:description" content="Free 1% rule calculator: purchase price and monthly rent to actual %, pass/fail, rent needed and max price for the one percent rule. Estimates only.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Rental Property 1% Rule Calculator",
+   "description": "Free 1% rule calculator: purchase price and monthly rent to actual %, pass/fail, rent needed and max price for the one percent rule. Estimates only.",
+   "url": "https://hostledgerhq.vercel.app/rental-property-1-percent-rule-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is the 1% rule in real estate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The 1% rule is a rough screen: monthly gross rent should be at least about 1% of the purchase price. A $350,000 property collecting $2,450 a month is at about 0.70%—below the classic 1% screen. Some investors use 0.7% or 2% instead; this calculator lets you set the target. The rule ignores vacancy, expenses, CapEx, financing and taxes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is the 1% rule different from GRM or cap rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The 1% rule compares monthly rent to price. GRM compares price to annual rent (they are inverses of each other when scaled). Cap rate uses net operating income after vacancy and operating expenses. Use the 1% rule or GRM as a quick gross-rent screen; use cap rate and cash flow when you have a rent roll and expense history."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does a property that fails the 1% rule always make a bad investment?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Many solid rentals in higher-priced markets screen below 1%. The rule is a filter, not a verdict. Local rents, expenses, appreciation, financing and your own underwriting matter more than any national rule of thumb."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I use scheduled rent or collected rent?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Either works if you stay consistent across deals. Scheduled/contract rent is common for a listing screen; trailing collected rent is more conservative. This calculator takes monthly gross rent and multiplies by 12 for the annual figure."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What target % should I use?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Classic teaching uses 1%. Some markets never clear 1%, so investors use 0.7% or similar as a local screen; others want 1.5% or 2% in cheaper markets. Enter whatever target you want to test. A target of zero blanks the reverse fields (rent needed, max price, gap, pass/fail)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/one-percent-rule-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="prorated-rent-calculator.html">Proration<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-late-fee-calculator.html">Late fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-increase-calculator.html">Rent increase<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cap-rate-calculator.html">Cap rate<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-on-cash-calculator.html">Cash-on-cash<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-dscr-calculator.html">DSCR<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-break-even-calculator.html">Break-even<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-utility-bill-split-calculator.html">Utility split<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-gross-rent-multiplier-calculator.html">GRM<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-1-percent-rule-calculator.html" aria-current="page">1% rule<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_1_percent_rule_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Rental property 1% rule calculator</li></ol></nav>
+  <h1>Rental property 1% rule calculator</h1>
+  <p class="narrow">For landlords and small investors with 1–10 units who want a quick rent-to-price screen: enter the purchase price and monthly gross rent to see the actual %, whether it meets your target (often 1%), the rent you would need, and the max price that still passes the rule.</p>
+
+  <div class="calc">
+   <form id="opr-form" novalidate aria-describedby="opr-disclaimer">
+    <fieldset>
+     <legend>Purchase &amp; rent</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="purchasePrice">Purchase price</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="purchasePrice" name="purchasePrice" type="number" inputmode="decimal" step="any" min="0" value="350000" aria-describedby="purchasePrice-hint"></div>
+      <span class="hint" id="purchasePrice-hint">What you pay (or current value if you already own it)</span>
+     </div>
+     <div class="field">
+      <label for="monthlyGrossRent">Monthly gross rent</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="monthlyGrossRent" name="monthlyGrossRent" type="number" inputmode="decimal" step="any" min="0" value="2450" aria-describedby="monthlyGrossRent-hint"></div>
+      <span class="hint" id="monthlyGrossRent-hint">Scheduled or collected rent for all units, before vacancy and expenses; annual = monthly × 12</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Target rule % (optional)</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="targetPct">Target %</label>
+      <div class="input has-post"><input id="targetPct" name="targetPct" type="number" inputmode="decimal" step="any" min="0" value="1" aria-describedby="targetPct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="targetPct-hint">Classic is 1; try 0.7–2 to match local screens. Zero blanks reverse fields.</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result highlight">
+    <h3>Actual rent-to-price %</h3>
+    <div class="big" id="out-actual">—</div>
+    <p class="detail" id="out-actual-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Passes the rule?</h3>
+    <div class="big" id="out-pass">—</div>
+    <p class="detail" id="out-pass-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Monthly gross rent</h3>
+    <div class="big" id="out-monthly">—</div>
+    <p class="detail" id="out-monthly-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Annual gross rent</h3>
+    <div class="big" id="out-annual">—</div>
+    <p class="detail" id="out-annual-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Monthly rent needed for the rule</h3>
+    <div class="big" id="out-rent-needed">—</div>
+    <p class="detail" id="out-rent-needed-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Max purchase price for the rule</h3>
+    <div class="big" id="out-price-max">—</div>
+    <p class="detail" id="out-price-max-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Gap vs rule (monthly)</h3>
+    <div class="big" id="out-gap">—</div>
+    <p class="detail" id="out-gap-detail"></p>
+   </div>
+    <p class="disclaimer" id="opr-disclaimer">Estimates only. Not appraisal, investment, tax or financial advice. The 1% rule is a rough screen that ignores vacancy, operating expenses, CapEx, financing, taxes and local market norms. There is no universal &ldquo;good&rdquo; market. Compare deals carefully and confirm rent from your own rent roll or lease abstracts.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p><strong>Actual %</strong> is monthly gross rent divided by purchase price, times 100. Annual rent is monthly times 12. If purchase price is zero, actual % is blank. The optional <strong>target %</strong> (default 1) decides pass/fail, the monthly rent needed at this price, the max purchase price that still meets the rule at this rent, and the monthly gap vs that rule rent (positive means above the rule). A target of zero or less blanks those reverse fields. Negatives are clamped to zero. The calculator does not model vacancy, expenses, mortgages or taxes.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional $350,000 rental collecting $2,450 a month with a 1% target.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Purchase price</th><td class="n">$350,000.00</td></tr>
+   <tr><th scope="row">Monthly gross rent</th><td class="n">$2,450.00</td></tr>
+   <tr><th scope="row">Annual gross rent</th><td class="n">$29,400.00</td></tr>
+   <tr><th scope="row">Actual %</th><td class="n">0.70%</td></tr>
+   <tr><th scope="row">Passes 1% rule?</th><td class="n">Fails</td></tr>
+   <tr><th scope="row">Monthly rent needed at 1%</th><td class="n">$3,500.00</td></tr>
+   <tr><th scope="row">Max price at 1%</th><td class="n">$245,000.00</td></tr>
+   <tr><th scope="row">Gap vs rule</th><td class="n">-$1,050.00</td></tr>
+  </table>
+  <p>So this example screens at about 0.70% and fails a 1% target. To pass at $350k you would need $3,500 a month of gross rent; at $2,450 a month the max price that still hits 1% is $245,000. A zero price leaves actual % blank; a zero target leaves the reverse fields blank.</p>
+
+  <h2>When investors use the 1% rule</h2>
+  <p>Buyers use the 1% rule (or a local variant) to filter listings before they dig into expenses. Listing sheets and investor forums still quote it as a shorthand for rent relative to price. Owners recompute it when rents change after a lease renewal or a vacancy fill. It is a screen, not a full underwrite: two properties with the same actual % can still diverge once vacancy, operating costs, deferred maintenance and financing enter the picture. In expensive markets many solid deals never clear 1%; in cheaper markets clearing 1% is common and not automatically &ldquo;good.&rdquo;</p>
+
+  <h2>Why a rent ledger helps</h2>
+  <p>A trustworthy 1% screen starts with trustworthy rent figures. That means rent due vs collected by door&mdash;not a flyer estimate. The HostLedger Landlord Rent Ledger keeps rent schedules and collections for up to ten long-term units, so the rent you type here can come from your own books. CapEx projects that change future rent (or basis) belong in the CapEx &amp; Improvement Tracker.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Landlord Rent Ledger on Etsy">
+   <img src="img/landlord-rent-ledger.jpg" width="560" height="700" loading="lazy" alt="Landlord Rent Ledger listing image">
+   <div>
+    <h2>Track the rent that feeds a real 1% screen</h2>
+    <p>The Landlord Rent Ledger: rent due vs collected, expenses and deposits held for up to ten long-term units. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_1_percent_rule_calculator" rel="noopener">Landlord Rent Ledger: $9 on Etsy</a>
+    <p class="also-flag">Planning improvements that change future rent or basis? See the <a href="https://www.etsy.com/listing/4567824696/landlord-capex-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_1_percent_rule_calculator" rel="noopener">CapEx &amp; Improvement Tracker</a> ($5 on Etsy).</p>
+    <p class="also-bundle">The rent ledger also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_1_percent_rule_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>What is the 1% rule in real estate?</summary>
+   <p>The 1% rule is a rough screen: monthly gross rent should be at least about 1% of the purchase price. A $350,000 property collecting $2,450 a month is at about 0.70%&mdash;below the classic 1% screen. Some investors use 0.7% or 2% instead; this calculator lets you set the target. The rule ignores vacancy, expenses, CapEx, financing and taxes.</p>
+  </details>
+  <details>
+   <summary>How is the 1% rule different from GRM or cap rate?</summary>
+   <p>The 1% rule compares monthly rent to price. GRM compares price to annual rent (they are inverses of each other when scaled). Cap rate uses net operating income after vacancy and operating expenses. Use the 1% rule or GRM as a quick gross-rent screen; use cap rate and cash flow when you have a rent roll and expense history.</p>
+  </details>
+  <details>
+   <summary>Does a property that fails the 1% rule always make a bad investment?</summary>
+   <p>No. Many solid rentals in higher-priced markets screen below 1%. The rule is a filter, not a verdict. Local rents, expenses, appreciation, financing and your own underwriting matter more than any national rule of thumb.</p>
+  </details>
+  <details>
+   <summary>Should I use scheduled rent or collected rent?</summary>
+   <p>Either works if you stay consistent across deals. Scheduled/contract rent is common for a listing screen; trailing collected rent is more conservative. This calculator takes monthly gross rent and multiplies by 12 for the annual figure.</p>
+  </details>
+  <details>
+   <summary>What target % should I use?</summary>
+   <p>Classic teaching uses 1%. Some markets never clear 1%, so investors use 0.7% or similar as a local screen; others want 1.5% or 2% in cheaper markets. Enter whatever target you want to test. A target of zero blanks the reverse fields (rent needed, max price, gap, pass/fail).</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="rental-property-gross-rent-multiplier-calculator.html">rental property gross rent multiplier calculator</a>, <a href="rental-property-cap-rate-calculator.html">rental property cap rate calculator</a>, <a href="rental-property-cash-on-cash-calculator.html">rental property cash-on-cash return calculator</a>, <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a> and <a href="rental-property-dscr-calculator.html">rental property dscr calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_1_percent_rule_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+     <li><a href="prorated-rent-calculator.html">Prorated rent calculator</a></li>
+     <li><a href="rent-late-fee-calculator.html">Rent late fee calculator</a></li>
+     <li><a href="rent-increase-calculator.html">Rent increase calculator</a></li>
+     <li><a href="rental-property-cap-rate-calculator.html">Rental property cap rate calculator</a></li>
+     <li><a href="rental-property-cash-on-cash-calculator.html">Rental property cash-on-cash return calculator</a></li>
+     <li><a href="rental-property-dscr-calculator.html">Rental property DSCR calculator</a></li>
+     <li><a href="airbnb-break-even-calculator.html">Airbnb break-even calculator</a></li>
+     <li><a href="rental-utility-bill-split-calculator.html">Rental utility bill split calculator</a></li>
+     <li><a href="rental-property-gross-rent-multiplier-calculator.html">Rental property gross rent multiplier calculator</a></li>
+     <li><a href="rental-property-1-percent-rule-calculator.html">Rental property 1% rule calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_1_percent_rule_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
