@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Airbnb vs Long-Term Rental Calculator — Free | HostLedger</title>
+<meta name="description" content="Free Airbnb vs long-term rental calculator: compare STR and LTR monthly and annual net, the difference, and break-even STR occupancy.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/airbnb-vs-long-term-rental-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/airbnb-vs-long-term-rental-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Airbnb vs Long-Term Rental Calculator — Free | HostLedger">
+<meta property="og:description" content="Free Airbnb vs long-term rental calculator: compare STR and LTR monthly and annual net, the difference, and break-even STR occupancy.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-str.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Airbnb vs Long-Term Rental Calculator",
+   "description": "Free Airbnb vs long-term rental calculator: compare STR and LTR monthly and annual net, the difference, and break-even STR occupancy.",
+   "url": "https://hostledgerhq.vercel.app/airbnb-vs-long-term-rental-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How is short-term different from long-term rental income?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Short-term (Airbnb, VRBO, direct) is usually priced per night with occupancy, cleaning fees, platform fees and higher operating costs. Long-term is a monthly lease with vacancy and optional property management. This calculator puts both on the same monthly and annual net so you can see which strategy wins at your numbers."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why is occupancy tax left out?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In many markets the platform collects and remits occupancy or lodging tax for you, so it never hits your net. Where you remit it yourself, treat it as an extra STR cost or use the short-term rental profit calculator, which models host remittance. Rules vary by city and state—check yours."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What counts as shared fixed costs?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Costs you pay either way: mortgage principal and interest, property taxes, insurance and HOA. Enter them once so the comparison is fair. STR-only costs (internet, supplies, furnishing amortization, higher utilities) and LTR-only costs (landlord-paid utilities you would not pay as an STR host) sit in their own fields."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What does break-even STR occupancy mean?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is the occupancy rate at which short-term monthly net equals long-term monthly net. Above it, STR wins; below it, LTR wins (when each booked night still contributes positively after fees and cleaning). If contribution per night is negative, break-even is not reachable."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this include local STR permits or HOA bans?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Many cities require short-term rental permits, caps or primary-residence rules, and some HOAs ban STR entirely. A higher STR net on paper is useless if you cannot operate legally. Confirm regulations and insurance before you switch."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/str-vs-ltr-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="prorated-rent-calculator.html">Proration<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-late-fee-calculator.html">Late fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-increase-calculator.html">Rent increase<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cap-rate-calculator.html">Cap rate<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-on-cash-calculator.html">Cash-on-cash<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-dscr-calculator.html">DSCR<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-break-even-calculator.html">Break-even<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-utility-bill-split-calculator.html">Utility split<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-gross-rent-multiplier-calculator.html">GRM<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-1-percent-rule-calculator.html">1% rule<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-50-percent-rule-calculator.html">50% rule<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-vs-long-term-rental-calculator.html" aria-current="page">STR vs LTR<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_vs_long_term_rental_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Airbnb vs long-term rental calculator</li></ol></nav>
+  <h1>Airbnb vs long-term rental calculator</h1>
+  <p class="narrow">Compare short-term rental (Airbnb, VRBO, direct) income to a long-term lease on the same property: nightly rate, occupancy, cleaning and platform fees versus monthly rent, vacancy and management, with shared fixed costs entered once. See monthly and annual net for each strategy, which wins by how much, nights booked and stays, and the STR occupancy that breaks even with long-term net.</p>
+
+  <div class="calc">
+   <form id="svl-form" novalidate aria-describedby="svl-disclaimer">
+    <fieldset>
+     <legend>Short-term rental (Airbnb / VRBO)</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="nightlyRate">Nightly rate</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="nightlyRate" name="nightlyRate" type="number" inputmode="decimal" step="any" min="0" value="150" aria-describedby="nightlyRate-hint"></div>
+      <span class="hint" id="nightlyRate-hint">Average daily rate guests pay for lodging</span>
+     </div>
+     <div class="field">
+      <label for="occupancyPct">Occupancy rate</label>
+      <div class="input has-post"><input id="occupancyPct" name="occupancyPct" type="number" inputmode="decimal" step="any" min="0" max="100" value="60" aria-describedby="occupancyPct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="occupancyPct-hint">Booked nights ÷ nights available (0–100)</span>
+     </div>
+     <div class="field">
+      <label for="nightsAvailable">Nights available per month</label>
+      <div class="input"><input id="nightsAvailable" name="nightsAvailable" type="number" inputmode="decimal" step="any" min="0" value="30" aria-describedby="nightsAvailable-hint"></div>
+      <span class="hint" id="nightsAvailable-hint">Usually 28–31; used with occupancy for booked nights</span>
+     </div>
+     <div class="field">
+      <label for="avgStayNights">Average stay length</label>
+      <div class="input has-post"><input id="avgStayNights" name="avgStayNights" type="number" inputmode="decimal" step="any" min="0" value="3" aria-describedby="avgStayNights-hint"><span class="unit post" aria-hidden="true">nights</span></div>
+      <span class="hint" id="avgStayNights-hint">Typical booked nights per stay (at least 1)</span>
+     </div>
+     <div class="field">
+      <label for="cleaningFeePerStay">Cleaning fee charged per stay</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="cleaningFeePerStay" name="cleaningFeePerStay" type="number" inputmode="decimal" step="any" min="0" value="75" aria-describedby="cleaningFeePerStay-hint"></div>
+      <span class="hint" id="cleaningFeePerStay-hint">What guests pay you for cleaning (platform fee applies)</span>
+     </div>
+     <div class="field">
+      <label for="cleaningCostPerStay">Cleaning cost you pay per stay</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="cleaningCostPerStay" name="cleaningCostPerStay" type="number" inputmode="decimal" step="any" min="0" value="90" aria-describedby="cleaningCostPerStay-hint"></div>
+      <span class="hint" id="cleaningCostPerStay-hint">Cleaner, laundry and supplies you actually pay</span>
+     </div>
+     <div class="field">
+      <label for="platformFeePct">Platform host fee</label>
+      <div class="input has-post"><input id="platformFeePct" name="platformFeePct" type="number" inputmode="decimal" step="any" min="0" max="100" value="3" aria-describedby="platformFeePct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="platformFeePct-hint">From your payout report; 0–100</span>
+     </div>
+     <div class="field">
+      <label for="strOnlyCosts">Monthly STR-only costs</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="strOnlyCosts" name="strOnlyCosts" type="number" inputmode="decimal" step="any" min="0" value="400" aria-describedby="strOnlyCosts-hint"></div>
+      <span class="hint" id="strOnlyCosts-hint">Utilities, internet, supplies, furnishing amortization beyond shared costs</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Long-term rental</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="monthlyRent">Monthly rent</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="monthlyRent" name="monthlyRent" type="number" inputmode="decimal" step="any" min="0" value="2000" aria-describedby="monthlyRent-hint"></div>
+      <span class="hint" id="monthlyRent-hint">Scheduled rent for the long-term lease</span>
+     </div>
+     <div class="field">
+      <label for="vacancyPct">Vacancy rate</label>
+      <div class="input has-post"><input id="vacancyPct" name="vacancyPct" type="number" inputmode="decimal" step="any" min="0" max="100" value="5" aria-describedby="vacancyPct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="vacancyPct-hint">Expected empty months as a % of rent (0–100)</span>
+     </div>
+     <div class="field">
+      <label for="managementPct">Property management fee</label>
+      <div class="input has-post"><input id="managementPct" name="managementPct" type="number" inputmode="decimal" step="any" min="0" max="100" value="0" aria-describedby="managementPct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="managementPct-hint">Optional; applied to effective rent after vacancy</span>
+     </div>
+     <div class="field">
+      <label for="ltrOnlyCosts">Monthly LTR-only costs</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="ltrOnlyCosts" name="ltrOnlyCosts" type="number" inputmode="decimal" step="any" min="0" value="0" aria-describedby="ltrOnlyCosts-hint"></div>
+      <span class="hint" id="ltrOnlyCosts-hint">Landlord-paid utilities or other costs unique to long-term</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Shared fixed costs</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="sharedFixed">Monthly shared fixed costs</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="sharedFixed" name="sharedFixed" type="number" inputmode="decimal" step="any" min="0" value="1500" aria-describedby="sharedFixed-hint"></div>
+      <span class="hint" id="sharedFixed-hint">Mortgage P&amp;I, taxes, insurance, HOA — paid either way</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result highlight">
+    <h3>Monthly difference (winner)</h3>
+    <div class="big" id="out-diff">—</div>
+    <p class="detail" id="out-diff-detail"></p>
+   </div>
+   <div class="result">
+    <h3>STR monthly net</h3>
+    <div class="big" id="out-str-net">—</div>
+    <p class="detail" id="out-str-net-detail"></p>
+   </div>
+   <div class="result">
+    <h3>LTR monthly net</h3>
+    <div class="big" id="out-ltr-net">—</div>
+    <p class="detail" id="out-ltr-net-detail"></p>
+   </div>
+   <div class="result">
+    <h3>STR annual net</h3>
+    <div class="big" id="out-str-annual">—</div>
+    <p class="detail" id="out-str-annual-detail"></p>
+   </div>
+   <div class="result">
+    <h3>LTR annual net</h3>
+    <div class="big" id="out-ltr-annual">—</div>
+    <p class="detail" id="out-ltr-annual-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Nights booked / month</h3>
+    <div class="big" id="out-booked">—</div>
+    <p class="detail" id="out-booked-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Break-even STR occupancy</h3>
+    <div class="big" id="out-be-occ">—</div>
+    <p class="detail" id="out-be-occ-detail"></p>
+   </div>
+    <p class="disclaimer" id="svl-disclaimer">Estimates only. Not investment, tax, financial or legal advice. Occupancy and lodging tax are omitted because they are often collected and remitted by the platform; where you remit them yourself, add them to STR costs or use the short-term rental profit calculator. Short-term rental rules, permits, caps and HOA bans vary by city and association&mdash;confirm you can operate legally before relying on any STR figure here. Confirm numbers from your own books.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p><strong>Short-term:</strong> booked nights = nights available × occupancy %; stays = booked nights ÷ average stay length. Revenue is lodging plus cleaning fees charged; the platform fee applies to that revenue. Subtract platform fees, cleaning costs you pay, STR-only monthly costs and shared fixed costs to get STR net. <strong>Long-term:</strong> effective rent = monthly rent after vacancy; subtract management % (on effective rent), LTR-only costs and the same shared fixed costs. <strong>Difference</strong> is STR net minus LTR net (positive means STR wins). <strong>Break-even STR occupancy</strong> is the occupancy where STR net equals LTR net, using contribution per booked night after platform and cleaning. Percents are clamped 0&ndash;100; money inputs are clamped at zero; average stay is at least one night; nights available defaults to 30 if blank. Negative nets are allowed. Occupancy tax is left out on purpose.</p>
+
+  <h2>A worked example</h2>
+  <p>The defaults describe a fictional one-unit property: $150 a night at 60% of 30 available nights (18 booked, 6 stays), $75 cleaning fee charged and $90 paid per stay, 3% platform fee, $400 of STR-only costs; versus $2,000 monthly rent with 5% vacancy and no management; shared fixed costs $1,500.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">STR revenue (lodging + cleaning fees)</th><td class="n">$3,150.00</td></tr>
+   <tr><th scope="row">STR platform + cleaning costs</th><td class="n">$634.50</td></tr>
+   <tr><th scope="row">STR monthly net</th><td class="n">$615.50</td></tr>
+   <tr><th scope="row">LTR effective rent</th><td class="n">$1,900.00</td></tr>
+   <tr><th scope="row">LTR monthly net</th><td class="n">$400.00</td></tr>
+   <tr><th scope="row">Monthly difference (STR wins)</th><td class="n">$215.50</td></tr>
+   <tr><th scope="row">STR / LTR annual net</th><td class="n">$7,386.00 / $4,800.00</td></tr>
+   <tr><th scope="row">Break-even STR occupancy</th><td class="n">54.86%</td></tr>
+  </table>
+  <p>So at these numbers STR clears about $215.50 more per month ($2,586 a year). STR net would match LTR at roughly 54.9% occupancy. Raise the long-term rent, cut STR costs, or change occupancy and the winner can flip.</p>
+
+  <h2>When each strategy fits</h2>
+  <p>Short-term can earn more in tourist or event markets with strong ADR and manageable turnovers, but it needs more active work, higher wear, platform fees and often local permits or primary-residence rules. Long-term is usually steadier cash flow with less day-to-day work, at the cost of lower upside and vacancy between tenants. Some owners run STR in peak season and switch to medium- or long-term leases in the off-season. Insurance, HOA rules and city caps can rule STR out entirely even when the spreadsheet favors it. Use this page as a first cut, then underwrite with real booking history and a full cash-flow model.</p>
+
+  <h2>Why tracking helps</h2>
+  <p>A one-off calculator answers &ldquo;what if.&rdquo; Running either strategy means logging what actually booked or was due, what you collected, and what you spent. The HostLedger STR Profit Tracker + Seasonal Pricing Calendar records nights, ADR, platform fees and seasonal rates for up to four short-term units. The Landlord Rent Ledger tracks rent due vs collected and expenses for up to ten long-term doors. Pair them when you are deciding whether to flip a door from LTR to STR (or back).</p>
+  </div>
+
+  <aside class="cta-box" aria-label="STR Profit Tracker + Seasonal Pricing Calendar on Etsy">
+   <img src="img/str-profit-tracker.jpg" width="560" height="700" loading="lazy" alt="STR Profit Tracker + Seasonal Pricing Calendar listing image">
+   <div>
+    <h2>Track the real STR nights and rates every month</h2>
+    <p>The STR Profit Tracker + Seasonal Pricing Calendar for 1–4 units. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4564157134/str-host-profit-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_vs_long_term_rental_calculator" rel="noopener">STR Profit Tracker + Seasonal Pricing Calendar: $9 on Etsy</a>
+    <p class="also-flag">Comparing or running long-term doors too? See the <a href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_vs_long_term_rental_calculator" rel="noopener">Landlord Rent Ledger</a> ($9 on Etsy).</p>
+    <p class="also-bundle">The tracker also comes in the <a href="https://www.etsy.com/listing/4592299378/airbnb-host-spreadsheet-bundle-7?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_vs_long_term_rental_calculator" rel="noopener">Airbnb Host Spreadsheet Bundle</a> (7 tools in one download).</p>
+    <p class="also-bundle">The rent ledger also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_vs_long_term_rental_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>How is short-term different from long-term rental income?</summary>
+   <p>Short-term (Airbnb, VRBO, direct) is usually priced per night with occupancy, cleaning fees, platform fees and higher operating costs. Long-term is a monthly lease with vacancy and optional property management. This calculator puts both on the same monthly and annual net so you can see which strategy wins at your numbers.</p>
+  </details>
+  <details>
+   <summary>Why is occupancy tax left out?</summary>
+   <p>In many markets the platform collects and remits occupancy or lodging tax for you, so it never hits your net. Where you remit it yourself, treat it as an extra STR cost or use the short-term rental profit calculator, which models host remittance. Rules vary by city and state&mdash;check yours.</p>
+  </details>
+  <details>
+   <summary>What counts as shared fixed costs?</summary>
+   <p>Costs you pay either way: mortgage principal and interest, property taxes, insurance and HOA. Enter them once so the comparison is fair. STR-only costs (internet, supplies, furnishing amortization, higher utilities) and LTR-only costs (landlord-paid utilities you would not pay as an STR host) sit in their own fields.</p>
+  </details>
+  <details>
+   <summary>What does break-even STR occupancy mean?</summary>
+   <p>It is the occupancy rate at which short-term monthly net equals long-term monthly net. Above it, STR wins; below it, LTR wins (when each booked night still contributes positively after fees and cleaning). If contribution per night is negative, break-even is not reachable.</p>
+  </details>
+  <details>
+   <summary>Does this include local STR permits or HOA bans?</summary>
+   <p>No. Many cities require short-term rental permits, caps or primary-residence rules, and some HOAs ban STR entirely. A higher STR net on paper is useless if you cannot operate legally. Confirm regulations and insurance before you switch.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="short-term-rental-profit-calculator.html">short-term rental profit calculator</a>, <a href="airbnb-break-even-calculator.html">Airbnb break-even calculator</a>, <a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a>, <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a>, <a href="rental-property-50-percent-rule-calculator.html">rental property 50% rule calculator</a> and <a href="rental-property-cap-rate-calculator.html">rental property cap rate calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_vs_long_term_rental_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+     <li><a href="prorated-rent-calculator.html">Prorated rent calculator</a></li>
+     <li><a href="rent-late-fee-calculator.html">Rent late fee calculator</a></li>
+     <li><a href="rent-increase-calculator.html">Rent increase calculator</a></li>
+     <li><a href="rental-property-cap-rate-calculator.html">Rental property cap rate calculator</a></li>
+     <li><a href="rental-property-cash-on-cash-calculator.html">Rental property cash-on-cash return calculator</a></li>
+     <li><a href="rental-property-dscr-calculator.html">Rental property DSCR calculator</a></li>
+     <li><a href="airbnb-break-even-calculator.html">Airbnb break-even calculator</a></li>
+     <li><a href="rental-utility-bill-split-calculator.html">Rental utility bill split calculator</a></li>
+     <li><a href="rental-property-gross-rent-multiplier-calculator.html">Rental property gross rent multiplier calculator</a></li>
+     <li><a href="rental-property-1-percent-rule-calculator.html">Rental property 1% rule calculator</a></li>
+     <li><a href="rental-property-50-percent-rule-calculator.html">Rental property 50% rule calculator</a></li>
+     <li><a href="airbnb-vs-long-term-rental-calculator.html">Airbnb vs long-term rental calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=airbnb_vs_long_term_rental_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
