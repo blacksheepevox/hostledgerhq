@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Property 50% Rule Calculator — Free | HostLedger</title>
+<meta name="description" content="Free 50% rule calculator: monthly rent, expense ratio and mortgage P&amp;I to estimated operating expenses, NOI, cash flow and break-even payment.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/rental-property-50-percent-rule-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/rental-property-50-percent-rule-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Rental Property 50% Rule Calculator — Free | HostLedger">
+<meta property="og:description" content="Free 50% rule calculator: monthly rent, expense ratio and mortgage P&amp;I to estimated operating expenses, NOI, cash flow and break-even payment.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Rental Property 50% Rule Calculator",
+   "description": "Free 50% rule calculator: monthly rent, expense ratio and mortgage P&I to estimated operating expenses, NOI, cash flow and break-even payment.",
+   "url": "https://hostledgerhq.vercel.app/rental-property-50-percent-rule-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is the 50% rule in real estate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The 50% rule is a rough screen: assume about half of a rental’s gross rent goes to operating expenses (taxes, insurance, repairs, maintenance, vacancy, management, utilities you pay, CapEx reserves). The other half is an estimate of net operating income (NOI) that has to cover the mortgage. At $2,450 a month of rent, the rule estimates $1,225 of expenses and $1,225 of NOI."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does the 50% include the mortgage payment?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The 50% covers operating expenses only. Mortgage principal and interest come out of the remaining half. That is why this calculator subtracts your monthly P&I from the estimated NOI to get cash flow, and shows the max payment that would break even."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is 50% the right expense ratio for my property?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not always. Newer buildings, tenant-paid utilities and low-tax areas can run well under 50%; older buildings, high property taxes, high insurance, owner-paid utilities and paid management can run higher. Set the expense ratio to whatever your own records or a local benchmark support. The field accepts 0–100%."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is the 50% rule different from the 1% rule?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The 1% rule compares monthly rent to purchase price and ignores expenses entirely. The 50% rule estimates expenses and NOI from rent, then compares NOI to the mortgage. Investors often use the 1% rule first to filter listings, then the 50% rule to sanity-check cash flow, then a full cash-flow analysis with real numbers."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What does negative cash flow mean here?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It means the mortgage payment is larger than the NOI the 50% rule estimates. With the defaults, $1,500 of P&I against $1,225 of estimated NOI shows −$275 a month. It is a screening signal to look closer, not a verdict: your actual expenses may be lower or higher than the rule assumes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/fifty-percent-rule-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="prorated-rent-calculator.html">Proration<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-late-fee-calculator.html">Late fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-increase-calculator.html">Rent increase<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cap-rate-calculator.html">Cap rate<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-on-cash-calculator.html">Cash-on-cash<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-dscr-calculator.html">DSCR<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-break-even-calculator.html">Break-even<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-utility-bill-split-calculator.html">Utility split<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-gross-rent-multiplier-calculator.html">GRM<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-1-percent-rule-calculator.html">1% rule<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-50-percent-rule-calculator.html" aria-current="page">50% rule<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_50_percent_rule_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Rental property 50% rule calculator</li></ol></nav>
+  <h1>Rental property 50% rule calculator</h1>
+  <p class="narrow">For landlords and small investors with 1&ndash;10 units who want a quick expense-and-cash-flow screen: enter monthly gross rent and your mortgage payment to see what the 50% rule estimates for operating expenses, net operating income (NOI), monthly and annual cash flow, cash flow per unit, and the largest mortgage payment that still breaks even.</p>
+
+  <div class="calc">
+   <form id="fpr-form" novalidate aria-describedby="fpr-disclaimer">
+    <fieldset>
+     <legend>Rent &amp; expense ratio</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="monthlyGrossRent">Monthly gross rent</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="monthlyGrossRent" name="monthlyGrossRent" type="number" inputmode="decimal" step="any" min="0" value="2450" aria-describedby="monthlyGrossRent-hint"></div>
+      <span class="hint" id="monthlyGrossRent-hint">Scheduled or collected rent for all units combined; annual = monthly × 12</span>
+     </div>
+     <div class="field">
+      <label for="expenseRatioPct">Operating expense ratio</label>
+      <div class="input has-post"><input id="expenseRatioPct" name="expenseRatioPct" type="number" inputmode="decimal" step="any" min="0" max="100" value="50" aria-describedby="expenseRatioPct-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="expenseRatioPct-hint">Share of rent assumed for operating expenses (not P&amp;I). Classic rule is 50; 0–100.</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Financing &amp; units (optional)</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="monthlyMortgage">Monthly mortgage payment (P&amp;I)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="monthlyMortgage" name="monthlyMortgage" type="number" inputmode="decimal" step="any" min="0" value="1500" aria-describedby="monthlyMortgage-hint"></div>
+      <span class="hint" id="monthlyMortgage-hint">Principal and interest only; leave 0 for a free-and-clear property</span>
+     </div>
+     <div class="field">
+      <label for="units">Number of units</label>
+      <div class="input"><input id="units" name="units" type="number" inputmode="decimal" step="1" min="1" value="1" aria-describedby="units-hint"></div>
+      <span class="hint" id="units-hint">Used for cash flow per unit; blank or below 1 counts as 1</span>
+     </div>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result highlight">
+    <h3>Estimated monthly cash flow</h3>
+    <div class="big" id="out-cashflow">—</div>
+    <p class="detail" id="out-cashflow-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Estimated monthly operating expenses</h3>
+    <div class="big" id="out-expenses">—</div>
+    <p class="detail" id="out-expenses-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Estimated NOI (monthly)</h3>
+    <div class="big" id="out-noi">—</div>
+    <p class="detail" id="out-noi-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Estimated NOI (annual)</h3>
+    <div class="big" id="out-noi-annual">—</div>
+    <p class="detail" id="out-noi-annual-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Estimated annual cash flow</h3>
+    <div class="big" id="out-cashflow-annual">—</div>
+    <p class="detail" id="out-cashflow-annual-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Monthly cash flow per unit</h3>
+    <div class="big" id="out-per-unit">—</div>
+    <p class="detail" id="out-per-unit-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Max mortgage payment to break even</h3>
+    <div class="big" id="out-max-mortgage">—</div>
+    <p class="detail" id="out-max-mortgage-detail"></p>
+   </div>
+    <p class="disclaimer" id="fpr-disclaimer">Estimates only. Not appraisal, investment, tax or financial advice. The 50% rule is a rough screen: the expense share excludes mortgage principal and interest, and real operating expenses vary with building age, property taxes, insurance, utilities, management and location. Confirm with your own rent roll, expense history and quotes before you rely on any number here.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p><strong>Estimated operating expenses</strong> are monthly gross rent times the expense ratio (default 50%, clamped to 0&ndash;100%). <strong>Estimated NOI</strong> is rent minus those expenses; annual figures are monthly times 12. <strong>Monthly cash flow</strong> is NOI minus your mortgage principal and interest, and can be negative. <strong>Per-unit cash flow</strong> divides monthly cash flow by the number of units (blank or below 1 counts as 1, so nothing divides by zero). The <strong>max mortgage payment to break even</strong> equals the estimated NOI: any P&amp;I above it shows negative cash flow under the rule. Negative inputs are treated as zero. The calculator does not model taxes on income, appreciation or principal paydown.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional single-unit rental collecting $2,450 a month with a $1,500 monthly P&amp;I payment and the classic 50% expense ratio.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Monthly gross rent</th><td class="n">$2,450.00</td></tr>
+   <tr><th scope="row">Expense ratio</th><td class="n">50%</td></tr>
+   <tr><th scope="row">Estimated operating expenses</th><td class="n">$1,225.00</td></tr>
+   <tr><th scope="row">Estimated NOI (monthly)</th><td class="n">$1,225.00</td></tr>
+   <tr><th scope="row">Estimated NOI (annual)</th><td class="n">$14,700.00</td></tr>
+   <tr><th scope="row">Mortgage P&amp;I</th><td class="n">$1,500.00</td></tr>
+   <tr><th scope="row">Monthly cash flow</th><td class="n">-$275.00</td></tr>
+   <tr><th scope="row">Annual cash flow</th><td class="n">-$3,300.00</td></tr>
+   <tr><th scope="row">Max P&amp;I to break even</th><td class="n">$1,225.00</td></tr>
+  </table>
+  <p>So under the 50% rule this example runs about $275 a month short: the estimated NOI of $1,225 does not cover a $1,500 payment. To break even the P&amp;I would need to be $1,225 or less, or rent would need to rise to $3,000 a month at the same payment. If your real expenses run at 40% instead of 50%, NOI rises to $1,470 and the shortfall shrinks to $30 a month.</p>
+
+  <h2>When investors use the 50% rule</h2>
+  <p>Buyers use the 50% rule as a second-pass screen after a rent-to-price check such as the 1% rule: it gives a fast, conservative guess at operating costs before they have a seller&rsquo;s expense history. Owners revisit it when refinancing, when rents change, or when comparing a new deal against what they already hold. It is a rule of thumb, not an underwrite. A newer building with tenant-paid utilities can run well under 50%; an older building with high taxes, insurance and paid management can run above it. Once you have real figures, use a full cash-flow analysis instead of the rule.</p>
+
+  <h2>Why a rent ledger helps</h2>
+  <p>The fastest way to replace the 50% guess with your own ratio is a year of real numbers: rent due vs collected and expenses by door. The HostLedger Landlord Rent Ledger tracks both for up to ten long-term units, so you can see whether your properties actually run at 35%, 50% or 60% of rent. Big-ticket replacements that the rule lumps into &ldquo;expenses&rdquo; (roofs, HVAC, water heaters) belong in the CapEx &amp; Improvement Tracker.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Landlord Rent Ledger on Etsy">
+   <img src="img/landlord-rent-ledger.jpg" width="560" height="700" loading="lazy" alt="Landlord Rent Ledger listing image">
+   <div>
+    <h2>Find your real expense ratio instead of guessing 50%</h2>
+    <p>The Landlord Rent Ledger: rent due vs collected, expenses and deposits held for up to ten long-term units. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_50_percent_rule_calculator" rel="noopener">Landlord Rent Ledger: $9 on Etsy</a>
+    <p class="also-flag">Budgeting roofs, HVAC and other replacements the rule lumps into expenses? See the <a href="https://www.etsy.com/listing/4567824696/landlord-capex-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_50_percent_rule_calculator" rel="noopener">CapEx &amp; Improvement Tracker</a> ($5 on Etsy).</p>
+    <p class="also-bundle">The rent ledger also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_50_percent_rule_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>What is the 50% rule in real estate?</summary>
+   <p>The 50% rule is a rough screen: assume about half of a rental&rsquo;s gross rent goes to operating expenses (taxes, insurance, repairs, maintenance, vacancy, management, utilities you pay, CapEx reserves). The other half is an estimate of net operating income (NOI) that has to cover the mortgage. At $2,450 a month of rent, the rule estimates $1,225 of expenses and $1,225 of NOI.</p>
+  </details>
+  <details>
+   <summary>Does the 50% include the mortgage payment?</summary>
+   <p>No. The 50% covers operating expenses only. Mortgage principal and interest come out of the remaining half. That is why this calculator subtracts your monthly P&amp;I from the estimated NOI to get cash flow, and shows the max payment that would break even.</p>
+  </details>
+  <details>
+   <summary>Is 50% the right expense ratio for my property?</summary>
+   <p>Not always. Newer buildings, tenant-paid utilities and low-tax areas can run well under 50%; older buildings, high property taxes, high insurance, owner-paid utilities and paid management can run higher. Set the expense ratio to whatever your own records or a local benchmark support. The field accepts 0&ndash;100%.</p>
+  </details>
+  <details>
+   <summary>How is the 50% rule different from the 1% rule?</summary>
+   <p>The 1% rule compares monthly rent to purchase price and ignores expenses entirely. The 50% rule estimates expenses and NOI from rent, then compares NOI to the mortgage. Investors often use the 1% rule first to filter listings, then the 50% rule to sanity-check cash flow, then a full cash-flow analysis with real numbers.</p>
+  </details>
+  <details>
+   <summary>What does negative cash flow mean here?</summary>
+   <p>It means the mortgage payment is larger than the NOI the 50% rule estimates. With the defaults, $1,500 of P&amp;I against $1,225 of estimated NOI shows &minus;$275 a month. It is a screening signal to look closer, not a verdict: your actual expenses may be lower or higher than the rule assumes.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="rental-property-1-percent-rule-calculator.html">rental property 1% rule calculator</a>, <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a>, <a href="rental-property-cap-rate-calculator.html">rental property cap rate calculator</a>, <a href="rental-property-cash-on-cash-calculator.html">rental property cash-on-cash return calculator</a>, <a href="rental-property-dscr-calculator.html">rental property dscr calculator</a> and <a href="rental-property-gross-rent-multiplier-calculator.html">rental property gross rent multiplier calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_50_percent_rule_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+     <li><a href="prorated-rent-calculator.html">Prorated rent calculator</a></li>
+     <li><a href="rent-late-fee-calculator.html">Rent late fee calculator</a></li>
+     <li><a href="rent-increase-calculator.html">Rent increase calculator</a></li>
+     <li><a href="rental-property-cap-rate-calculator.html">Rental property cap rate calculator</a></li>
+     <li><a href="rental-property-cash-on-cash-calculator.html">Rental property cash-on-cash return calculator</a></li>
+     <li><a href="rental-property-dscr-calculator.html">Rental property DSCR calculator</a></li>
+     <li><a href="airbnb-break-even-calculator.html">Airbnb break-even calculator</a></li>
+     <li><a href="rental-utility-bill-split-calculator.html">Rental utility bill split calculator</a></li>
+     <li><a href="rental-property-gross-rent-multiplier-calculator.html">Rental property gross rent multiplier calculator</a></li>
+     <li><a href="rental-property-1-percent-rule-calculator.html">Rental property 1% rule calculator</a></li>
+     <li><a href="rental-property-50-percent-rule-calculator.html">Rental property 50% rule calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_property_50_percent_rule_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
