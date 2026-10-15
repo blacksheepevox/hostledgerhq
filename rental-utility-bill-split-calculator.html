@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Utility Bill Split Calculator — Free | HostLedger</title>
+<meta name="description" content="Free RUBS / utility bill split calculator for 1–10 unit landlords: equal, by occupants, by sq ft, or blended, with optional admin fee. Estimates only.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1b4332">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://hostledgerhq.vercel.app/rental-utility-bill-split-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hostledgerhq.vercel.app/rental-utility-bill-split-calculator.html">
+<meta property="og:site_name" content="HostLedger">
+<meta property="og:title" content="Rental Utility Bill Split Calculator — Free | HostLedger">
+<meta property="og:description" content="Free RUBS / utility bill split calculator for 1–10 unit landlords: equal, by occupants, by sq ft, or blended, with optional admin fee. Estimates only.">
+<meta property="og:image" content="https://hostledgerhq.vercel.app/img/og-landlord.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Rental Utility Bill Split Calculator",
+   "description": "Free RUBS / utility bill split calculator for 1–10 unit landlords: equal, by occupants, by sq ft, or blended, with optional admin fee. Estimates only.",
+   "url": "https://hostledgerhq.vercel.app/rental-utility-bill-split-calculator.html",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in the browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "HostLedger"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is RUBS (ratio utility billing system)?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "RUBS is a way some landlords allocate a master-metered utility bill across units using a ratio: equal shares, number of occupants, square footage, or a blend of those. Each tenant pays their computed share (sometimes plus a small admin fee) instead of having a separate meter. Whether RUBS is allowed, and how it must be disclosed, depends on state and city rules and on the lease."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How should I split utilities between units?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Common methods are an equal split (same amount per door), by occupants living in each unit, by square footage, or a blended weight (for example 50% occupants and 50% square footage). Pick one method, put it in the lease, and use it the same way every billing period. This calculator runs the arithmetic; it does not choose the legal method for your property."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need separate meters?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Submeters measure each unit’s actual use and bill that use. RUBS estimates a share of a master bill when submeters are not installed. Some jurisdictions encourage or require submeters for new construction, and some restrict or ban RUBS. Check local law before you choose."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I add an admin or billing fee?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Some landlords add a small per-unit fee to cover the cost of allocating and billing the master meter. Whether that fee is allowed, how large it can be, and whether it must be in the lease varies by place. Enter it here only if your lease and local rules allow it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why don&rsquo;t the cents always divide evenly?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A bill in cents rarely divides into equal whole-cent shares. This calculator rounds each unit’s share to the nearest cent and uses a largest-remainder step so the shares still add up exactly to the bill. That way the allocation reconciles and nobody is short or long a penny."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my data saved or sent anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="js/utility-split-calc.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="index.html">HostLedger<small>boring money tools for small property operators</small></a>
+  <nav aria-label="Main">
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="short-term-rental-profit-calculator.html">STR profit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-flow-calculator.html">Cash flow<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-occupancy-rate-calculator.html">Occupancy<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-cleaning-fee-calculator.html">Cleaning fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-mileage-deduction-calculator.html">Mileage<span class="sr-only"> calculator</span></a></li>
+    <li><a href="security-deposit-refund-calculator.html">Deposit<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-depreciation-calculator.html">Depreciation<span class="sr-only"> calculator</span></a></li>
+    <li><a href="prorated-rent-calculator.html">Proration<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-late-fee-calculator.html">Late fee<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rent-increase-calculator.html">Rent increase<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cap-rate-calculator.html">Cap rate<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-cash-on-cash-calculator.html">Cash-on-cash<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-property-dscr-calculator.html">DSCR<span class="sr-only"> calculator</span></a></li>
+    <li><a href="airbnb-break-even-calculator.html">Break-even<span class="sr-only"> calculator</span></a></li>
+    <li><a href="rental-utility-bill-split-calculator.html" aria-current="page">Utility split<span class="sr-only"> calculator</span></a></li>
+    <li><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_utility_bill_split_calculator" rel="noopener">Shop on Etsy</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Rental utility bill split calculator</li></ol></nav>
+  <h1>Rental utility bill split calculator</h1>
+  <p class="narrow">For small landlords with 1–10 units on a master-metered utility: enter the total bill for the period, how many units share it, and choose an allocation method&mdash;equal split, by occupants, by square footage, or a blended occupants + sq&nbsp;ft weight (RUBS-style). Optionally add a per-unit admin fee. Results update as you type, with shares rounded so they still add up to the bill.</p>
+
+  <div class="calc">
+   <form id="rubs-form" novalidate aria-describedby="rubs-disclaimer">
+    <fieldset>
+     <legend>Bill &amp; units</legend>
+     <div class="fields">
+     <div class="field">
+      <label for="totalBill">Total utility bill</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="totalBill" name="totalBill" type="number" inputmode="decimal" step="any" min="0" value="360" aria-describedby="totalBill-hint"></div>
+      <span class="hint" id="totalBill-hint">Master-metered bill for this period (water, sewer, trash, gas, electric, etc.)</span>
+     </div>
+     <div class="field">
+      <label for="nUnits">Number of units sharing the bill</label>
+      <div class="input"><input id="nUnits" name="nUnits" type="number" inputmode="decimal" step="1" min="1" max="10" value="4" aria-describedby="nUnits-hint"></div>
+      <span class="hint" id="nUnits-hint">1–10 doors on this master meter</span>
+     </div>
+     <div class="field">
+      <label for="adminFee">Admin / billing fee per unit (optional)</label>
+      <div class="input has-pre"><span class="unit pre" aria-hidden="true">$</span><input id="adminFee" name="adminFee" type="number" inputmode="decimal" step="any" min="0" value="3" aria-describedby="adminFee-hint"></div>
+      <span class="hint" id="adminFee-hint">Added on top of each unit’s utility share; 0 if none</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>Allocation method</legend>
+     <div class="radios" role="radiogroup" aria-label="How to split the bill">
+      <label><input type="radio" name="method" value="equal" checked> Equal split (same amount per unit)</label>
+      <label><input type="radio" name="method" value="occupants"> By occupants</label>
+      <label><input type="radio" name="method" value="sqft"> By square footage</label>
+      <label><input type="radio" name="method" value="blended"> Blended occupants + sq ft</label>
+     </div>
+     <div class="fields" style="margin-top:10px">
+     <div class="field">
+      <label for="blendWeight">Occupants weight in blend</label>
+      <div class="input has-post"><input id="blendWeight" name="blendWeight" type="number" inputmode="decimal" step="any" min="0" max="100" value="50" aria-describedby="blendWeight-hint"><span class="unit post" aria-hidden="true">%</span></div>
+      <span class="hint" id="blendWeight-hint">Used when Blended is selected; the rest is square footage (50 = half and half)</span>
+     </div>
+     </div>
+    </fieldset>
+    <fieldset id="unit-details" hidden>
+     <legend>Per-unit occupants &amp; square footage</legend>
+     <p class="hint" style="margin:0 0 8px">Shown when you allocate by occupants, square footage, or a blend. Equal split ignores these numbers.</p>
+     <div class="table-scroll">
+     <table class="example monthly" id="unit-table">
+      <caption class="sr-only">Occupants and square footage by unit</caption>
+      <thead><tr><th scope="col">Unit</th><th scope="col">Occupants</th><th scope="col">Square feet</th></tr></thead>
+      <tbody>
+     <tr id="unit-row-1"><th scope="row">Unit 1</th><td><div class="input"><input id="u1-occ" name="u1-occ" type="number" inputmode="decimal" step="1" min="0" value="2" aria-label="Unit 1 occupants"></div></td><td><div class="input"><input id="u1-sqft" name="u1-sqft" type="number" inputmode="decimal" step="1" min="0" value="800" aria-label="Unit 1 square feet"></div></td></tr>
+     <tr id="unit-row-2"><th scope="row">Unit 2</th><td><div class="input"><input id="u2-occ" name="u2-occ" type="number" inputmode="decimal" step="1" min="0" value="1" aria-label="Unit 2 occupants"></div></td><td><div class="input"><input id="u2-sqft" name="u2-sqft" type="number" inputmode="decimal" step="1" min="0" value="600" aria-label="Unit 2 square feet"></div></td></tr>
+     <tr id="unit-row-3"><th scope="row">Unit 3</th><td><div class="input"><input id="u3-occ" name="u3-occ" type="number" inputmode="decimal" step="1" min="0" value="3" aria-label="Unit 3 occupants"></div></td><td><div class="input"><input id="u3-sqft" name="u3-sqft" type="number" inputmode="decimal" step="1" min="0" value="900" aria-label="Unit 3 square feet"></div></td></tr>
+     <tr id="unit-row-4"><th scope="row">Unit 4</th><td><div class="input"><input id="u4-occ" name="u4-occ" type="number" inputmode="decimal" step="1" min="0" value="2" aria-label="Unit 4 occupants"></div></td><td><div class="input"><input id="u4-sqft" name="u4-sqft" type="number" inputmode="decimal" step="1" min="0" value="700" aria-label="Unit 4 square feet"></div></td></tr>
+     <tr id="unit-row-5" hidden><th scope="row">Unit 5</th><td><div class="input"><input id="u5-occ" name="u5-occ" type="number" inputmode="decimal" step="1" min="0" value="2" aria-label="Unit 5 occupants"></div></td><td><div class="input"><input id="u5-sqft" name="u5-sqft" type="number" inputmode="decimal" step="1" min="0" value="700" aria-label="Unit 5 square feet"></div></td></tr>
+     <tr id="unit-row-6" hidden><th scope="row">Unit 6</th><td><div class="input"><input id="u6-occ" name="u6-occ" type="number" inputmode="decimal" step="1" min="0" value="2" aria-label="Unit 6 occupants"></div></td><td><div class="input"><input id="u6-sqft" name="u6-sqft" type="number" inputmode="decimal" step="1" min="0" value="700" aria-label="Unit 6 square feet"></div></td></tr>
+     <tr id="unit-row-7" hidden><th scope="row">Unit 7</th><td><div class="input"><input id="u7-occ" name="u7-occ" type="number" inputmode="decimal" step="1" min="0" value="2" aria-label="Unit 7 occupants"></div></td><td><div class="input"><input id="u7-sqft" name="u7-sqft" type="number" inputmode="decimal" step="1" min="0" value="700" aria-label="Unit 7 square feet"></div></td></tr>
+     <tr id="unit-row-8" hidden><th scope="row">Unit 8</th><td><div class="input"><input id="u8-occ" name="u8-occ" type="number" inputmode="decimal" step="1" min="0" value="2" aria-label="Unit 8 occupants"></div></td><td><div class="input"><input id="u8-sqft" name="u8-sqft" type="number" inputmode="decimal" step="1" min="0" value="700" aria-label="Unit 8 square feet"></div></td></tr>
+     <tr id="unit-row-9" hidden><th scope="row">Unit 9</th><td><div class="input"><input id="u9-occ" name="u9-occ" type="number" inputmode="decimal" step="1" min="0" value="2" aria-label="Unit 9 occupants"></div></td><td><div class="input"><input id="u9-sqft" name="u9-sqft" type="number" inputmode="decimal" step="1" min="0" value="700" aria-label="Unit 9 square feet"></div></td></tr>
+     <tr id="unit-row-10" hidden><th scope="row">Unit 10</th><td><div class="input"><input id="u10-occ" name="u10-occ" type="number" inputmode="decimal" step="1" min="0" value="2" aria-label="Unit 10 occupants"></div></td><td><div class="input"><input id="u10-sqft" name="u10-sqft" type="number" inputmode="decimal" step="1" min="0" value="700" aria-label="Unit 10 square feet"></div></td></tr>
+      </tbody>
+     </table>
+     </div>
+    </fieldset>
+    <div class="form-actions">
+     <button type="submit">Calculate</button>
+     <button type="reset">Reset to example</button>
+    </div>
+   </form>
+
+   <div class="results" aria-live="polite" aria-label="Results">
+   <div class="result highlight">
+    <h3>Total recovered</h3>
+    <div class="big" id="out-recovered">—</div>
+    <p class="detail" id="out-recovered-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Bill allocated to units</h3>
+    <div class="big" id="out-allocated">—</div>
+    <p class="detail" id="out-allocated-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Allocation check</h3>
+    <div class="big" id="out-check">—</div>
+    <p class="detail" id="out-check-detail"></p>
+   </div>
+   <div class="result">
+    <h3>Admin fees total</h3>
+    <div class="big" id="out-admin">—</div>
+    <p class="detail" id="out-admin-detail"></p>
+   </div>
+    <div class="result" style="grid-column:1/-1">
+     <h3>Per-unit share</h3>
+     <div class="table-scroll">
+     <table class="example" id="share-table">
+      <caption class="sr-only">Per-unit utility share, percent, admin fee and total due</caption>
+      <thead><tr><th scope="col">Unit</th><th scope="col">Bill share</th><th scope="col">Percent</th><th scope="col">Admin fee</th><th scope="col">Total due</th></tr></thead>
+      <tbody id="share-tbody"></tbody>
+     </table>
+     </div>
+     <p class="detail" id="out-share-detail"></p>
+    </div>
+    <p class="disclaimer" id="rubs-disclaimer">Estimates only. Not legal advice. RUBS and utility billing rules vary by state and city; some places restrict or ban ratio utility billing, require submeters, or limit admin fees. Check local law and your lease before you bill a tenant.</p>
+   </div>
+  </div>
+
+  <div class="narrow">
+  <h2>How this calculator works</h2>
+  <p>First it takes the <strong>total bill</strong> and the <strong>number of units</strong> (1–10). Then it builds a weight for each unit: <strong>equal</strong> gives every door the same weight; <strong>by occupants</strong> uses the people living in each unit; <strong>by square footage</strong> uses floor area; <strong>blended</strong> mixes the two with the occupants weight you set (the rest is sq&nbsp;ft). Each unit&rsquo;s bill share is its weight over the total weight, times the bill. Shares are rounded to cents with a largest-remainder step so they still <strong>add up exactly to the bill</strong>. An optional <strong>admin fee</strong> is then added per unit on top of the utility share. <strong>Total recovered</strong> is the allocated bill plus all admin fees.</p>
+
+  <h2>A worked example</h2>
+  <p>The default numbers describe a fictional four-unit building with a $360 master utility bill and a $3 admin fee per door, split equally.</p>
+  <table class="example">
+   <caption class="sr-only">Worked example</caption>
+   <tr><th scope="row">Total utility bill</th><td class="n">$360.00</td></tr>
+   <tr><th scope="row">Units</th><td class="n">4</td></tr>
+   <tr><th scope="row">Method</th><td class="n">Equal split</td></tr>
+   <tr><th scope="row">Bill share per unit ($360 ÷ 4)</th><td class="n">$90.00 (25%)</td></tr>
+   <tr><th scope="row">Admin fee per unit</th><td class="n">$3.00</td></tr>
+   <tr><th scope="row">Total due per unit</th><td class="n">$93.00</td></tr>
+   <tr><th scope="row">Total recovered (bill + admin)</th><td class="n">$372.00</td></tr>
+  </table>
+  <p>Switch to &ldquo;By occupants&rdquo; with the prefilled 2 / 1 / 3 / 2 people and the same $360 bill becomes $90, $45, $135 and $90. &ldquo;By square footage&rdquo; with 800 / 600 / 900 / 700 sq&nbsp;ft becomes $96, $72, $108 and $84. A 50/50 blend of those two methods yields $93.00, $58.50, $121.50 and $87.00&mdash;still adding up to $360.</p>
+
+  <h2>When landlords use RUBS or a utility split</h2>
+  <p>Master meters are common in small multifamily buildings where separate meters were never installed. Landlords then need a written way to pass the shared bill through to tenants: equal shares when units are similar, occupant or square-footage ratios when they are not, and sometimes a small admin fee for the billing work. Whatever you use should match the lease the tenant signed and the rules where the property sits. Keep the master bill, the allocation method and each unit&rsquo;s charge together so a dispute later has a paper trail.</p>
+  <p><strong>Local rules come first.</strong> RUBS and utility billing rules vary by state and city. Some places restrict or ban ratio utility billing, require submeters for new work, or limit what you can add as a fee. This page is not legal advice; confirm the rules for your property and put the method in the lease before you bill.</p>
+
+  <h2>Why a utility log helps</h2>
+  <p>A split only works if you know which bill, which period, who pays, and what each door was charged. Across ten units that is easy to lose in email threads. The HostLedger Utility &amp; Bill Log tracks bills by property and who pays&mdash;owner, tenant, or shared&mdash;so the allocation you compute here has a place to land next to the invoice. The Landlord Rent Ledger then shows whether each door&rsquo;s share was collected with the rent.</p>
+  </div>
+
+  <aside class="cta-box" aria-label="Utility &amp; Bill Log on Etsy">
+   <img src="img/utility-tracker.jpg" width="560" height="700" loading="lazy" alt="Utility &amp; Bill Log listing image">
+   <div>
+    <h2>Log every utility bill and who pays it</h2>
+    <p>The Utility &amp; Bill Log: bills by property and who pays&mdash;owner, tenant, or shared. Google Sheets + Excel, macro-free, sample workbook and quick-start PDF included. Buy once on Etsy.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/listing/4566242174/landlord-utility-tracker-spreadsheet?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_utility_bill_split_calculator" rel="noopener">Utility &amp; Bill Log: $5 on Etsy</a>
+    <p class="also-flag">Want rent due vs collected, expenses and deposits for every door in one file? See the <a href="https://www.etsy.com/listing/4564183576/landlord-rent-ledger-spreadsheet-long?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_utility_bill_split_calculator" rel="noopener">Landlord Rent Ledger</a> ($9 on Etsy).</p>
+    <p class="also-bundle">The utility log also comes in the <a href="https://www.etsy.com/listing/4592298812/landlord-spreadsheet-bundle-12-rental?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_utility_bill_split_calculator" rel="noopener">Landlord Spreadsheet Bundle</a> (12 tools in one download).</p>
+   </div>
+  </aside>
+
+  <section class="faq narrow" aria-labelledby="faq">
+   <h2 id="faq">FAQ</h2>
+  <details>
+   <summary>What is RUBS (ratio utility billing system)?</summary>
+   <p>RUBS is a way some landlords allocate a master-metered utility bill across units using a ratio: equal shares, number of occupants, square footage, or a blend of those. Each tenant pays their computed share (sometimes plus a small admin fee) instead of having a separate meter. Whether RUBS is allowed, and how it must be disclosed, depends on state and city rules and on the lease.</p>
+  </details>
+  <details>
+   <summary>How should I split utilities between units?</summary>
+   <p>Common methods are an equal split (same amount per door), by occupants living in each unit, by square footage, or a blended weight (for example 50% occupants and 50% square footage). Pick one method, put it in the lease, and use it the same way every billing period. This calculator runs the arithmetic; it does not choose the legal method for your property.</p>
+  </details>
+  <details>
+   <summary>Do I need separate meters?</summary>
+   <p>Submeters measure each unit&rsquo;s actual use and bill that use. RUBS estimates a share of a master bill when submeters are not installed. Some jurisdictions encourage or require submeters for new construction, and some restrict or ban RUBS. Check local law before you choose.</p>
+  </details>
+  <details>
+   <summary>Can I add an admin or billing fee?</summary>
+   <p>Some landlords add a small per-unit fee to cover the cost of allocating and billing the master meter. Whether that fee is allowed, how large it can be, and whether it must be in the lease varies by place. Enter it here only if your lease and local rules allow it.</p>
+  </details>
+  <details>
+   <summary>Why don&amp;rsquo;t the cents always divide evenly?</summary>
+   <p>A bill in cents rarely divides into equal whole-cent shares. This calculator rounds each unit&rsquo;s share to the nearest cent and uses a largest-remainder step so the shares still add up exactly to the bill. That way the allocation reconciles and nobody is short or long a penny.</p>
+  </details>
+  <details>
+   <summary>Is my data saved or sent anywhere?</summary>
+   <p>No. The math runs in your browser. Nothing is stored or sent, and refreshing the page resets the defaults.</p>
+  </details>
+  </section>
+  <p class="narrow related">Related free calculators: <a href="security-deposit-refund-calculator.html">security deposit refund calculator</a>, <a href="rent-increase-calculator.html">rent increase calculator</a>, <a href="rental-property-cash-flow-calculator.html">rental property cash flow calculator</a> and <a href="prorated-rent-calculator.html">prorated rent calculator</a>. Or browse <a href="index.html#calculators">all free calculators</a> and <a href="index.html#cat">all 15 HostLedger tools and 2 bundles</a>.</p>
+ </div>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>HostLedger</h2>
+    <p>Buy-once spreadsheets for small short-term rental hosts and long-term landlords. Sold only on Etsy as <a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_utility_bill_split_calculator" rel="noopener">HostLedgerHQ</a>.</p>
+   </div>
+   <div>
+    <h2>Free calculators</h2>
+    <ul>
+     <li><a href="short-term-rental-profit-calculator.html">Short-term rental profit calculator</a></li>
+     <li><a href="rental-property-cash-flow-calculator.html">Rental property cash flow calculator</a></li>
+     <li><a href="airbnb-occupancy-rate-calculator.html">Airbnb occupancy rate calculator</a></li>
+     <li><a href="airbnb-cleaning-fee-calculator.html">Airbnb cleaning fee calculator</a></li>
+     <li><a href="rental-property-mileage-deduction-calculator.html">Rental property mileage deduction calculator</a></li>
+     <li><a href="security-deposit-refund-calculator.html">Security deposit refund calculator</a></li>
+     <li><a href="rental-property-depreciation-calculator.html">Rental property depreciation calculator</a></li>
+     <li><a href="prorated-rent-calculator.html">Prorated rent calculator</a></li>
+     <li><a href="rent-late-fee-calculator.html">Rent late fee calculator</a></li>
+     <li><a href="rent-increase-calculator.html">Rent increase calculator</a></li>
+     <li><a href="rental-property-cap-rate-calculator.html">Rental property cap rate calculator</a></li>
+     <li><a href="rental-property-cash-on-cash-calculator.html">Rental property cash-on-cash return calculator</a></li>
+     <li><a href="rental-property-dscr-calculator.html">Rental property DSCR calculator</a></li>
+     <li><a href="airbnb-break-even-calculator.html">Airbnb break-even calculator</a></li>
+     <li><a href="rental-utility-bill-split-calculator.html">Rental utility bill split calculator</a></li>
+    </ul>
+   </div>
+   <div>
+    <h2>Questions?</h2>
+    <p><a href="https://www.etsy.com/shop/HostLedgerHQ?utm_source=hostledger_site&utm_medium=referral&utm_campaign=rental_utility_bill_split_calculator" rel="noopener">Message the shop on Etsy</a>. Orders, downloads and refund requests are handled through Etsy.</p>
+   </div>
+  </div>
+  <p class="fine">Calculators and spreadsheets give estimates for your own records only. They are not tax, legal, accounting, or financial advice. Airbnb and VRBO are trademarks of their owners; HostLedger is not affiliated with them or endorsed by them. No ads, no trackers, no cookies on this site.</p>
+ </div>
+</footer>
+</body>
+</html>
